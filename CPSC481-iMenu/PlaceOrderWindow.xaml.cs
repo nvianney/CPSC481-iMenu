@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
@@ -62,6 +64,31 @@ namespace CPSC481_iMenu
             MainWindow.Show();
             
 
+
+        }
+
+        private void Confirmation_Checkbox_Checked(object sender, RoutedEventArgs e)
+        {
+            //if the checkbox is checked, show the place order button and make it clickable
+            Place_Order_Button.Opacity = 1;
+            Place_Order_Button.IsEnabled= true;
+
+            //Place_Order_Button.Enabl
+
+        }
+
+        private void Place_Order_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Button? btn = sender as Button;
+            btn.Background = btn.Background == Brushes.LightGreen ? new BrushConverter().ConvertFrom("#FFDDDDDD") as SolidColorBrush : Brushes.LightGreen;
+            //https://social.msdn.microsoft.com/Forums/vstudio/en-US/e5420458-8b16-4d2e-819c-b23ed8d56b29/how-do-i-change-the-background-color-of-a-button-in-wpf-on-a-mouse-click-?forum=wpf
+
+            Place_Order_Button.IsEnabled= false;
+            Place_Order_Label.Content = "Order Placed!";
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }

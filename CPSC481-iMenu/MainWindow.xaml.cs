@@ -53,7 +53,7 @@ namespace CPSC481_iMenu
             return true;
         }
 
-        private void Place_Order_Button_Click(object sender, RoutedEventArgs e)
+        private void Confirm_Order_Button_Click(object sender, RoutedEventArgs e)
         {
             bool press = IsButtonPressed(isCallServerPressed);
             Button? btn = sender as Button;
@@ -72,6 +72,10 @@ namespace CPSC481_iMenu
 
         }
 
+        private void ListBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 
 }
