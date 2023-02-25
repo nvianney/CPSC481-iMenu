@@ -87,9 +87,70 @@ namespace CPSC481_iMenu
             Place_Order_Label.Content = "Order Placed!";
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+  
+        private void Increase_Quantity(object sender, RoutedEventArgs e)
         {
+            Button? btn = sender as Button;
+            String buttonName = btn.Name;
+            Char buttonIndex = buttonName.Last();
+            //gets the last character of the button name (which should be an integer)
+            //can be used to update the label
 
+            String labelName = "Food_Item_Quantity" + buttonIndex;
+            //Label Name contains the lable of the quantity to be updated
+
+           
+            //get the current quantity
+            String old = Quantity.Text;
+            int oldint = (int)Convert.ToSingle(old);
+            oldint++;
+            Quantity.Text = (String)oldint.ToString();
+
+
+
+            //Increase the quantity by 1
+
+            //update the lable to represent the updated quantity
+            Call_Server_Label.Content = labelName;
+
+            //UPdate the total cost
+
+        }
+
+        private void Decrease_Quantity(object sender, RoutedEventArgs e)
+        {
+            Button? btn = sender as Button;
+            String buttonName = btn.Name;
+            Char buttonIndex = buttonName.Last();
+            //gets the last character of the button name (which should be an integer)
+            //can be used to update the label
+
+            String labelName = "Food_Item_Quantity" + buttonIndex;
+            //Label Name contains the lable of the quantity to be updated
+
+            //get the current quantity   
+            
+            //Decrease the quantity by 1
+
+            //update the lable to represent the updated quantity
+            Call_Server_Label.Content = labelName;
+
+            //update the total cost
+
+
+        }
+
+        private void Remove_Item_1_Click(object sender, RoutedEventArgs e)
+        {
+            ShowMessage("You are about to delete the item from the order", "Delete Confirmation");
+            //calling another method to display the remove item confirmation.         
+        }
+
+        private void ShowMessage(string msg, string WindowTitle)
+        {
+            //https://www.tutorialspoint.com/wpf/wpf_dialog_box.htm
+            MessageBoxButton button = MessageBoxButton.YesNoCancel;
+            MessageBoxResult result = MessageBox.Show(msg, WindowTitle, button);          
         }
     }
 }
