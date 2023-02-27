@@ -85,6 +85,7 @@ namespace CPSC481_iMenu
 
             Place_Order_Button.IsEnabled= false;
             Place_Order_Label.Content = "Order Placed!";
+            ShowInformation("Your order has been placed!", "Order Placed Confirmation");
         }
 
   
@@ -150,6 +151,12 @@ namespace CPSC481_iMenu
         {
             //https://www.tutorialspoint.com/wpf/wpf_dialog_box.htm
             MessageBoxButton button = MessageBoxButton.YesNoCancel;
+            MessageBoxResult result = MessageBox.Show(msg, WindowTitle, button);          
+        }
+        private void ShowInformation(string msg, string WindowTitle)
+        {
+            //https://www.tutorialspoint.com/wpf/wpf_dialog_box.htm
+            MessageBoxButton button = MessageBoxButton.OK;
             MessageBoxResult result = MessageBox.Show(msg, WindowTitle, button);          
         }
     }
