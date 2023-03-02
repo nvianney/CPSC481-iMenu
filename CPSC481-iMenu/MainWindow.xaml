@@ -8,14 +8,108 @@
         Title="iMenu - Restaurant Ordering System" Height ="9in" Width="10in">
     <!-- Landscape view: 10in x 9in -->
     <Grid>
-        <Button Content="    Call Server" Margin="687,10,10,0" VerticalAlignment="Top" Height="68" Click="Call_Server_Button_Click" AutomationProperties.HelpText="Click to call Server" FontSize="36" FontWeight="Bold"/>
-        <Image HorizontalAlignment="Left" Height="100" Margin="158,121,0,0" VerticalAlignment="Top" Width="100"/>
-        <Image x:Name="iMenu_Image" HorizontalAlignment="Left" Height="180" Margin="10,10,0,0" VerticalAlignment="Top" Width="233" Source="/Image1.png"/>
-        <Label x:Name="Table_Number1" Content="Table No. 05" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="59" Width="144" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
-        <Label x:Name="Call_Server_Label" Content="" HorizontalAlignment="Right" Margin="641,83,0,0" VerticalAlignment="Top" Width="309" FontSize="18" Height="38" HorizontalContentAlignment="Right"/>
-        <Label Content="XYZ Restaurant" Margin="670,121,0,0" VerticalAlignment="Top" Height="62" FontSize="36" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="262"/>
-        <Button x:Name="Confirm_Order_Button" Content="Confirm Order" Margin="687,744,10,0" VerticalAlignment="Top" Height="68" Click="Confirm_Order_Button_Click" AutomationProperties.HelpText="Click to Confirm Order" FontSize="32" FontWeight="Bold"/>
-        <Rectangle HorizontalAlignment="Left" Height="623" Margin="10,189,0,0" Stroke="Black" VerticalAlignment="Top" Width="636" StrokeThickness="3"/>
-        <Image x:Name="Bell" HorizontalAlignment="Left" Height="40" Margin="700,24,0,0" VerticalAlignment="Top" Width="40" Source="/call server bell.png"/>
+        <Grid.RowDefinitions>
+            <!-- First element sizing -->
+            <RowDefinition Height = "65" />
+            <!-- Second element sizing -->
+            <RowDefinition Height = "*" />
+        </Grid.RowDefinitions>
+        
+        <!-- Toolbar -->
+        <Grid Grid.Row="0" Background="#FFF99494">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            
+            <Image Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Stretch" Source="/Image1.png" />
+
+            <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Table No. 05" FontSize="22" FontWeight="Bold" />
+
+            <Button Grid.Column="2" Margin="16,8,16,8">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/call server bell.png" Margin="0,0,4,0" />
+                    <TextBlock Text="Call Server" VerticalAlignment="Center" FontSize="36" FontWeight="Bold" Margin="4,0,0,0" />
+                </StackPanel>
+            </Button>
+
+        </Grid>
+        
+        <!-- Content -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="300" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Left pane -->
+            <Grid Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Options bar-->
+                <StackPanel Grid.Column="0" Background="#FFD8FFAB">
+                    <Button Height="80" Margin="0,8,0,8" />
+                    <Button Height="80" Margin="0,8,0,8" />
+                </StackPanel>
+                
+                <!-- Menu -->
+                <ScrollViewer Grid.Column="1">
+                    <StackPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <local:MenuItem Grid.Column="0" />
+                            <local:MenuItem Grid.Column="1" />
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <local:MenuItem Grid.Column="0" />
+                            <local:MenuItem Grid.Column="1" />
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <local:MenuItem Grid.Column="0" />
+                            <local:MenuItem Grid.Column="1" />
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <local:MenuItem Grid.Column="0" />
+                            <local:MenuItem Grid.Column="1" />
+                        </Grid>
+
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+
+            <Grid Grid.Column="1" Background="#FFE6E6E6">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="90" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" FontSize="24" Text="Your order" FontWeight="Bold" Margin="24,0,0,8" VerticalAlignment="Bottom"/>
+                <ScrollViewer Grid.Row="1">
+                    <StackPanel>
+                        <local:OrderItem Loaded="OrderItem_Loaded" />
+                        <local:OrderItem Loaded="OrderItem_Loaded" />
+                        <local:OrderItem Loaded="OrderItem_Loaded" />
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>
