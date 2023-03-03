@@ -19,16 +19,9 @@
             <Grid Grid.Row="1" Margin="0,16,0,16">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="55" />
                 </Grid.ColumnDefinitions>
 
                 <Image x:Name="image" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="UniformToFill" Source="/ChummyJoes.png" />
-
-                <StackPanel Grid.Column="1" x:Name="allergy_container">
-                    <Image HorizontalAlignment="Stretch" Height="40" VerticalAlignment="Top" Margin="0,8,0,8" Source="/circle.png"/>
-                    <Image HorizontalAlignment="Stretch" Height="40" VerticalAlignment="Top" Margin="0,8,0,8" Source="/circle.png"/>
-                    <Image HorizontalAlignment="Stretch" Height="40" VerticalAlignment="Top" Margin="0,8,0,8" Source="/circle.png"/>
-                </StackPanel>
 
             </Grid>
 

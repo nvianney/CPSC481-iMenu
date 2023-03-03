@@ -58,7 +58,14 @@
                 
                 <!-- Menu -->
                 <ScrollViewer Grid.Column="1">
-                    <StackPanel>
+                    <StackPanel Background="#FFE4E4E4">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="100" />
+                            </Grid.ColumnDefinitions>
+                            <Button Grid.Column="1" Height="40" Content="Filter" FontSize="20" />
+                        </Grid>
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
