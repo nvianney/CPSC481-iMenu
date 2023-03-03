@@ -10,12 +10,24 @@
 
   <ItemGroup>
     <None Remove="call server bell.png" />
+    <None Remove="ChummyJoes.png" />
+    <None Remove="circle.png" />
     <None Remove="Image1.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="call server bell.png" />
+    <Resource Include="ChummyJoes.png" />
+    <Resource Include="circle.png">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Image1.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="MenuItem.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 
 </Project>

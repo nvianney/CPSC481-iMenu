@@ -35,11 +35,11 @@ namespace CPSC481_iMenu
             btn.Background = btn.Background == Brushes.LightGreen ? new BrushConverter().ConvertFrom("#FFDDDDDD") as SolidColorBrush : Brushes.LightGreen;
             //https://social.msdn.microsoft.com/Forums/vstudio/en-US/e5420458-8b16-4d2e-819c-b23ed8d56b29/how-do-i-change-the-background-color-of-a-button-in-wpf-on-a-mouse-click-?forum=wpf
 
-            if(press)
-                Call_Server_Label.Content = "Server is coming to Help, Please Wait!";
+            //if(press)
+                //Call_Server_Label.Content = "Server is coming to Help, Please Wait!";
             //Server is coming to Help, Please Wait!
-            else
-                Call_Server_Label.Content = "Opps";
+            //else
+                //Call_Server_Label.Content = "Opps";
         }
 
         private bool IsButtonPressed(bool button_given)
@@ -73,6 +73,11 @@ namespace CPSC481_iMenu
         }
 
         private void ListBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void OrderItem_Loaded(object sender, RoutedEventArgs e)
         {
 
         }
