@@ -19,14 +19,13 @@ namespace CPSC481_iMenu
     /// <summary>
     /// Interaction logic for PlaceOrderWindow.xaml
     /// </summary>
-    public partial class PlaceOrderWindow : Window
+    public partial class PlaceOrderWindow : Page
     {
         bool isCallServerPressed = false;
-        readonly Window MainWindow;
-        public PlaceOrderWindow(MainWindow mainWindow_given)
+
+        public PlaceOrderWindow()
         {
             InitializeComponent();
-            MainWindow = mainWindow_given;
         }
 
         private void Call_Server_Button_Click(object sender, RoutedEventArgs e)
@@ -58,10 +57,10 @@ namespace CPSC481_iMenu
         private void Go_Back_Button_Click(object sender, RoutedEventArgs e)
         {
             //Close this "Order Confirmation" Window
-            this.Close();
+            //this.Close();
 
             //Go back to "Main Window"
-            MainWindow.Show();
+            //MainWindow.Show();
             
 
 

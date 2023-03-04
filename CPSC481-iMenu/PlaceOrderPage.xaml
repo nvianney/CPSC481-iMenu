@@ -1,11 +1,12 @@
-﻿<Window x:Class="CPSC481_iMenu.PlaceOrderWindow"
+﻿<Page x:Class="CPSC481_iMenu.PlaceOrderWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPSC481_iMenu" xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="iMenu - Place Order" Height ="9in" Width="7in">
+        Title="iMenu - Place Order" Height ="9in" Width="7in"
+        Background="White">
 
     <Grid>
         <!-- Setting arrays for food item names, cost per item, quantity ordered -->
@@ -172,4 +173,4 @@
         <!-- This is Place order sub-window -->
 
     </Grid>
-</Window>
+</Page>
