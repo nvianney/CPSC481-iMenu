@@ -10,6 +10,17 @@ namespace CPSC481_iMenu
     {
         NUT, DAIRY
     }
+
+    enum DietaryRestrictions
+    {
+        VEGETARIAN,
+        VEGAN,
+        GLUTEN_FREE,
+        DIARY_FREE,
+        PEANUT_FREE,
+        SEAFOOD_FREE
+    }
+
     class DishModel
     {
         String name;
@@ -17,6 +28,6 @@ namespace CPSC481_iMenu
         String imageName;
 
         Allergens[] allergens;
-        
+        DietaryRestrictions[] dietaryRestrictions;
     }
 }
