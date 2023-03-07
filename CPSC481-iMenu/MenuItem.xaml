@@ -13,7 +13,7 @@
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="0.18*" />
             </Grid.RowDefinitions>
- 
+
             <TextBlock Grid.Row="0" x:Name="title" Grid.Column="0" Text="Item 1 abcdefghi" VerticalAlignment="Center" Margin="0,0,0,0" FontSize="16" />
 
             <Grid Grid.Row="1" Margin="0,16,0,16">
@@ -21,7 +21,7 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Image x:Name="image" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="UniformToFill" Source="/ChummyJoes.png" />
+                <Image x:Name="expand_menu" Grid.Column="0" Stretch="UniformToFill" Source="/ChummyJoes.png" />
 
             </Grid>
 
@@ -30,13 +30,14 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="55" />
                 </Grid.ColumnDefinitions>
-                
+
                 <TextBlock Grid.Column="0" Text="Descripton here abcdefghi jklmnopqr stuvwxyz 123456" VerticalAlignment="Center" Margin="0,0,0,0" FontSize="12" TextWrapping="Wrap"/>
-				
-				<!-- Consider using an image -->
-				<Button Grid.Column="1" Content="Add" HorizontalAlignment="Stretch" FontSize="22"/>
+
+                <!-- Consider using an image -->
+                <Button Grid.Column="1" Content="Add" HorizontalAlignment="Stretch" FontSize="22"/>
 
             </Grid>
+            <Image Margin="201,9,10,4" Source="/Image5.png" Stretch="Fill"/>
 
         </Grid>
     </Grid>
