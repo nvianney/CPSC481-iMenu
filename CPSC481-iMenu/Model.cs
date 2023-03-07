@@ -26,8 +26,9 @@ namespace CPSC481_iMenu
         String name;
         String description;
         String imageName;
+        String[] ingredients;
 
-        Allergens[] allergens;
+    Allergens[] allergens;
         DietaryRestrictions[] dietaryRestrictions;
     }
 }
