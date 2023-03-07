@@ -8,9 +8,11 @@
         Title="ItemWindow" Height ="6in" Width="7in">
     <Grid>
         <Label Name ="ItemName" FontSize="30" Content="Item 1" HorizontalAlignment="Left" Margin="55,34,0,0" VerticalAlignment="Top"/>
-        <Image x:Name="image" Source="/ChummyJoes.png" Margin="55,84,300,220" />
+        <Image x:Name="image" Source="/ChummyJoes.png" Margin="55,82,300,220" />
+        <TextBlock Name ="Description" Text="Descripton here abcdefghi jklmnopqr stuvwxyz 123456" VerticalAlignment="Top" Margin="408,53,29,0" FontSize="13" TextWrapping="Wrap" Height="63"/>
+        <Label Name ="IngredientTitle" FontSize="25" Content="Ingredients" HorizontalAlignment="Left" Margin="408,115,0,0" VerticalAlignment="Top"/>
 
-        <ListView x:Name="ItemIngredientsList" Height ="1.5in" Margin="433,206,0,0" SelectionMode="Multiple" RenderTransformOrigin="0.5,0.5" HorizontalContentAlignment="Center" Padding="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" d:ItemsSource="{d:SampleData ItemCount=6}" ScrollViewer.VerticalScrollBarVisibility="Auto">
+        <ListView x:Name="ItemIngredientsList" Height ="1.5in" Margin="408,163,0,0" SelectionMode="Multiple" RenderTransformOrigin="0.5,0.5" HorizontalContentAlignment="Left" Padding="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" d:ItemsSource="{d:SampleData ItemCount=6}" ScrollViewer.VerticalScrollBarVisibility="Auto" Width="212">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
