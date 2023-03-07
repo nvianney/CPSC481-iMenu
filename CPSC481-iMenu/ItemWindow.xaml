@@ -9,10 +9,10 @@
     <Grid>
         <Label Name ="ItemName" FontSize="30" Content="Item 1" HorizontalAlignment="Left" Margin="55,34,0,0" VerticalAlignment="Top"/>
         <Image x:Name="image" Source="/ChummyJoes.png" Margin="55,82,300,220" />
-        <TextBlock Name ="Description" Text="Descripton here abcdefghi jklmnopqr stuvwxyz 123456" VerticalAlignment="Top" Margin="408,53,29,0" FontSize="13" TextWrapping="Wrap" Height="63"/>
-        <Label Name ="IngredientTitle" FontSize="25" Content="Ingredients" HorizontalAlignment="Left" Margin="408,115,0,0" VerticalAlignment="Top"/>
+        <TextBlock Name ="Description" Text="Descripton here abcdefghi jklmnopqr stuvwxyz 123456" VerticalAlignment="Top" Margin="408,53,29,0" FontSize="15" TextWrapping="Wrap" Height="63"/>
+        <Label Name ="IngredientTitle" FontSize="25" Content="Ingredients" HorizontalAlignment="Left" Margin="408,134,0,0" VerticalAlignment="Top"/>
 
-        <ListView x:Name="ItemIngredientsList" Height ="1.5in" Margin="408,163,0,0" SelectionMode="Multiple" RenderTransformOrigin="0.5,0.5" HorizontalContentAlignment="Left" Padding="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" d:ItemsSource="{d:SampleData ItemCount=6}" ScrollViewer.VerticalScrollBarVisibility="Auto" Width="212">
+        <ListView x:Name="ItemIngredientsList" Height ="119" Margin="408,192,0,0" SelectionMode="Multiple" RenderTransformOrigin="0.5,0.5" HorizontalContentAlignment="Left" Padding="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" d:ItemsSource="{d:SampleData ItemCount=6}" ScrollViewer.VerticalScrollBarVisibility="Auto" Width="212">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -21,8 +21,16 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Image x:Name="DairyFreeSymbol" Source="/DairyFree.png" Margin="36,307,551,200" />
+        <Label x:Name ="DairyFreeTitle" FontSize="10" Content="Dairy Free" HorizontalAlignment="Left" Margin="50,360,0,0" VerticalAlignment="Top" Height="22" Width="56"/>
 
-        <Button Content="Add To Cart" HorizontalAlignment="Center" Margin="0,340,0,0" VerticalAlignment="Center" FontSize="20" FontFamily="Segoe UI Light" Style="{StaticResource ButtonStyle}" Padding="10,10,10,10" Width="180" Height="50" Click="Button_Click"/>
+        <Image Name="PeanutFreeSymbol" Source="/PeanutFree.png" Margin="126,312,480,205" />
+        <Label Name ="PeanutFreeTitle" FontSize="10" Content="Peanut Free" HorizontalAlignment="Left" Margin="128,360,0,0" VerticalAlignment="Top" Height="22" Width="63"/>
+        <Button Content="-" FontSize="22" Margin="246,416,360,92" RenderTransformOrigin="0.561,0.489"/>
+        <TextBlock FontSize="18" HorizontalAlignment="Center" Text="1" VerticalAlignment="Top" Margin="0,430,0,0"/>
+        <Button Content="+" FontSize="22" Margin="362,416,246,92"/>
+        <TextBlock FontSize="18" HorizontalAlignment="Right" Text="$21.00" VerticalAlignment="Top" Margin="0,430,180,0"/>
+        <Button Content="Add To Cart" HorizontalAlignment="Center" Margin="0,487,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Segoe UI Light" Style="{StaticResource ButtonStyle}" Padding="10,10,10,10" Width="180" Height="50"/>
 
     </Grid>
 </Window>

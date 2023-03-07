@@ -22,14 +22,10 @@ namespace CPSC481_iMenu
         public ItemWindow()
         {
             InitializeComponent();
-            //assuming later DishModel will be passed from MainWindow, and content can be initialized using dish specific values
-            
+            //assuming later ItemIngredientsList can be initialized using dish specific values
+            ItemIngredientsList.ItemsSource = new String[] {"Chicken","Onion","Tomatoes", "Ketchup", "Hamburger Buns"};
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
     }
 }

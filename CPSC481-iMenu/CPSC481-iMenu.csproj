@@ -12,7 +12,9 @@
     <None Remove="call server bell.png" />
     <None Remove="ChummyJoes.png" />
     <None Remove="circle.png" />
+    <None Remove="DairyFree.png" />
     <None Remove="Image1.png" />
+    <None Remove="PeanutFree.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,7 +23,9 @@
     <Resource Include="circle.png">
       <CopyToOutputDirectory></CopyToOutputDirectory>
     </Resource>
+    <Resource Include="DairyFree.png" />
     <Resource Include="Image1.png" />
+    <Resource Include="PeanutFree.png" />
   </ItemGroup>
 
   <ItemGroup>
