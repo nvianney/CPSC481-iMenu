@@ -9,6 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
@@ -23,7 +24,15 @@ namespace CPSC481_iMenu
     {
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+           
+            //https://www.tutorialspoint.com/wpf/wpf_dialog_box.htm
+            MessageBoxButton button = MessageBoxButton.YesNo;
+            MessageBoxResult result = MessageBox.Show("Legand Window Close?", "Legand Window Close?", button);
 
+            if (result == MessageBoxResult.Yes) { this.Close(); }
+           
+
+         
         }
     }
 }
