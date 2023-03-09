@@ -12,7 +12,13 @@
     <None Remove="call server bell.png" />
     <None Remove="ChummyJoes.png" />
     <None Remove="circle.png" />
+    <None Remove="contains fish.png" />
+    <None Remove="dairy free.png" />
+    <None Remove="egg free.png" />
     <None Remove="Image1.png" />
+    <None Remove="nut pree.png" />
+    <None Remove="sugar free.png" />
+    <None Remove="trans fat free.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,11 +27,20 @@
     <Resource Include="circle.png">
       <CopyToOutputDirectory></CopyToOutputDirectory>
     </Resource>
+    <Resource Include="contains fish.png" />
+    <Resource Include="dairy free.png" />
+    <Resource Include="egg free.png" />
     <Resource Include="Image1.png" />
+    <Resource Include="nut pree.png" />
+    <Resource Include="sugar free.png" />
+    <Resource Include="trans fat free.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Update="MenuItem.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="LegendWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
