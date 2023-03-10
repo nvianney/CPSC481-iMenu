@@ -54,8 +54,12 @@
                 <StackPanel Grid.Column="0" Background="#FFD8FFAB">
                     <Button Height="80" Margin="0,8,0,8" />
                     <Button Height="80" Margin="0,8,0,8" />
+                  
                 </StackPanel>
-                
+
+                <!-- Instead of having a bar at the buttom to display the legend I made a box on the corner-->
+                <Button Grid.Column="0" Height="60" Width="60" RenderTransformOrigin="0.75,3.525" Margin="0,723,1,0" Content="?" FontSize="40" FontWeight="Bold" Background="#FFE86464"/>
+
                 <!-- Menu -->
                 <ScrollViewer Grid.Column="1">
                     <StackPanel Background="#FFE4E4E4">

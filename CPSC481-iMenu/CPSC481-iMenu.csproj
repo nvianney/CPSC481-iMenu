@@ -12,6 +12,7 @@
     <None Remove="call server bell.png" />
     <None Remove="ChummyJoes.png" />
     <None Remove="circle.png" />
+    <None Remove="expand.png" />
     <None Remove="Image1.png" />
   </ItemGroup>
 
@@ -21,6 +22,7 @@
     <Resource Include="circle.png">
       <CopyToOutputDirectory></CopyToOutputDirectory>
     </Resource>
+    <Resource Include="expand.png" />
     <Resource Include="Image1.png" />
   </ItemGroup>
 
