@@ -23,9 +23,12 @@ namespace CPSC481_iMenu
         {
             InitializeComponent();
             //assuming later ItemIngredientsList can be initialized using dish specific values
-            ItemIngredientsList.ItemsSource = new String[] {"Chicken","Onion","Tomatoes", "Ketchup", "Hamburger Buns"};
+            ItemIngredientsList.ItemsSource = new String[] {"Beef","Onion","Tomatoes", "Ketchup", "Mustard","Pickles","Hamburger Buns"};
         }
 
-
+        private void exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

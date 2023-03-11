@@ -13,8 +13,10 @@
     <None Remove="ChummyJoes.png" />
     <None Remove="circle.png" />
     <None Remove="DairyFree.png" />
+    <None Remove="DairyFree2.png" />
     <None Remove="Image1.png" />
     <None Remove="PeanutFree.png" />
+    <None Remove="PeanutFree2.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,8 +26,10 @@
       <CopyToOutputDirectory></CopyToOutputDirectory>
     </Resource>
     <Resource Include="DairyFree.png" />
+    <Resource Include="DairyFree2.png" />
     <Resource Include="Image1.png" />
     <Resource Include="PeanutFree.png" />
+    <Resource Include="PeanutFree2.png" />
   </ItemGroup>
 
   <ItemGroup>
