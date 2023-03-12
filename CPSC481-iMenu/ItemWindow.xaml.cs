@@ -10,24 +10,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace CPSC481_iMenu
 {
     /// <summary>
-    /// Interaction logic for MenuItem.xaml
+    /// Interaction logic for ItemWindow.xaml
     /// </summary>
-    public partial class MenuItem : UserControl
+    public partial class ItemWindow : Window
     {
-        public MenuItem()
+        public ItemWindow()
         {
             InitializeComponent();
+            //assuming later ItemIngredientsList can be initialized using dish specific values
+            ItemIngredientsList.ItemsSource = new String[] {"Beef","Onion","Tomatoes", "Ketchup", "Mustard","Pickles","Hamburger Buns"};
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void exit_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }
