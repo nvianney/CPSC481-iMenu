@@ -19,14 +19,13 @@ namespace CPSC481_iMenu
     /// <summary>
     /// Interaction logic for PlaceOrderWindow.xaml
     /// </summary>
-    public partial class PlaceOrderWindow : Window
+    public partial class PlaceOrderWindow : Page
     {
         bool isCallServerPressed = false;
-        readonly Window MainWindow;
-        public PlaceOrderWindow(MainWindow mainWindow_given)
+
+        public PlaceOrderWindow()
         {
             InitializeComponent();
-            MainWindow = mainWindow_given;
         }
 
         private void Call_Server_Button_Click(object sender, RoutedEventArgs e)
@@ -37,11 +36,11 @@ namespace CPSC481_iMenu
             btn.Background = btn.Background == Brushes.LightGreen ? new BrushConverter().ConvertFrom("#FFDDDDDD") as SolidColorBrush : Brushes.LightGreen;
             //https://social.msdn.microsoft.com/Forums/vstudio/en-US/e5420458-8b16-4d2e-819c-b23ed8d56b29/how-do-i-change-the-background-color-of-a-button-in-wpf-on-a-mouse-click-?forum=wpf
 
-            if (press)
-                Call_Server_Label.Content = "Server is coming to Help, Please Wait!";
-            //Server is coming to Help, Please Wait!
-            else
-                Call_Server_Label.Content = "Opps";
+            //if (press)
+            //    Call_Server_Label.Content = "Server is coming to Help, Please Wait!";
+            ////Server is coming to Help, Please Wait!
+            //else
+            //    Call_Server_Label.Content = "Opps";
         }
 
         private bool IsButtonPressed(bool button_given)
@@ -58,10 +57,10 @@ namespace CPSC481_iMenu
         private void Go_Back_Button_Click(object sender, RoutedEventArgs e)
         {
             //Close this "Order Confirmation" Window
-            this.Close();
+            //this.Close();
 
             //Go back to "Main Window"
-            MainWindow.Show();
+            //MainWindow.Show();
             
 
 
@@ -70,8 +69,8 @@ namespace CPSC481_iMenu
         private void Confirmation_Checkbox_Checked(object sender, RoutedEventArgs e)
         {
             //if the checkbox is checked, show the place order button and make it clickable
-            Place_Order_Button.Opacity = 1;
-            Place_Order_Button.IsEnabled= true;
+            //Place_Order_Button.Opacity = 1;
+            //Place_Order_Button.IsEnabled= true;
 
             //Place_Order_Button.Enabl
 
@@ -83,8 +82,8 @@ namespace CPSC481_iMenu
             btn.Background = btn.Background == Brushes.LightGreen ? new BrushConverter().ConvertFrom("#FFDDDDDD") as SolidColorBrush : Brushes.LightGreen;
             //https://social.msdn.microsoft.com/Forums/vstudio/en-US/e5420458-8b16-4d2e-819c-b23ed8d56b29/how-do-i-change-the-background-color-of-a-button-in-wpf-on-a-mouse-click-?forum=wpf
 
-            Place_Order_Button.IsEnabled= false;
-            Place_Order_Label.Content = "Order Placed!";
+            //Place_Order_Button.IsEnabled= false;
+            //Place_Order_Label.Content = "Order Placed!";
             ShowInformation("Your order has been placed!", "Order Placed Confirmation");
         }
 
@@ -102,17 +101,17 @@ namespace CPSC481_iMenu
 
            
             //get the current quantity
-            String old = Quantity.Text;
-            int oldint = (int)Convert.ToSingle(old);
-            oldint++;
-            Quantity.Text = (String)oldint.ToString();
+            //String old = Quantity.Text;
+            //int oldint = (int)Convert.ToSingle(old);
+            //oldint++;
+            //Quantity.Text = (String)oldint.ToString();
 
 
 
             //Increase the quantity by 1
 
             //update the lable to represent the updated quantity
-            Call_Server_Label.Content = labelName;
+            //Call_Server_Label.Content = labelName;
 
             //UPdate the total cost
 
@@ -134,7 +133,7 @@ namespace CPSC481_iMenu
             //Decrease the quantity by 1
 
             //update the lable to represent the updated quantity
-            Call_Server_Label.Content = labelName;
+            //Call_Server_Label.Content = labelName;
 
             //update the total cost
 
@@ -158,6 +157,11 @@ namespace CPSC481_iMenu
             //https://www.tutorialspoint.com/wpf/wpf_dialog_box.htm
             MessageBoxButton button = MessageBoxButton.OK;
             MessageBoxResult result = MessageBox.Show(msg, WindowTitle, button);          
+        }
+
+        private void Quantity_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
