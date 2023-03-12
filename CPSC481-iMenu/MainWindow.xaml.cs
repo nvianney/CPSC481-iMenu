@@ -17,11 +17,17 @@ namespace CPSC481_iMenu
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class MainWindow : Window
     {
-        public Window1()
+        public MainWindow()
         {
             InitializeComponent();
+        }
+
+        public void OrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            PlaceOrderWindow window = new PlaceOrderWindow();
+            window.Show();
         }
     }
 }
