@@ -19,7 +19,7 @@ namespace CPSC481_iMenu
     /// <summary>
     /// Interaction logic for PlaceOrderWindow.xaml
     /// </summary>
-    public partial class PlaceOrderWindow : Page
+    public partial class PlaceOrderWindow : Window
     {
         bool isCallServerPressed = false;
 
@@ -61,7 +61,8 @@ namespace CPSC481_iMenu
 
             //Go back to "Main Window"
             //MainWindow.Show();
-            
+
+            this.Close();
 
 
         }
