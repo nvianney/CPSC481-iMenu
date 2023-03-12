@@ -52,9 +52,19 @@
 
                 <!-- Options bar-->
                 <StackPanel Grid.Column="0" Background="#FFD8FFAB">
-                    <Button Height="80" Margin="0,8,0,8" />
-                    <Button Height="80" Margin="0,8,0,8" />
-                  
+                    <Button Height="80" Margin="0,8,0,8">
+                        <Image Height="80" Source="/sidebar/starter.png" />
+                    </Button>
+                    <Button Height="80" Margin="0,8,0,8" >
+                        <Image Height="80" Source="/sidebar/main.png" />
+                    </Button>
+                    <Button Height="80" Margin="0,8,0,8" >
+                        <Image Height="80" Source="/sidebar/drink.png" />
+                    </Button>
+                    <Button Height="80" Margin="0,8,0,8" >
+                        <Image Height="80" Source="/sidebar/dessert.png" />
+                    </Button>
+
                 </StackPanel>
 
                 <!-- Instead of having a bar at the buttom to display the legend I made a box on the corner-->
