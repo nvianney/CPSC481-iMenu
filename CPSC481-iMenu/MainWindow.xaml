@@ -141,7 +141,7 @@
                 </Button>
             </Grid>
         </Grid>
-        <Canvas Grid.Row="1">
+        <Canvas Grid.Row="1" Visibility="Collapsed">
             <Rectangle Fill="#66000000" Canvas.Left="0" Canvas.Top="0" Canvas.Right="0" Canvas.Bottom="0" Width="960" Height="864"/>
             <Grid Canvas.Left="50" Canvas.Top="30" Background="White">
                 <StackPanel Margin="16,16,16,16">
