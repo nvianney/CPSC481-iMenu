@@ -76,50 +76,59 @@
                 </Grid>
 
                 <!-- Menu -->
-                <ScrollViewer Grid.Column="1">
-                    <StackPanel Background="#FFE4E4E4">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="100" />
-                            </Grid.ColumnDefinitions>
-                            <Button Grid.Column="1" Height="40" Content="Filter" FontSize="20" />
-                        </Grid>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <local:MenuItem Grid.Column="0" />
-                            <local:MenuItem Grid.Column="1" />
-                        </Grid>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <local:MenuItem Grid.Column="0" />
-                            <local:MenuItem Grid.Column="1" />
-                        </Grid>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <local:MenuItem Grid.Column="0" />
-                            <local:MenuItem Grid.Column="1" />
-                        </Grid>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <local:MenuItem Grid.Column="0" />
-                            <local:MenuItem Grid.Column="1" />
-                        </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="50" />
+                    </Grid.RowDefinitions>
+                    <ScrollViewer Grid.Column="1" Grid.Row="0" >
+                        <StackPanel Background="#FFE4E4E4">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="100" />
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="1" Height="40" Content="Filter" FontSize="20" />
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <local:MenuItem Grid.Column="0" />
+                                <local:MenuItem Grid.Column="1" />
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <local:MenuItem Grid.Column="0" />
+                                <local:MenuItem Grid.Column="1" />
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <local:MenuItem Grid.Column="0" />
+                                <local:MenuItem Grid.Column="1" />
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <local:MenuItem Grid.Column="0" />
+                                <local:MenuItem Grid.Column="1" />
+                            </Grid>
 
-                    </StackPanel>
-                </ScrollViewer>
+                        </StackPanel>
+                    </ScrollViewer>
+                    <Button x:Name="btn_legend" FontSize="18" Grid.Row="1" Background="WhiteSmoke" Click="btn_legend_Click" >
+                        Legend
+                    </Button>
+                </Grid>
             </Grid>
 
             <Grid Grid.Column="1" Background="#FFE6E6E6">
@@ -136,7 +145,7 @@
                         <local:OrderItem />
                     </StackPanel>
                 </ScrollViewer>
-                <Button x:Name="btn_order" Click="OrderButton_Click" Grid.Row="2" FontSize="18">
+                <Button x:Name="btn_order" Click="OrderButton_Click" Grid.Row="2" FontSize="23" FontWeight="Bold" Background="DarkGreen">
                     Place Order
                 </Button>
             </Grid>

@@ -29,5 +29,10 @@ namespace CPSC481_iMenu
             PlaceOrderWindow window = new PlaceOrderWindow();
             window.Show();
         }
+
+        private void btn_legend_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
