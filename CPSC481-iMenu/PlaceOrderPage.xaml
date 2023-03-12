@@ -54,7 +54,9 @@
                 <ColumnDefinition Width="300" />
             </Grid.ColumnDefinitions>
 
-            <CheckBox Grid.Column="0" x:Name="Confirmation_Checkbox" Content="Check this box if you have made sure&#xD;&#xA;that items in our order list are correct&#xD;&#xA;and you are aware of any allergy it&#xD;&#xA;may contains." FontSize="18" Checked="Confirmation_Checkbox_Checked" IsChecked="False"/>
+            <CheckBox Grid.Column="0" x:Name="Confirmation_Checkbox" FontSize="18" Checked="Confirmation_Checkbox_Checked" IsChecked="False" Margin="16,16,16,16">
+                <TextBlock TextWrapping="WrapWithOverflow">By checking this box, you agree that the items are correct and are aware of the allergies it may contain.</TextBlock>
+            </CheckBox>
             <Button x:Name="btn_order" Grid.Column="1" FontSize="18" VerticalAlignment="Bottom" Height="50">
                 Confirm Order
             </Button>
