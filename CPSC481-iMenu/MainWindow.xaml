@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Menu Window" Height="9in" Width="10in">
     <!-- Landscape view: 10in x 9in -->
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <!-- First element sizing -->
@@ -28,6 +28,7 @@
 
             <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Table No. 05" FontSize="22" FontWeight="Bold" />
 
+            <!--<Button Grid.Column="2" Margin="16,8,16,8" BorderBrush="#FFED5353" BorderThickness="5,5,5,5" Background="White">-->
             <Button Grid.Column="2" Margin="16,8,16,8">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/call server bell.png" Margin="0,0,4,0" />
@@ -36,7 +37,6 @@
             </Button>
 
         </Grid>
-
         <!-- Content -->
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -141,5 +141,25 @@
                 </Button>
             </Grid>
         </Grid>
+        <Canvas Grid.Row="1">
+            <Rectangle Fill="#66000000" Canvas.Left="0" Canvas.Top="0" Canvas.Right="0" Canvas.Bottom="0" Width="960" Height="864"/>
+            <Grid Canvas.Left="50" Canvas.Top="30" Background="White">
+                <StackPanel Margin="16,16,16,16">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="40" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" FontSize="20" FontWeight="Bold">Tutorial</TextBlock>
+                        <Button x:Name="exit" Grid.Column="1" Content="X" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0" Background="#FFE86464" />
+                    </Grid>
+
+                    <TextBlock FontSize="18" Width="300" Height="150" TextWrapping="WrapWithOverflow" Margin="0,24,0,0">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis risus at urna tincidunt consectetur sit amet vel lacus. Donec turpis sapien, placerat et rutrum eu, dignissim et orci.
+                    </TextBlock>
+                </StackPanel>
+            </Grid>
+
+        </Canvas>
     </Grid>
 </Window>
