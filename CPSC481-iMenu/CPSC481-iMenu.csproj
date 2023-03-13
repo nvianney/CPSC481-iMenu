@@ -12,13 +12,16 @@
     <None Remove="call server bell.png" />
     <None Remove="ChummyJoes.png" />
     <None Remove="circle.png" />
-    <None Remove="contains fish.png" />
-    <None Remove="dairy free.png" />
-    <None Remove="egg free.png" />
+    <None Remove="expand.png" />
+    <None Remove="DairyFree.png" />
+    <None Remove="DairyFree2.png" />
     <None Remove="Image1.png" />
-    <None Remove="nut pree.png" />
-    <None Remove="sugar free.png" />
-    <None Remove="trans fat free.png" />
+    <None Remove="PeanutFree.png" />
+    <None Remove="PeanutFree2.png" />
+    <None Remove="sidebar\dessert.png" />
+    <None Remove="sidebar\drink.png" />
+    <None Remove="sidebar\main.png" />
+    <None Remove="starter.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,13 +30,16 @@
     <Resource Include="circle.png">
       <CopyToOutputDirectory></CopyToOutputDirectory>
     </Resource>
-    <Resource Include="contains fish.png" />
-    <Resource Include="dairy free.png" />
-    <Resource Include="egg free.png" />
+    <Resource Include="expand.png" />
+    <Resource Include="DairyFree.png" />
+    <Resource Include="DairyFree2.png" />
     <Resource Include="Image1.png" />
-    <Resource Include="nut pree.png" />
-    <Resource Include="sugar free.png" />
-    <Resource Include="trans fat free.png" />
+    <Resource Include="PeanutFree.png" />
+    <Resource Include="PeanutFree2.png" />
+    <Resource Include="sidebar\dessert.png" />
+    <Resource Include="sidebar\drink.png" />
+    <Resource Include="sidebar\main.png" />
+    <Resource Include="sidebar\starter.png" />
   </ItemGroup>
 
   <ItemGroup>
