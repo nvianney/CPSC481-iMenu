@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,7 +33,10 @@ namespace CPSC481_iMenu
 
         private void btn_legend_Click(object sender, RoutedEventArgs e)
         {
+            LegendWindow window = new LegendWindow();
+            window.Show();
 
+            //this.Close();
         }
     }
 }
