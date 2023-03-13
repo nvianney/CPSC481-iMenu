@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPSC481_iMenu"
         mc:Ignorable="d"
-        Title="iMenu - Restaurant Ordering System" Height ="9in" Width="10in">
+        Title="Menu Window" Height="9in" Width="10in">
     <!-- Landscape view: 10in x 9in -->
+
     <Grid>
         <Grid.RowDefinitions>
             <!-- First element sizing -->
@@ -14,7 +15,7 @@
             <!-- Second element sizing -->
             <RowDefinition Height = "*" />
         </Grid.RowDefinitions>
-        
+
         <!-- Toolbar -->
         <Grid Grid.Row="0" Background="#FFF99494">
             <Grid.ColumnDefinitions>
@@ -22,11 +23,12 @@
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
-            
+
             <Image Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Stretch" Source="/Image1.png" />
 
             <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Table No. 05" FontSize="22" FontWeight="Bold" />
 
+            <!--<Button Grid.Column="2" Margin="16,8,16,8" BorderBrush="#FFED5353" BorderThickness="5,5,5,5" Background="White">-->
             <Button Grid.Column="2" Margin="16,8,16,8">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/call server bell.png" Margin="0,0,4,0" />
@@ -35,7 +37,6 @@
             </Button>
 
         </Grid>
-        
         <!-- Content -->
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -51,72 +52,123 @@
                 </Grid.ColumnDefinitions>
 
                 <!-- Options bar-->
-                <StackPanel Grid.Column="0" Background="#FFD8FFAB">
-                    <Button Height="80" Margin="0,8,0,8" />
-                    <Button Height="80" Margin="0,8,0,8" />
-                </StackPanel>
-                
-                <!-- Menu -->
-                <ScrollViewer Grid.Column="1">
-                    <StackPanel Background="#FFE4E4E4">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="100" />
-                            </Grid.ColumnDefinitions>
-                            <Button Grid.Column="1" Height="40" Content="Filter" FontSize="20" />
-                        </Grid>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <local:MenuItem Grid.Column="0" />
-                            <local:MenuItem Grid.Column="1" />
-                        </Grid>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <local:MenuItem Grid.Column="0" />
-                            <local:MenuItem Grid.Column="1" />
-                        </Grid>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <local:MenuItem Grid.Column="0" />
-                            <local:MenuItem Grid.Column="1" />
-                        </Grid>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <local:MenuItem Grid.Column="0" />
-                            <local:MenuItem Grid.Column="1" />
-                        </Grid>
-
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Column="0" Background="#FFD8FFAB">
+                        <Button Height="80" Margin="0,8,0,8">
+                            <Image Height="80" Source="/sidebar/starter.png" />
+                        </Button>
+                        <Button Height="80" Margin="0,8,0,8" >
+                            <Image Height="80" Source="/sidebar/main.png" />
+                        </Button>
+                        <Button Height="80" Margin="0,8,0,8" >
+                            <Image Height="80" Source="/sidebar/drink.png" />
+                        </Button>
+                        <Button Height="80" Margin="0,8,0,8" >
+                            <Image Height="80" Source="/sidebar/dessert.png" />
+                        </Button>
                     </StackPanel>
-                </ScrollViewer>
+                    <!-- Instead of having a bar at the buttom to display the legend I made a box on the corner-->
+                    <Button Grid.Row="1" Height="60" Width="60" Content="?" FontSize="40" FontWeight="Bold" Background="#FFE86464"/>
+                </Grid>
+
+                <!-- Menu -->
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="50" />
+                    </Grid.RowDefinitions>
+                    <ScrollViewer Grid.Column="1" Grid.Row="0" >
+                        <StackPanel Background="#FFE4E4E4">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="100" />
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="1" Height="40" Content="Filter" FontSize="20" />
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <local:MenuItem Grid.Column="0" />
+                                <local:MenuItem Grid.Column="1" />
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <local:MenuItem Grid.Column="0" />
+                                <local:MenuItem Grid.Column="1" />
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <local:MenuItem Grid.Column="0" />
+                                <local:MenuItem Grid.Column="1" />
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <local:MenuItem Grid.Column="0" />
+                                <local:MenuItem Grid.Column="1" />
+                            </Grid>
+
+                        </StackPanel>
+                    </ScrollViewer>
+                    <Button x:Name="btn_legend" FontSize="18" Grid.Row="1" Background="WhiteSmoke" Click="btn_legend_Click" >
+                        Legend
+                    </Button>
+                </Grid>
             </Grid>
 
             <Grid Grid.Column="1" Background="#FFE6E6E6">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="90" />
                     <RowDefinition Height="*" />
+                    <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" FontSize="24" Text="Your order" FontWeight="Bold" Margin="24,0,0,8" VerticalAlignment="Bottom"/>
                 <ScrollViewer Grid.Row="1">
                     <StackPanel>
-                        <local:OrderItem Loaded="OrderItem_Loaded" />
-                        <local:OrderItem Loaded="OrderItem_Loaded" />
-                        <local:OrderItem Loaded="OrderItem_Loaded" />
+                        <local:OrderItem />
+                        <local:OrderItem />
+                        <local:OrderItem />
                     </StackPanel>
                 </ScrollViewer>
+                <Button x:Name="btn_order" Click="OrderButton_Click" Grid.Row="2" FontSize="23" FontWeight="Bold" Background="DarkGreen">
+                    Place Order
+                </Button>
             </Grid>
         </Grid>
+        <Canvas Grid.Row="1" Visibility="Collapsed">
+            <Rectangle Fill="#66000000" Canvas.Left="0" Canvas.Top="0" Canvas.Right="0" Canvas.Bottom="0" Width="960" Height="864"/>
+            <Grid Canvas.Left="50" Canvas.Top="30" Background="White">
+                <StackPanel Margin="16,16,16,16">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="40" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" FontSize="20" FontWeight="Bold">Tutorial</TextBlock>
+                        <Button x:Name="exit" Grid.Column="1" Content="X" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0" Background="#FFE86464" />
+                    </Grid>
+
+                    <TextBlock FontSize="18" Width="300" Height="150" TextWrapping="WrapWithOverflow" Margin="0,24,0,0">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis risus at urna tincidunt consectetur sit amet vel lacus. Donec turpis sapien, placerat et rutrum eu, dignissim et orci.
+                    </TextBlock>
+                </StackPanel>
+            </Grid>
+
+        </Canvas>
     </Grid>
 </Window>

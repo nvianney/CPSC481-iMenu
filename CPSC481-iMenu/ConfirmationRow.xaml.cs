@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace CPSC481_iMenu
 {
     /// <summary>
-    /// Interaction logic for MenuItem.xaml
+    /// Interaction logic for ConfirmationRow.xaml
     /// </summary>
-    public partial class MenuItem : UserControl
+    public partial class ConfirmationRow : UserControl
     {
-        public MenuItem()
+        public ConfirmationRow()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
