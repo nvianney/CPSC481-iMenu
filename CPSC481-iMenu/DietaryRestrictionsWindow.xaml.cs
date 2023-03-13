@@ -38,5 +38,10 @@ namespace CPSC481_iMenu
                
             this.Close();
         }
+
+        private void DietaryRestrictionsListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
