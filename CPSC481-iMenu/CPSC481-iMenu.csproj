@@ -50,6 +50,9 @@
     <Compile Update="MenuItem.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="LegendWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 
 </Project>
