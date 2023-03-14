@@ -55,7 +55,14 @@
                         <TextBlock HorizontalAlignment="Left" Margin="380,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="85" Width="156"><Run FontWeight="Bold" Text="Common Food Items:"/><LineBreak/><Run Text="- "/><Run Text=" "/><Run Language="en-ca" Text="Cucumber Sandwich"/><LineBreak/><Run Text="- "/><Run Language="en-ca" Text=" Cheesy Meatball Casserole"/><LineBreak/><Run Text="- "/><Run Language="en-ca" Text=" American Goulash "/></TextBlock>
                         <TextBlock HorizontalAlignment="Left" Margin="383,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="84" Width="156"><Run FontWeight="Bold" Text="Common Food Items:"/><LineBreak/><Run Text="- "/><Run Language="en-ca" Text=" Broccoli, Cheese Omelet"/><LineBreak/><Run Text="- "/><Run Language="en-ca" Text=" Ceasar Salad"/><LineBreak/><Run Text="- "/><Run Language="en-ca" Text=" Shrimp Salad"/></TextBlock>
                         <TextBlock HorizontalAlignment="Left" Margin="380,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="83" Width="156"><Run FontWeight="Bold" Text="Common Food Items:"/><LineBreak/><Run Text="- "/><Run Language="en-ca" Text=" Broccoli, Cheese Omelet"/><LineBreak/><Run Text="- "/><Run Language="en-ca" Text=" Ceasar Salad"/><LineBreak/><Run Text="- "/><Run Language="en-ca" Text=" Shrimp Salad"/></TextBlock>
-                        <Button Content="Show Food Items" HorizontalAlignment="Left" Margin="116,85,0,0" VerticalAlignment="Top" Width="128" Click="Button_Click_1" FontWeight="Bold" FontSize="14" Height="28"/>
+                        <!--<Button Content="Show Food Items" HorizontalAlignment="Left" Margin="116,85,0,0" VerticalAlignment="Top" Width="128" Click="Button_Click_1" FontWeight="Bold" FontSize="14" Height="28"/> -->
+                        <Image HorizontalAlignment="Left" Height="109" VerticalAlignment="Top" Width="88" Source="/dairy free.png"/>
+                        <Image HorizontalAlignment="Left" Height="109" Margin="274,0,0,0" VerticalAlignment="Top" Width="88" Source="/nut pree.png"/>
+                        <Image HorizontalAlignment="Left" Height="109" Margin="274,123,0,0" VerticalAlignment="Top" Width="88" Source="/sugar free.png"/>
+                        <Image HorizontalAlignment="Left" Height="109" Margin="274,263,0,0" VerticalAlignment="Top" Width="88" Source="/sugar free.png"/>
+                        <Image HorizontalAlignment="Left" Height="109" VerticalAlignment="Top" Width="88" Source="/trans fat free.png" Margin="0,263,0,0"/>
+                        <Image HorizontalAlignment="Left" Height="109" VerticalAlignment="Top" Width="88" Source="/gluten free.png" Margin="0,131,0,0"/>
+
                     </Grid>
                 </ScrollViewer>
             </Grid>
