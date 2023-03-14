@@ -29,15 +29,15 @@ namespace CPSC481_iMenu
         
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+           
             //https://www.tutorialspoint.com/wpf/wpf_dialog_box.htm
             MessageBoxButton button = MessageBoxButton.YesNo;
             MessageBoxResult result = MessageBox.Show("Legend Window Close?", "Legend Window Close?", button);
 
             if (result == MessageBoxResult.Yes) { this.Close(); }
+           
 
-
-
+         
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
