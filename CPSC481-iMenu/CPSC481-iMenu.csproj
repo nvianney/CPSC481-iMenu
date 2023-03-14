@@ -32,15 +32,17 @@
     </Resource>
     <Resource Include="expand.png" />
 	<Resource Include="Image1.png" />
-    <Resource Include="dietaryRestrictionsImages\DairyFree.png" />
-    <Resource Include="dietaryRestrictionsImages\DairyFree2.png" />
-	<Resource Include="dietaryRestrictionsImages\GlutenFree.png" />
-    <Resource Include="dietaryRestrictionsImages\PeanutFree.png" />
-    <Resource Include="dietaryRestrictionsImages\PeanutFree2.png" />
-	<Resource Include="dietaryRestrictionsImages\Seafood.png" />
-	<Resource Include="dietaryRestrictionsImages\Vegan.png" />
-	<Resource Include="dietaryRestrictionsImages\Vegetarian.png" />
-    <Resource Include="sidebar\dessert.png" />
+	<Resource Include="allergy_images\Seafood.png" />
+	<Resource Include="allergy_images\Vegan.png" />
+	<Resource Include="allergy_images\Vegetarian.png" />
+	<Resource Include="allergy_images\dairy free.png" />
+	<Resource Include="allergy_images\nut pree.png" />
+	<Resource Include="allergy_images\gluten free.png" />
+	<Resource Include="allergy_images\trans fat free.png" />
+	<Resource Include="allergy_images\sugar free.png" />
+	<Resource Include="allergy_images\egg free.png" />
+	<Resource Include="allergy_images\contains fish.png" />
+	<Resource Include="sidebar\dessert.png" />
     <Resource Include="sidebar\drink.png" />
     <Resource Include="sidebar\main.png" />
     <Resource Include="sidebar\starter.png" />

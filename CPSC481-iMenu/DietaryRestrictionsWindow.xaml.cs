@@ -23,12 +23,12 @@ namespace CPSC481_iMenu
     {
         readonly List<DietaryRestrictionModel> dietaryRestrictions= new List<DietaryRestrictionModel>
         {
-           new DietaryRestrictionModel(){ dietaryRestriction = DietaryRestrictions.VEGETARIAN, dietaryRestrictionName = "Vegetarian", imgSource ="dietaryRestrictionsImages\\Vegetarian.png" },
-           new DietaryRestrictionModel(){ dietaryRestriction = DietaryRestrictions.VEGAN, dietaryRestrictionName = "Vegan", imgSource = "dietaryRestrictionsImages\\Vegan.png" },
-           new DietaryRestrictionModel(){ dietaryRestriction = DietaryRestrictions.GLUTEN_FREE, dietaryRestrictionName = "Gluten Free", imgSource = "dietaryRestrictionsImages\\GlutenFree.png" },
-           new DietaryRestrictionModel(){ dietaryRestriction = DietaryRestrictions.DIARY_FREE, dietaryRestrictionName = "Diary Free", imgSource = "dietaryRestrictionsImages\\DairyFree.png" },
-           new DietaryRestrictionModel(){ dietaryRestriction = DietaryRestrictions.PEANUT_FREE, dietaryRestrictionName = "Peanut Free", imgSource = "dietaryRestrictionsImages\\PeanutFree2.png" },
-           new DietaryRestrictionModel(){ dietaryRestriction = DietaryRestrictions.SEAFOOD_FREE, dietaryRestrictionName = "Seafood Free", imgSource = "dietaryRestrictionsImages\\Seafood.png" }
+           new DietaryRestrictionModel(){ dietaryRestriction = DietaryRestrictions.VEGETARIAN, dietaryRestrictionName = "Vegetarian", imgSource ="allergy_images/Vegetarian.png" },
+           new DietaryRestrictionModel(){ dietaryRestriction = DietaryRestrictions.VEGAN, dietaryRestrictionName = "Vegan", imgSource = "allergy_images/Vegan.png" },
+           new DietaryRestrictionModel(){ dietaryRestriction = DietaryRestrictions.GLUTEN_FREE, dietaryRestrictionName = "Gluten Free", imgSource = "allergy_images/gluten free.png" },
+           new DietaryRestrictionModel(){ dietaryRestriction = DietaryRestrictions.DIARY_FREE, dietaryRestrictionName = "Diary Free", imgSource = "allergy_images/dairy free.png" },
+           new DietaryRestrictionModel(){ dietaryRestriction = DietaryRestrictions.PEANUT_FREE, dietaryRestrictionName = "Peanut Free", imgSource = "allergy_images/nut pree.png" },
+           new DietaryRestrictionModel(){ dietaryRestriction = DietaryRestrictions.SEAFOOD_FREE, dietaryRestrictionName = "Seafood Free", imgSource = "allergy_images/Seafood.png" }
         };
 
         public DietaryRestrictionsWindow()
