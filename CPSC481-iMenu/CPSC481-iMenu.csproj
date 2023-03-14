@@ -31,12 +31,18 @@
       <CopyToOutputDirectory></CopyToOutputDirectory>
     </Resource>
     <Resource Include="expand.png" />
-    <Resource Include="DairyFree.png" />
-    <Resource Include="DairyFree2.png" />
-    <Resource Include="Image1.png" />
-    <Resource Include="PeanutFree.png" />
-    <Resource Include="PeanutFree2.png" />
-    <Resource Include="sidebar\dessert.png" />
+	<Resource Include="Image1.png" />
+	<Resource Include="allergy_images\Seafood.png" />
+	<Resource Include="allergy_images\Vegan.png" />
+	<Resource Include="allergy_images\Vegetarian.png" />
+	<Resource Include="allergy_images\dairy free.png" />
+	<Resource Include="allergy_images\nut pree.png" />
+	<Resource Include="allergy_images\gluten free.png" />
+	<Resource Include="allergy_images\trans fat free.png" />
+	<Resource Include="allergy_images\sugar free.png" />
+	<Resource Include="allergy_images\egg free.png" />
+	<Resource Include="allergy_images\contains fish.png" />
+	<Resource Include="sidebar\dessert.png" />
     <Resource Include="sidebar\drink.png" />
     <Resource Include="sidebar\main.png" />
     <Resource Include="sidebar\starter.png" />
