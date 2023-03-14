@@ -31,11 +31,15 @@
       <CopyToOutputDirectory></CopyToOutputDirectory>
     </Resource>
     <Resource Include="expand.png" />
-    <Resource Include="DairyFree.png" />
-    <Resource Include="DairyFree2.png" />
-    <Resource Include="Image1.png" />
-    <Resource Include="PeanutFree.png" />
-    <Resource Include="PeanutFree2.png" />
+	<Resource Include="Image1.png" />
+    <Resource Include="dietaryRestrictionsImages\DairyFree.png" />
+    <Resource Include="dietaryRestrictionsImages\DairyFree2.png" />
+	<Resource Include="dietaryRestrictionsImages\GlutenFree.png" />
+    <Resource Include="dietaryRestrictionsImages\PeanutFree.png" />
+    <Resource Include="dietaryRestrictionsImages\PeanutFree2.png" />
+	<Resource Include="dietaryRestrictionsImages\Seafood.png" />
+	<Resource Include="dietaryRestrictionsImages\Vegan.png" />
+	<Resource Include="dietaryRestrictionsImages\Vegetarian.png" />
     <Resource Include="sidebar\dessert.png" />
     <Resource Include="sidebar\drink.png" />
     <Resource Include="sidebar\main.png" />

@@ -9,18 +9,18 @@
     <Grid>
         <Image HorizontalAlignment="Left" Height="306" VerticalAlignment="Top" Width="283" Source="/Image1.png" Margin="41,33,0,0" />
         <Label Content="Select your dietary restrictions:" FontFamily="Segoe UI Light" HorizontalAlignment="Center" Margin="0,179,0,0" VerticalAlignment="Top" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <ListView x:Name="DietaryRestrictionsListView" SelectionMode="Multiple" RenderTransformOrigin="0.5,0.5" HorizontalContentAlignment="Center" Padding="10,10,10,10" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="{x:Null}" d:ItemsSource="{d:SampleData ItemCount=6}" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="328" SelectionChanged="DietaryRestrictionsListView_SelectionChanged" Height="351">
+        <ListView Name="DietaryRestrictionsListView" SelectionMode="Multiple" RenderTransformOrigin="0.5,0.5" HorizontalContentAlignment="Center" Padding="10,10,10,10" BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Disabled" SelectionChanged="DietaryRestrictionsListView_SelectionChanged" Height="351" Margin="378,249,378,248">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <StackPanel.Resources>
-                            <Style TargetType="{x:Type TextBlock}">
-                                <Setter Property="Padding" Value="10,10,10,10"/>
+                    <WrapPanel>
+                        <WrapPanel.Resources>
+                            <Style TargetType="{x:Type Image}">
+                                <Setter Property="Margin" Value="0,0,10,0" />
                             </Style>
-                        </StackPanel.Resources>
-                        <Image Height="40" Width="40" Source="/PeanutFree.png" />
-                        <TextBlock Text="{Binding}" FontSize="18" FontFamily="Segoe UI Light" />
-                    </StackPanel>
+                        </WrapPanel.Resources>
+                        <Image Source="{Binding imgSource}" Height="40" Width="40"/>
+                        <TextBlock Text="{Binding dietaryRestrictionName}" FontSize="18" FontFamily="Segoe UI Light" />
+                    </WrapPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
