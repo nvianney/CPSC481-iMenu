@@ -139,10 +139,13 @@
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" FontSize="24" Text="Your order" FontWeight="Bold" Margin="24,0,0,8" VerticalAlignment="Bottom"/>
                 <ScrollViewer Grid.Row="1">
-                    <StackPanel>
-                        <local:OrderItem />
-                        <local:OrderItem />
-                        <local:OrderItem />
+                    <StackPanel Height="1355">
+                        <local:OrderItem x:Name="OrderItem1"/>
+                        <local:GlutenFreeOrderItem x:Name="Your_Order_GlutenFree_Item"/>
+                        <local:OrderItem x:Name="OrderItem2"/>
+                        <local:OrderItem x:Name="OrderItem3"/>
+                        <local:OrderItem x:Name="OrderItem4"/>
+                        <local:OrderItem x:Name="OrderItem5"/>
                     </StackPanel>
                 </ScrollViewer>
                 <Button x:Name="btn_order" Click="OrderButton_Click" Grid.Row="2" FontSize="23" FontWeight="Bold" Background="DarkGreen">

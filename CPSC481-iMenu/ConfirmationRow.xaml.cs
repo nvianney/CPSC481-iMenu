@@ -24,5 +24,18 @@ namespace CPSC481_iMenu
         {
             InitializeComponent();
         }
+
+        private void exit_Click(object sender, RoutedEventArgs e)
+        {
+            ShowMessage("You are about to delete the item from the order", "Delete Confirmation");
+            //calling another method to display the remove item confirmation.         
+        }
+
+        private void ShowMessage(string msg, string WindowTitle)
+        {
+            //https://www.tutorialspoint.com/wpf/wpf_dialog_box.htm
+            MessageBoxButton button = MessageBoxButton.YesNoCancel;
+            MessageBoxResult result = MessageBox.Show(msg, WindowTitle, button);
+        }
     }
 }

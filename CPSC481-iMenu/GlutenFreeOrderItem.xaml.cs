@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -18,9 +19,9 @@ namespace CPSC481_iMenu
     /// <summary>
     /// Interaction logic for OrderItem.xaml
     /// </summary>
-    public partial class OrderItem : UserControl
+    public partial class GlutenFreeOrderItem : UserControl
     {
-        public OrderItem()
+        public GlutenFreeOrderItem()
         {
             InitializeComponent();
         }
@@ -58,11 +59,11 @@ namespace CPSC481_iMenu
                 removeItem = ShowMessage("You are about to delete the item from the order", "Delete Confirmation");
                 Quantity.Text = "1";
             }
-            if (removeItem)
+            if(removeItem)
             {
                 //remove the food item
                 RemoveFoodItem();
-
+                
             }
         }
 
@@ -86,7 +87,7 @@ namespace CPSC481_iMenu
 
             if (mainWindow != null)
             {
-                mainWindow.OrderItem1.Visibility = Visibility.Collapsed;
+                mainWindow.Your_Order_GlutenFree_Item.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -97,8 +98,5 @@ namespace CPSC481_iMenu
                 RemoveFoodItem();
             }
         }
-
-
     }
 }
-
