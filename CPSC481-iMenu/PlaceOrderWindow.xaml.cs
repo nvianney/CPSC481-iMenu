@@ -41,6 +41,8 @@ namespace CPSC481_iMenu
             ////Server is coming to Help, Please Wait!
             //else
             //    Call_Server_Label.Content = "Opps";
+
+            call_server_canvas.Visibility = Visibility.Visible;
         }
 
         private bool IsButtonPressed(bool button_given)
@@ -70,8 +72,8 @@ namespace CPSC481_iMenu
         private void Confirmation_Checkbox_Checked(object sender, RoutedEventArgs e)
         {
             //if the checkbox is checked, show the place order button and make it clickable
-            //Place_Order_Button.Opacity = 1;
-            //Place_Order_Button.IsEnabled= true;
+            btn_order.Opacity = 1;
+            btn_order.IsEnabled= true;
 
             //Place_Order_Button.Enabl
 
@@ -85,67 +87,13 @@ namespace CPSC481_iMenu
 
             //Place_Order_Button.IsEnabled= false;
             //Place_Order_Label.Content = "Order Placed!";
-            ShowInformation("Your order has been placed!", "Order Placed Confirmation");
+            //ShowInformation("Your order has been placed!", "Order Placed Confirmation");
+
+            place_order_canvas.Visibility= Visibility.Visible;
         }
 
   
-        private void Increase_Quantity(object sender, RoutedEventArgs e)
-        {
-            Button? btn = sender as Button;
-            String buttonName = btn.Name;
-            Char buttonIndex = buttonName.Last();
-            //gets the last character of the button name (which should be an integer)
-            //can be used to update the label
-
-            String labelName = "Food_Item_Quantity" + buttonIndex;
-            //Label Name contains the lable of the quantity to be updated
-
-           
-            //get the current quantity
-            //String old = Quantity.Text;
-            //int oldint = (int)Convert.ToSingle(old);
-            //oldint++;
-            //Quantity.Text = (String)oldint.ToString();
-
-
-
-            //Increase the quantity by 1
-
-            //update the lable to represent the updated quantity
-            //Call_Server_Label.Content = labelName;
-
-            //UPdate the total cost
-
-        }
-
-        private void Decrease_Quantity(object sender, RoutedEventArgs e)
-        {
-            Button? btn = sender as Button;
-            String buttonName = btn.Name;
-            Char buttonIndex = buttonName.Last();
-            //gets the last character of the button name (which should be an integer)
-            //can be used to update the label
-
-            String labelName = "Food_Item_Quantity" + buttonIndex;
-            //Label Name contains the lable of the quantity to be updated
-
-            //get the current quantity   
-            
-            //Decrease the quantity by 1
-
-            //update the lable to represent the updated quantity
-            //Call_Server_Label.Content = labelName;
-
-            //update the total cost
-
-
-        }
-
-        private void Remove_Item_1_Click(object sender, RoutedEventArgs e)
-        {
-            ShowMessage("You are about to delete the item from the order", "Delete Confirmation");
-            //calling another method to display the remove item confirmation.         
-        }
+   
 
         private void ShowMessage(string msg, string WindowTitle)
         {
@@ -160,9 +108,21 @@ namespace CPSC481_iMenu
             MessageBoxResult result = MessageBox.Show(msg, WindowTitle, button);          
         }
 
-        private void Quantity_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
+        private void call_server_close_Click(object sender, RoutedEventArgs e)
+        {
+            //close the dialog
+            call_server_canvas.Visibility = Visibility.Collapsed;
+        }
+
+        private void call_server_cancel_button_Click(object sender, RoutedEventArgs e)
+        {
+            call_server_canvas.Visibility = Visibility.Collapsed;
+        }
+
+        private void place_order_canvas_close_Click(object sender, RoutedEventArgs e)
+        {
+            place_order_canvas.Visibility = Visibility.Collapsed;
         }
     }
 }

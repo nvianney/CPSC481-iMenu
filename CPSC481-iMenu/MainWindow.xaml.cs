@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,6 +21,7 @@ namespace CPSC481_iMenu
     /// </summary>
     public partial class MainWindow : Window
     {
+        private static Boolean canDelete = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -37,6 +39,58 @@ namespace CPSC481_iMenu
             window.Show();
 
             //this.Close();
+        }
+
+        private void Call_Server_Button_Click(object sender, RoutedEventArgs e)
+        {
+            //check if the button was pressed or not
+           // bool press = IsButtonPressed(isCallServerPressed);
+            Button? btn = sender as Button;
+            btn.Background = btn.Background == Brushes.LightGreen ? new BrushConverter().ConvertFrom("#FFDDDDDD") as SolidColorBrush : Brushes.LightGreen;
+            //https://social.msdn.microsoft.com/Forums/vstudio/en-US/e5420458-8b16-4d2e-819c-b23ed8d56b29/how-do-i-change-the-background-color-of-a-button-in-wpf-on-a-mouse-click-?forum=wpf
+
+            call_server_canvas.Visibility = Visibility.Visible;
+
+            //Call_Server_Button.Opacity = 0.4;
+
+
+        }
+
+       
+        private void delete_confirmation_close_Click(object sender, RoutedEventArgs e)
+        {
+            //when clicked the x button, close the canvas, make it collapse in visibility
+            delete_confirmation_canvas.Visibility = Visibility.Collapsed;
+        }
+
+        private void delete_confirmation_no_button_Click(object sender, RoutedEventArgs e)
+        {
+            //do not delete the item
+            canDelete = false;
+            delete_confirmation_canvas.Visibility = Visibility.Collapsed;
+        }
+
+        private void delete_confirmation_yes_button_Click(object sender, RoutedEventArgs e)
+        {
+            //delete the item
+            canDelete = true;
+            delete_confirmation_canvas.Visibility = Visibility.Collapsed;
+        }
+
+        static bool Get_canDelete()
+        {
+            return canDelete;
+        }
+
+        private void call_server_close_Click(object sender, RoutedEventArgs e)
+        {
+            //close the dialog
+            call_server_canvas.Visibility = Visibility.Collapsed;
+        }
+
+        private void call_server_cancel_button_Click(object sender, RoutedEventArgs e)
+        {
+            call_server_canvas.Visibility = Visibility.Collapsed;
         }
     }
 }

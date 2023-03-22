@@ -27,15 +27,40 @@ namespace CPSC481_iMenu
 
         private void exit_Click(object sender, RoutedEventArgs e)
         {
-            ShowMessage("You are about to delete the item from the order", "Delete Confirmation");
-            //calling another method to display the remove item confirmation.         
+            if(ShowMessage("You are about to delete the item from the order", "Delete Confirmation"))
+            {
+                //calling another method to display the remove item confirmation.
+                RemoveFoodItem();
+
+                var mainWindow = Application.Current.Windows
+           .Cast<Window>()
+           .FirstOrDefault(window => window is PlaceOrderWindow) as PlaceOrderWindow;
+
+
+            }
+
         }
 
-        private void ShowMessage(string msg, string WindowTitle)
+        private Boolean ShowMessage(string msg, string WindowTitle)
         {
             //https://www.tutorialspoint.com/wpf/wpf_dialog_box.htm
             MessageBoxButton button = MessageBoxButton.YesNoCancel;
             MessageBoxResult result = MessageBox.Show(msg, WindowTitle, button);
+            if (result == MessageBoxResult.Yes) { return true; }
+            return false;
         }
+
+        private void RemoveFoodItem()
+        {
+            var mainWindow = Application.Current.Windows
+            .Cast<Window>()
+            .FirstOrDefault(window => window is PlaceOrderWindow) as PlaceOrderWindow;
+
+            if (mainWindow != null)
+            {
+                mainWindow.FoodItem1.Visibility = Visibility.Collapsed;
+            }
+        }
+
     }
 }

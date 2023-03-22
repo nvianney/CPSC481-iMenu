@@ -29,7 +29,7 @@
             <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Table No. 05" FontSize="22" FontWeight="Bold" />
 
             <!--<Button Grid.Column="2" Margin="16,8,16,8" BorderBrush="#FFED5353" BorderThickness="5,5,5,5" Background="White">-->
-            <Button Grid.Column="2" Margin="16,8,16,8">
+            <Button Name ="Call_Server_Button" Grid.Column="2" Margin="16,8,16,8" Click="Call_Server_Button_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/call server bell.png" Margin="0,0,4,0" />
                     <TextBlock Text="Call Server" VerticalAlignment="Center" FontSize="36" FontWeight="Bold" Margin="4,0,0,0" />
@@ -72,7 +72,7 @@
                         </Button>
                     </StackPanel>
                     <!-- Instead of having a bar at the buttom to display the legend I made a box on the corner-->
-                    <Button Grid.Row="1" Height="60" Width="60" Content="?" FontSize="40" FontWeight="Bold" Background="#FFE86464"/>
+                    <Button Grid.Row="1" Height="60" Width="60" Content="?" FontSize="40" FontWeight="Bold" Background="#FFE86464" />
                 </Grid>
 
                 <!-- Menu -->
@@ -131,7 +131,7 @@
                 </Grid>
             </Grid>
 
-            <Grid Grid.Column="1" Background="#FFE6E6E6">
+            <Grid Grid.Column="1" Background="#FFF5CFCF" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="90" />
                     <RowDefinition Height="*" />
@@ -140,7 +140,7 @@
                 <TextBlock Grid.Row="0" FontSize="24" Text="Your order" FontWeight="Bold" Margin="24,0,0,8" VerticalAlignment="Bottom"/>
                 <ScrollViewer Grid.Row="1">
                     <StackPanel Height="1355">
-                        <local:OrderItem x:Name="OrderItem1"/>
+                        <local:OrderItem x:Name="OrderItem1" RenderTransformOrigin="0.806,0.524" />
                         <local:GlutenFreeOrderItem x:Name="Your_Order_GlutenFree_Item"/>
                         <local:OrderItem x:Name="OrderItem2"/>
                         <local:OrderItem x:Name="OrderItem3"/>
@@ -152,6 +152,7 @@
                     Place Order
                 </Button>
             </Grid>
+
         </Grid>
         <Canvas Grid.Row="1" Visibility="Collapsed">
             <Rectangle Fill="#66000000" Canvas.Left="0" Canvas.Top="0" Canvas.Right="0" Canvas.Bottom="0" Width="960" Height="864"/>
@@ -167,11 +168,58 @@
                     </Grid>
 
                     <TextBlock FontSize="18" Width="300" Height="150" TextWrapping="WrapWithOverflow" Margin="0,24,0,0">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis risus at urna tincidunt consectetur sit amet vel lacus. Donec turpis sapien, placerat et rutrum eu, dignissim et orci.
+                    Lorem ipsum sdaf sit amet, consectetur adipiscing elit. Donec quis risus at urna tincidunt consectetur sit amet vel lacus. Donec turpis sapien, placerat et rutrum eu, dignissim et orci.
                     </TextBlock>
                 </StackPanel>
             </Grid>
 
         </Canvas>
+
+        <!-- Delete confirmation canvas, blanks out the remaining screeen shows option to keep the item or delete the item-->
+        <Canvas Name="delete_confirmation_canvas" Grid.Row="1" Visibility="Collapsed">
+            <Rectangle Fill="#66000000" Canvas.Left="0" Canvas.Top="0" Canvas.Right="0" Canvas.Bottom="0" Width="960" Height="864"/>
+            <Grid Canvas.Left="314" Canvas.Top="275" Background="White" Height="262" Width="334">
+                <StackPanel Margin="16,16,16,16">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="40" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" FontSize="20" FontWeight="Bold">Delete Confirmation</TextBlock>
+                        <Button x:Name="delete_confirmation_close" Grid.Column="1" Content="X" VerticalAlignment="Bottom" Background="#FFE86464" Height="27" Click="delete_confirmation_close_Click" />
+                    </Grid>
+
+                    <TextBlock FontSize="18" Width="300" Height="70" TextWrapping="WrapWithOverflow" Margin="0,24,0,0" HorizontalAlignment="Center"><Run Text="You are about to delete the selected Item."/><LineBreak/><LineBreak/><LineBreak/></TextBlock>
+                    <Button x:Name="delete_confirmation_no_button" Width="192" Height="40" Content="No, Keep the Item" FontSize="16" FontWeight="Bold" Background="#FFABED23" Click="delete_confirmation_no_button_Click" />
+                    <TextBlock></TextBlock>
+                    <Button x:Name="delete_confirmation_yes_button" Width="192" Height="40" Content="Yes, Delete the Item" FontSize="16" FontWeight="Bold" Background="#FFE86464" Click="delete_confirmation_yes_button_Click" />
+                </StackPanel>
+            </Grid>
+        </Canvas>
+        
+        <!-- pop-up for when sever button is pressed -->
+        <Canvas Name="call_server_canvas" Grid.Row="1" Visibility="Collapsed">
+            <Rectangle Fill="#66000000" Canvas.Left="0" Canvas.Top="0" Canvas.Right="0" Canvas.Bottom="0" Width="960" Height="864"/>
+            <Grid Canvas.Left="314" Canvas.Top="275" Background="White" Height="262" Width="334">
+                <StackPanel Margin="16,16,16,16">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="40" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" FontSize="20" FontWeight="Bold">Call Server</TextBlock>
+                        <Button x:Name="call_server_X_button" Grid.Column="1" Content="X" VerticalAlignment="Bottom" Background="#FFE86464" Height="27" Click="call_server_close_Click" />
+                    </Grid>
+
+                    <TextBlock FontSize="18" Width="300" Height="70" TextWrapping="WrapWithOverflow" Margin="0,24,0,0" HorizontalAlignment="Center"><Run Text="A server is coming to help.           Please wait!"/><LineBreak/><LineBreak/><LineBreak/></TextBlock>
+                    <TextBlock></TextBlock>
+                    <Button x:Name="call_server_cancel_button" Width="192" Height="40" Content="Cancel Request" FontSize="16" FontWeight="Bold" Background="#FFE86464" Click="call_server_cancel_button_Click" />
+                    <TextBlock></TextBlock>
+                    <!--<TextBlock HorizontalAlignment="Center">This dialog will close in 5 seconds.</TextBlock> -->
+                </StackPanel>
+            </Grid>
+        </Canvas>
+
+
     </Grid>
 </Window>

@@ -94,7 +94,20 @@ namespace CPSC481_iMenu
         {
             if (ShowMessage("You are about to delete the item from the order", "Delete Confirmation"))
             {
-                RemoveFoodItem();
+                //RemoveFoodItem();
+            }
+            Show_delete_canvas();
+        }
+
+        private void Show_delete_canvas()
+        {
+            var mainWindow = Application.Current.Windows
+          .Cast<Window>()
+          .FirstOrDefault(window => window is MainWindow) as MainWindow;
+
+            if (mainWindow != null)
+            {
+                mainWindow.delete_confirmation_canvas.Visibility = Visibility.Visible;
             }
         }
 
