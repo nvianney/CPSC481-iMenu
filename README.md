@@ -17,3 +17,4 @@ Team Members:<br>
 
 # How to use iMenu
 Once the Git-Hub directly is cloned, and all the propery dependicies are downloaded (VS Studio, C# package etc) the interface should be ready to use.
+Once the interaface is up and running, the users will be presented with the dietry selection screen from which they can select which kind of diertry restrictions they have and then the main menu screen filtered with the food item is displayed. The users can browse the menu, select the food item to get more information about the ingredients, description, allergy etc. The right side of the interaface displayes the current order list of the customer. The botton right button "Place Order" will take the user to a confirmation screen where they are required to confirm the food items and allergy information and once confirmed they can place the order using the "Confirm Button".
