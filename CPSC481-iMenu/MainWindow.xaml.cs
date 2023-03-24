@@ -92,5 +92,81 @@ namespace CPSC481_iMenu
         {
             call_server_canvas.Visibility = Visibility.Collapsed;
         }
+
+        private void Help_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Help_Canvas_Intro.Visibility = Visibility.Visible;
+        }
+
+        private void Help_Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Help_Canvas_Intro.Visibility = Visibility.Collapsed;
+            Help_Tip2.Visibility = Visibility.Collapsed;
+            Help_Tip3.Visibility = Visibility.Collapsed;
+            Help_Tip4.Visibility = Visibility.Collapsed;
+        }
+
+      
+
+        private void NextTipIntro_Click(object sender, RoutedEventArgs e)
+        {
+            Help_Canvas_Intro.Visibility = Visibility.Collapsed;
+            Help_Tip2.Visibility = Visibility.Visible;
+        }
+
+        private void NextTip2_Click(object sender, RoutedEventArgs e)
+        {
+            Help_Tip2.Visibility = Visibility.Collapsed;
+            Help_Tip3.Visibility = Visibility.Visible;
+        }
+
+        private void PreviousTip2_Click(object sender, RoutedEventArgs e)
+        {
+            Help_Canvas_Intro.Visibility = Visibility.Visible;
+            Help_Tip2.Visibility = Visibility.Collapsed;
+        }
+        private void NextTip3_Click(object sender, RoutedEventArgs e)
+        {
+            Help_Tip3.Visibility = Visibility.Collapsed;
+            Help_Tip4.Visibility = Visibility.Visible;
+        }
+        private void PreviousTip3_Click(object sender, RoutedEventArgs e)
+        {
+            Help_Tip3.Visibility = Visibility.Collapsed;
+            Help_Tip2.Visibility = Visibility.Visible;
+        }
+
+        private void NextTip4_Click(object sender, RoutedEventArgs e)
+        {
+            Help_Tip4.Visibility = Visibility.Collapsed;
+            //Help_Tip5.Visibility = Visibility.Visible;
+        }
+
+        private void PreviousTip4_Click(object sender, RoutedEventArgs e)
+        {
+            Help_Tip4.Visibility = Visibility.Collapsed;
+            Help_Tip3.Visibility = Visibility.Visible;
+        }
+
+        private void Open_Settings(Object sender, RoutedEventArgs e)
+        {
+            Settings_Pop_up.Visibility = Visibility.Visible;
+        }
+
+        private void Close_Settings_popup_Click(object sender, RoutedEventArgs e)
+        {
+            Settings_Pop_up.Visibility = Visibility.Collapsed;
+        }
+
+        private void Change_language_button_Click(object sender, RoutedEventArgs e)
+        {
+            Change_language_pop_up.Visibility = Visibility.Visible;
+            Settings_Pop_up.Visibility = Visibility.Collapsed;
+        }
+
+        private void Change_language_pop_up_close_Click(object sender, RoutedEventArgs e)
+        {
+            Change_language_pop_up.Visibility = Visibility.Collapsed;
+        }
     }
 }

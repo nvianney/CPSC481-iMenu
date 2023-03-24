@@ -20,6 +20,7 @@
     <None Remove="nut pree.png" />
     <None Remove="PeanutFree.png" />
     <None Remove="PeanutFree2.png" />
+    <None Remove="Settings image.png" />
     <None Remove="sidebar\dessert.png" />
     <None Remove="sidebar\drink.png" />
     <None Remove="sidebar\main.png" />
@@ -46,6 +47,7 @@
 	<Resource Include="allergy_images\egg free.png" />
 	<Resource Include="allergy_images\contains fish.png" />
 	<Resource Include="nut pree.png" />
+	<Resource Include="Settings image.png" />
 	<Resource Include="sidebar\dessert.png" />
     <Resource Include="sidebar\drink.png" />
     <Resource Include="sidebar\main.png" />

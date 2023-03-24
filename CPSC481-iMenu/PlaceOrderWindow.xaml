@@ -90,7 +90,7 @@
                     <TextBlock TextWrapping="WrapWithOverflow">By checking this box, you agree that the items are correct and are aware of the allergies it may contain.</TextBlock>
                 </CheckBox>
                 <Button x:Name="btn_order" Grid.Column="1" FontSize="18" VerticalAlignment="Bottom" Height="50" Click="Place_Order_Button_Click" IsEnabled="False" FontWeight="Bold">
-                    Confirm Order
+                    Place Order
                 </Button>
             </Grid>
         </Grid>
