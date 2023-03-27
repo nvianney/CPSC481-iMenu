@@ -14,12 +14,12 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="0.5*" />
         </Grid.ColumnDefinitions>
-        
-        <Image x:Name="image" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="/ChummyJoes.png" Margin="8,8,8,8" />
-        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"><Run Language="en-ca" Text="Fish"/><Run Text=" Burger"/></TextBlock>
+
+        <Image x:Name="image" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="{Binding ImagePath, RelativeSource={RelativeSource AncestorType=UserControl}}" Margin="8,8,8,8" />
+        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" Text="{Binding Title, RelativeSource={RelativeSource AncestorType=UserControl}}"></TextBlock>
         <StackPanel Grid.Column="2" VerticalAlignment="Center">
-            <TextBlock Text="$25.00*5=" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12"/>
-            <TextBlock Text="$125.00" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"/>
+            <TextBlock Text="{Binding QuantityString, RelativeSource={RelativeSource AncestorType=UserControl}}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12"/>
+            <TextBlock Text="{Binding TotalCostString, RelativeSource={RelativeSource AncestorType=UserControl}}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"/>
         </StackPanel>
         <Button Grid.Column="3" Content="Edit" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="25" />
         <Button x:Name="exit" Grid.Column="4" Content="X" Background="#FFE86464" VerticalAlignment="Center" HorizontalAlignment="Center" Width="30" Height="30" />

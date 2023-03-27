@@ -73,7 +73,14 @@ namespace CPSC481_iMenu
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Items.Store.Add(Id);
+            Items.Store.Add(
+                new Items.AddedItem()
+                {
+                    timestamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(),
+                    itemId = Id,
+                    quantity = 1,
+                }
+            );
         }
     }
 }

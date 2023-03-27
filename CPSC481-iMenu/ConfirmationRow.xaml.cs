@@ -20,6 +20,72 @@ namespace CPSC481_iMenu
     /// </summary>
     public partial class ConfirmationRow : UserControl
     {
+        public static readonly DependencyProperty IdProperty = DependencyProperty.Register(
+            nameof(Id),
+            typeof(int),
+            typeof(ConfirmationRow));
+
+        public int Id
+        {
+            get { return (int)GetValue(IdProperty); }
+            set { SetValue(IdProperty, value); }
+        }
+
+        public static readonly DependencyProperty TitleProperty = DependencyProperty.Register(
+            nameof(Title),
+            typeof(string),
+            typeof(ConfirmationRow));
+
+        public string Title
+        {
+            get { return (string)GetValue(TitleProperty); }
+            set { SetValue(TitleProperty, value); }
+        }
+
+        public static readonly DependencyProperty ImagePathProperty = DependencyProperty.Register(
+            nameof(ImagePath),
+            typeof(string),
+            typeof(ConfirmationRow));
+
+        public string ImagePath
+        {
+            get { return (string)GetValue(ImagePathProperty); }
+            set { SetValue(ImagePathProperty, value); }
+        }
+
+        public static readonly DependencyProperty CostProperty = DependencyProperty.Register(
+            nameof(Cost),
+            typeof(float),
+            typeof(ConfirmationRow));
+
+        public float Cost
+        {
+            get { return (float)GetValue(CostProperty); }
+            set { SetValue(CostProperty, value); }
+        }
+
+        public static readonly DependencyProperty QuantityProperty = DependencyProperty.Register(
+            nameof(Quantity),
+            typeof(int),
+            typeof(ConfirmationRow));
+
+        public int Quantity
+        {
+            get { return (int)GetValue(QuantityProperty); }
+            set { SetValue(QuantityProperty, value); }
+        }
+
+        public string QuantityString
+        {
+            get { return String.Format("${0:0.00}*{1}=", Cost, Quantity); }
+        }
+
+        public string TotalCostString
+        {
+            get { return String.Format("${0:0.00}", Cost * Quantity); }
+        }
+
+
         public ConfirmationRow()
         {
             InitializeComponent();

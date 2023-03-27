@@ -68,6 +68,19 @@
                         <ColumnDefinition Width="0.1*" />
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="1">
+                        <ItemsControl Name="orderList">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <UniformGrid Columns="1" />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <local:ConfirmationRow Id="{Binding id}" Title="{Binding name}" Cost="{Binding cost}" ImagePath="{Binding imageName}" Quantity="{Binding quantity}" />
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                        <!--
                         <local:ConfirmationRow Height="100" />
                         <local:ConfirmationRow Height="100" />
                         <local:ConfirmationRow Height="100" />
@@ -76,6 +89,7 @@
                         <local:ConfirmationRow Height="100" />
                         <local:ConfirmationRow Height="100" />
                         <local:ConfirmationRow Height="100" />
+                        -->
                     </StackPanel>
                 </Grid>
             </ScrollViewer>

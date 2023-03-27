@@ -24,12 +24,14 @@ namespace CPSC481_iMenu
 
     class DishModel
     {
-        public int id { get; set; }
+        public int itemId { get; set; }
         public String name { get; set; }
         public String description { get; set; }
         public String imageName { get; set; }
-        public String cost { get; set; }
+        public float cost { get; set; }
         public String[] ingredients { get; set; }
+
+        public long timestamp { get; set; } // to keep track of items added
 
         Allergens[] allergens;
         DietaryRestrictions[] dietaryRestrictions;
@@ -61,13 +63,13 @@ namespace CPSC481_iMenu
                             name = "Spaghetti",
                             description = "Made with whole-wheat pasta and a 50/50 blend of beef and pork meatballs",
                             imageName = "/ChummyJoes.png",
-                            cost = "21.00",
+                            cost = 21.00f,
                         }
                     };
 
                     for (int i = 0; i < _items.Count; i++)
                     {
-                        _items[i].id = i;
+                        _items[i].itemId = i;
                     }
                 }
 
@@ -75,7 +77,15 @@ namespace CPSC481_iMenu
             }
         }
 
-        public static ObservableCollection<int> Store = new ObservableCollection<int>();
+        internal class AddedItem
+        {
+            public long timestamp;
+            public int itemId;
+            public int quantity;
+        }
+
+        // timestamp, itemId
+        public static ObservableCollection<AddedItem> Store = new ObservableCollection<AddedItem>();
     }
     /*
      * End of terrible code

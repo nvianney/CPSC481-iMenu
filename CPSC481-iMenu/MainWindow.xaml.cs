@@ -33,7 +33,8 @@ namespace CPSC481_iMenu
         private void StoreChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             Console.WriteLine("Update");
-            orderList.ItemsSource = Items.Store.ToList().ConvertAll(x => Items.Data[x]);
+            // TODO: should cache existing menu in order list, then load, then reapply back quantity
+            orderList.ItemsSource = Items.Store.ToList().ConvertAll(x => Items.Data[x.itemId]);
         }
 
         public void OrderButton_Click(object sender, RoutedEventArgs e)

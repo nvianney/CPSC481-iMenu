@@ -55,14 +55,24 @@ namespace CPSC481_iMenu
 
         public static readonly DependencyProperty CostProperty = DependencyProperty.Register(
             nameof(Cost),
-            typeof(string),
+            typeof(float),
             typeof(OrderItem));
 
-        public string Cost
+        public float Cost
         {
-            get { return (string)GetValue(CostProperty); }
+            get { return (float)GetValue(CostProperty); }
             set { SetValue(CostProperty, value); }
         }
+
+        public string CostString
+        {
+            get
+            {
+                return String.Format("${0:0.00}", Cost);
+            }
+        }
+
+        public int quantity = 1;
 
 
         public OrderItem()
