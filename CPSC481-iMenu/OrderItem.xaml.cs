@@ -20,9 +20,63 @@ namespace CPSC481_iMenu
     /// </summary>
     public partial class OrderItem : UserControl
     {
+
+        public static readonly DependencyProperty TimestampProperty = DependencyProperty.Register(
+            nameof(Timestamp),
+            typeof(long),
+            typeof(OrderItem));
+
+        public long Timestamp
+        {
+            get { return (long)GetValue(TimestampProperty); }
+            set { SetValue(TimestampProperty, value); }
+        }
+
+        public static readonly DependencyProperty IdProperty = DependencyProperty.Register(
+            nameof(Id),
+            typeof(int),
+            typeof(OrderItem));
+
+        public int Id
+        {
+            get { return (int)GetValue(IdProperty); }
+            set { SetValue(IdProperty, value); }
+        }
+
+        public static readonly DependencyProperty QuantityProperty = DependencyProperty.Register(
+            nameof(Quantity),
+            typeof(long),
+            typeof(OrderItem));
+
+        public long Quantity // NOTE: update quantity here
+        {
+            get { return (long)GetValue(QuantityProperty); }
+            set { SetValue(QuantityProperty, value); }
+        }
+
+        public String Title
+        {
+            get { return Items.Data[Id].name; }
+        }
+
+        public string ImagePath
+        {
+            get { return Items.Data[Id].imageName; }
+        }
+
+        public string Cost
+        {
+            get { return String.Format("${0:0.00}", Items.Data[Id].cost); }
+        }
+
         public OrderItem()
         {
             InitializeComponent();
+        }
+
+        private void exit_Click(object sender, RoutedEventArgs e)
+        {
+            Items.Store.Remove(Items.Store.First(x => x.timestamp == Timestamp));
         }
     }
 }

@@ -81,7 +81,7 @@
                         <RowDefinition Height="*" />
                         <RowDefinition Height="50" />
                     </Grid.RowDefinitions>
-                    <ScrollViewer Grid.Column="1" Grid.Row="0" >
+                    <ScrollViewer Grid.Column="1" Grid.Row="0">
                         <StackPanel Background="#FFE4E4E4">
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -90,38 +90,18 @@
                                 </Grid.ColumnDefinitions>
                                 <Button Grid.Column="1" Height="40" Content="Filter" FontSize="20" />
                             </Grid>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
-                                <local:MenuItem Grid.Column="0" />
-                                <local:MenuItem Grid.Column="1" />
-                            </Grid>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
-                                <local:MenuItem Grid.Column="0" />
-                                <local:MenuItem Grid.Column="1" />
-                            </Grid>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
-                                <local:MenuItem Grid.Column="0" />
-                                <local:MenuItem Grid.Column="1" />
-                            </Grid>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
-                                <local:MenuItem Grid.Column="0" />
-                                <local:MenuItem Grid.Column="1" />
-                            </Grid>
+                            <ItemsControl Name="menuList">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <UniformGrid Columns="2" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <local:MenuItem Id="{Binding itemId}" Title="{Binding name}" Description="{Binding description}" ImagePath="{Binding imageName}" />
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
 
                         </StackPanel>
                     </ScrollViewer>
@@ -139,10 +119,25 @@
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" FontSize="24" Text="Your order" FontWeight="Bold" Margin="24,0,0,8" VerticalAlignment="Bottom"/>
                 <ScrollViewer Grid.Row="1">
+                    <!--
                     <StackPanel>
                         <local:OrderItem />
                         <local:OrderItem />
                         <local:OrderItem />
+                    </StackPanel>-->
+                    <StackPanel>
+                        <ItemsControl Name="orderList">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <UniformGrid Columns="1" />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <local:OrderItem Id="{Binding itemId}" Timestamp="{Binding timestamp}" Quantity="{Binding quantity}" />
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
                     </StackPanel>
                 </ScrollViewer>
                 <Button x:Name="btn_order" Click="OrderButton_Click" Grid.Row="2" FontSize="23" FontWeight="Bold" Background="DarkGreen">
