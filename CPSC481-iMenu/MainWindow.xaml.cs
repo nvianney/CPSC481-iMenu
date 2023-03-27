@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,15 @@ namespace CPSC481_iMenu
             InitializeComponent();
 
             menuList.ItemsSource = Items.Data;
+
+            // O(n^2). Also bad code
+            Items.Store.CollectionChanged += StoreChanged;
+        }
+
+        private void StoreChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            Console.WriteLine("Update");
+            orderList.ItemsSource = Items.Store.ToList().ConvertAll(x => Items.Data[x]);
         }
 
         public void OrderButton_Click(object sender, RoutedEventArgs e)

@@ -20,6 +20,51 @@ namespace CPSC481_iMenu
     /// </summary>
     public partial class OrderItem : UserControl
     {
+        public static readonly DependencyProperty IdProperty = DependencyProperty.Register(
+            nameof(Id),
+            typeof(int),
+            typeof(OrderItem));
+
+        public int Id
+        {
+            get { return (int)GetValue(IdProperty); }
+            set { SetValue(IdProperty, value); }
+        }
+
+        public static readonly DependencyProperty TitleProperty = DependencyProperty.Register(
+            nameof(Title),
+            typeof(string),
+            typeof(OrderItem));
+
+        public string Title
+        {
+            get { return (string)GetValue(TitleProperty); }
+            set { SetValue(TitleProperty, value); }
+        }
+
+        public static readonly DependencyProperty ImagePathProperty = DependencyProperty.Register(
+            nameof(ImagePath),
+            typeof(string),
+            typeof(OrderItem));
+
+        public string ImagePath
+        {
+            get { return (string)GetValue(ImagePathProperty); }
+            set { SetValue(ImagePathProperty, value); }
+        }
+
+        public static readonly DependencyProperty CostProperty = DependencyProperty.Register(
+            nameof(Cost),
+            typeof(string),
+            typeof(OrderItem));
+
+        public string Cost
+        {
+            get { return (string)GetValue(CostProperty); }
+            set { SetValue(CostProperty, value); }
+        }
+
+
         public OrderItem()
         {
             InitializeComponent();

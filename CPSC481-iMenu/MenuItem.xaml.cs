@@ -73,7 +73,7 @@ namespace CPSC481_iMenu
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Items.Store.Add(Id);
         }
     }
 }

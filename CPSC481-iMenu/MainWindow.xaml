@@ -143,10 +143,25 @@
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" FontSize="24" Text="Your order" FontWeight="Bold" Margin="24,0,0,8" VerticalAlignment="Bottom"/>
                 <ScrollViewer Grid.Row="1">
+                    <!--
                     <StackPanel>
                         <local:OrderItem />
                         <local:OrderItem />
                         <local:OrderItem />
+                    </StackPanel>-->
+                    <StackPanel>
+                        <ItemsControl Name="orderList">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <UniformGrid Columns="1" />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <local:OrderItem Id="{Binding id}" Title="{Binding name}" Cost="{Binding cost}" ImagePath="{Binding imageName}" />
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
                     </StackPanel>
                 </ScrollViewer>
                 <Button x:Name="btn_order" Click="OrderButton_Click" Grid.Row="2" FontSize="18">

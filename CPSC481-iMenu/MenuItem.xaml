@@ -49,7 +49,7 @@
                 <TextBlock Grid.Column="0" Text="{Binding Description, RelativeSource={RelativeSource AncestorType=UserControl}}" VerticalAlignment="Center" Margin="0,0,0,0" FontSize="12" TextWrapping="Wrap"/>
 
                 <!-- Consider using an image -->
-                <Button Grid.Column="1" Content="Add" HorizontalAlignment="Stretch" FontSize="22"/>
+                <Button Grid.Column="1" Content="Add" HorizontalAlignment="Stretch" FontSize="22" Click="Button_Click"/>
 
             </Grid>
            
