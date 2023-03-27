@@ -31,8 +31,6 @@ namespace CPSC481_iMenu
         public float cost { get; set; }
         public String[] ingredients { get; set; }
 
-        public long timestamp { get; set; } // to keep track of items added
-
         Allergens[] allergens;
         DietaryRestrictions[] dietaryRestrictions;
     }
@@ -64,7 +62,14 @@ namespace CPSC481_iMenu
                             description = "Made with whole-wheat pasta and a 50/50 blend of beef and pork meatballs",
                             imageName = "/ChummyJoes.png",
                             cost = 21.00f,
-                        }
+                        },
+                        new DishModel()
+                        {
+                            name = "Steak",
+                            description = "Angus beef",
+                            imageName = "/ChummyJoes.png",
+                            cost = 21.00f,
+                        },
                     };
 
                     for (int i = 0; i < _items.Count; i++)
@@ -79,9 +84,9 @@ namespace CPSC481_iMenu
 
         internal class AddedItem
         {
-            public long timestamp;
-            public int itemId;
-            public int quantity;
+            public long timestamp { get; set; }
+            public int itemId { get; set; }
+            public int quantity { get; set; }
         }
 
         // timestamp, itemId

@@ -20,6 +20,18 @@ namespace CPSC481_iMenu
     /// </summary>
     public partial class OrderItem : UserControl
     {
+
+        public static readonly DependencyProperty TimestampProperty = DependencyProperty.Register(
+            nameof(Timestamp),
+            typeof(long),
+            typeof(OrderItem));
+
+        public long Timestamp
+        {
+            get { return (long)GetValue(TimestampProperty); }
+            set { SetValue(TimestampProperty, value); }
+        }
+
         public static readonly DependencyProperty IdProperty = DependencyProperty.Register(
             nameof(Id),
             typeof(int),
@@ -31,45 +43,30 @@ namespace CPSC481_iMenu
             set { SetValue(IdProperty, value); }
         }
 
-        public static readonly DependencyProperty TitleProperty = DependencyProperty.Register(
-            nameof(Title),
-            typeof(string),
+        public static readonly DependencyProperty QuantityProperty = DependencyProperty.Register(
+            nameof(Quantity),
+            typeof(long),
             typeof(OrderItem));
 
-        public string Title
+        public long Quantity
         {
-            get { return (string)GetValue(TitleProperty); }
-            set { SetValue(TitleProperty, value); }
+            get { return (long)GetValue(QuantityProperty); }
+            set { SetValue(QuantityProperty, value); }
         }
 
-        public static readonly DependencyProperty ImagePathProperty = DependencyProperty.Register(
-            nameof(ImagePath),
-            typeof(string),
-            typeof(OrderItem));
+        public String Title
+        {
+            get { return Items.Data[Id].name; }
+        }
 
         public string ImagePath
         {
-            get { return (string)GetValue(ImagePathProperty); }
-            set { SetValue(ImagePathProperty, value); }
+            get { return Items.Data[Id].imageName; }
         }
 
-        public static readonly DependencyProperty CostProperty = DependencyProperty.Register(
-            nameof(Cost),
-            typeof(float),
-            typeof(OrderItem));
-
-        public float Cost
+        public string Cost
         {
-            get { return (float)GetValue(CostProperty); }
-            set { SetValue(CostProperty, value); }
-        }
-
-        public string CostString
-        {
-            get
-            {
-                return String.Format("${0:0.00}", Cost);
-            }
+            get { return String.Format("${0:0.00}", Items.Data[Id].cost); }
         }
 
         public int quantity = 1;
@@ -78,6 +75,11 @@ namespace CPSC481_iMenu
         public OrderItem()
         {
             InitializeComponent();
+        }
+
+        private void exit_Click(object sender, RoutedEventArgs e)
+        {
+            Items.Store.Remove(Items.Store.First(x => x.timestamp == Timestamp));
         }
     }
 }

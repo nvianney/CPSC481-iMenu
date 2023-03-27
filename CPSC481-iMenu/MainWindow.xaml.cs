@@ -34,7 +34,7 @@ namespace CPSC481_iMenu
         {
             Console.WriteLine("Update");
             // TODO: should cache existing menu in order list, then load, then reapply back quantity
-            orderList.ItemsSource = Items.Store.ToList().ConvertAll(x => Items.Data[x.itemId]);
+            orderList.ItemsSource = Items.Store.ToList();
         }
 
         public void OrderButton_Click(object sender, RoutedEventArgs e)

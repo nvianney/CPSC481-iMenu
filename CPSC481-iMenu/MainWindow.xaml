@@ -158,7 +158,7 @@
                             </ItemsControl.ItemsPanel>
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <local:OrderItem Id="{Binding itemId}" Title="{Binding name}" Cost="{Binding cost}" ImagePath="{Binding imageName}" />
+                                    <local:OrderItem Id="{Binding itemId}" Timestamp="{Binding timestamp}" Quantity="{Binding quantity}" />
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>

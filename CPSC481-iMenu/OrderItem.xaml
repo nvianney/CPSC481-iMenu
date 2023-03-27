@@ -23,7 +23,7 @@
                 <TextBlock x:Name="title" Grid.Column="0" Text="{Binding Title, RelativeSource={RelativeSource AncestorType=UserControl}}" VerticalAlignment="Center" Margin="0,0,0,0" FontSize="16" />
 
                 <!-- Better idea: use an image -->
-                <Button x:Name="exit" Grid.Column="1" Content="X" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="16,4,0,4" Background="#FFE86464" />
+                <Button x:Name="exit" Grid.Column="1" Content="X" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="16,4,0,4" Background="#FFE86464" Click="exit_Click" />
 
             </Grid>
 
@@ -47,7 +47,7 @@
                 <Button Grid.Column="0" Content="-" HorizontalAlignment="Stretch" FontSize="22"/>
                 <TextBlock Grid.Column="1" FontSize="18" HorizontalAlignment="Center" Text="1" VerticalAlignment="Center"/>
                 <Button Grid.Column="2" Content="+" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="22"/>
-                <TextBlock Grid.Column="3" FontSize="18" HorizontalAlignment="Right" Text="{Binding CostString, RelativeSource={RelativeSource AncestorType=UserControl}}" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="3" FontSize="18" HorizontalAlignment="Right" Text="{Binding Cost, RelativeSource={RelativeSource AncestorType=UserControl}}" VerticalAlignment="Center"/>
 
             </Grid>
 
