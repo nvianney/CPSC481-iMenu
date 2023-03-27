@@ -22,6 +22,8 @@ namespace CPSC481_iMenu
         public MainWindow()
         {
             InitializeComponent();
+
+            menuList.ItemsSource = Items.Data;
         }
 
         public void OrderButton_Click(object sender, RoutedEventArgs e)
