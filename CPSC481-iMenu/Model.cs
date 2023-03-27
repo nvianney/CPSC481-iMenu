@@ -7,16 +7,12 @@ using System.Threading.Tasks;
 
 namespace CPSC481_iMenu
 {
-    enum Allergens
-    {
-        NUT, DAIRY
-    }
     public enum DietaryRestrictions
     {
         VEGETARIAN,
         VEGAN,
         GLUTEN_FREE,
-        DIARY_FREE,
+        DAIRY_FREE,
         PEANUT_FREE,
         SEAFOOD_FREE
     }
@@ -28,6 +24,19 @@ namespace CPSC481_iMenu
         public String imgSource { get; set; }
     }
 
+    public static class DietaryRestrictionList
+    {
+        public static readonly Dictionary<DietaryRestrictions, DietaryRestrictionModel> dietaryRestrictions = new Dictionary<DietaryRestrictions, DietaryRestrictionModel>
+        {
+           { DietaryRestrictions.VEGETARIAN, new DietaryRestrictionModel(){ dietaryRestriction = DietaryRestrictions.VEGETARIAN, dietaryRestrictionName = "Vegetarian", imgSource ="allergy_images/Vegetarian.png" } },
+           { DietaryRestrictions.VEGAN, new DietaryRestrictionModel(){ dietaryRestriction = DietaryRestrictions.VEGAN, dietaryRestrictionName = "Vegan", imgSource = "allergy_images/Vegan.png" }},
+           { DietaryRestrictions.GLUTEN_FREE, new DietaryRestrictionModel() { dietaryRestriction = DietaryRestrictions.GLUTEN_FREE, dietaryRestrictionName = "Gluten Free", imgSource = "allergy_images/gluten free.png" } },
+           { DietaryRestrictions.DAIRY_FREE, new DietaryRestrictionModel() { dietaryRestriction = DietaryRestrictions.DAIRY_FREE, dietaryRestrictionName = "Dairy Free", imgSource = "allergy_images/dairy free.png" } },
+           { DietaryRestrictions.PEANUT_FREE, new DietaryRestrictionModel(){ dietaryRestriction = DietaryRestrictions.PEANUT_FREE, dietaryRestrictionName = "Peanut Free", imgSource = "allergy_images/nut pree.png" }},
+           { DietaryRestrictions.SEAFOOD_FREE, new DietaryRestrictionModel(){ dietaryRestriction = DietaryRestrictions.SEAFOOD_FREE, dietaryRestrictionName = "Seafood Free", imgSource = "allergy_images/Seafood.png" }}
+        };
+    }
+
     class DishModel
     {
         public int itemId { get; set; }
@@ -37,8 +46,7 @@ namespace CPSC481_iMenu
         public float cost { get; set; }
         public String[] ingredients { get; set; }
 
-        Allergens[] allergens;
-        DietaryRestrictionModel[] dietaryRestrictions;
+        public DietaryRestrictionModel[] dietaryRestrictions;
     }
 
     /*
@@ -68,6 +76,11 @@ namespace CPSC481_iMenu
                             description = "Made with whole-wheat pasta and a 50/50 blend of beef and pork meatballs",
                             imageName = "/ChummyJoes.png",
                             cost = 21.00f,
+                            dietaryRestrictions = new DietaryRestrictionModel[]{
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.SEAFOOD_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.DAIRY_FREE],
+                            }
                         },
                         new DishModel()
                         {
@@ -75,6 +88,50 @@ namespace CPSC481_iMenu
                             description = "Angus beef",
                             imageName = "/ChummyJoes.png",
                             cost = 21.00f,
+                            dietaryRestrictions = new DietaryRestrictionModel[]{
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.SEAFOOD_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.DAIRY_FREE],
+                            }
+                        },
+                        new DishModel()
+                        {
+                            name = "Veggie Burger",
+                            description = "vegan patty with relish, tomato and lettuce on a whole-grain bun",
+                            imageName = "/ChummyJoes.png",
+                            cost = 17.00f,
+                            dietaryRestrictions = new DietaryRestrictionModel[]{
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGAN],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGETARIAN],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.SEAFOOD_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.DAIRY_FREE],
+                            }
+                        },
+                        new DishModel()
+                        {
+                            name = "Tiramisu cake",
+                            description = "layered cake with coffee and rum",
+                            imageName = "/ChummyJoes.png",
+                            cost = 8.00f,
+                            dietaryRestrictions = new DietaryRestrictionModel[]{
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.GLUTEN_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGETARIAN],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.SEAFOOD_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
+                            }
+                        },
+                        new DishModel()
+                        {
+                            name = "Salmon salad",
+                            description = "chopped vegetables, flaky fish, and tangy citrus dressing",
+                            imageName = "/ChummyJoes.png",
+                            cost = 8.00f,
+                            dietaryRestrictions = new DietaryRestrictionModel[]{
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.GLUTEN_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.DAIRY_FREE],
+                            }
                         },
                     };
 
