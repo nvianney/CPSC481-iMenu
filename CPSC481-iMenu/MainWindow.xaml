@@ -97,40 +97,7 @@
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
-                        <!--
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <local:MenuItem Grid.Column="0" Title="Item 1" Description="Descripton 1" ImagePath="/ChummyJoes.png" />
-                            <local:MenuItem Grid.Column="1" Title="Item 2" Description="Description 2" />
-                        </Grid>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <local:MenuItem Grid.Column="0" />
-                            <local:MenuItem Grid.Column="1" />
-                        </Grid>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <local:MenuItem Grid.Column="0" />
-                            <local:MenuItem Grid.Column="1" />
-                        </Grid>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <local:MenuItem Grid.Column="0" />
-                            <local:MenuItem Grid.Column="1" />
-                        </Grid>
--->
+                        
                     </StackPanel>
                 </ScrollViewer>
             </Grid>
