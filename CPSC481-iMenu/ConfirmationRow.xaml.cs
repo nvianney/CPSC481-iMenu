@@ -20,6 +20,17 @@ namespace CPSC481_iMenu
     /// </summary>
     public partial class ConfirmationRow : UserControl
     {
+        public static readonly DependencyProperty TimestampProperty = DependencyProperty.Register(
+            nameof(Timestamp),
+            typeof(long),
+            typeof(ConfirmationRow));
+
+        public long Timestamp
+        {
+            get { return (long)GetValue(TimestampProperty); }
+            set { SetValue(TimestampProperty, value); }
+        }
+
         public static readonly DependencyProperty IdProperty = DependencyProperty.Register(
             nameof(Id),
             typeof(int),
@@ -31,48 +42,30 @@ namespace CPSC481_iMenu
             set { SetValue(IdProperty, value); }
         }
 
-        public static readonly DependencyProperty TitleProperty = DependencyProperty.Register(
-            nameof(Title),
-            typeof(string),
+        public static readonly DependencyProperty QuantityProperty = DependencyProperty.Register(
+            nameof(Quantity),
+            typeof(long),
             typeof(ConfirmationRow));
+
+        public long Quantity
+        {
+            get { return (long)GetValue(QuantityProperty); }
+            set { SetValue(QuantityProperty, value); }
+        }
 
         public string Title
         {
-            get { return (string)GetValue(TitleProperty); }
-            set { SetValue(TitleProperty, value); }
+            get { return Items.Data[Id].name; }
         }
-
-        public static readonly DependencyProperty ImagePathProperty = DependencyProperty.Register(
-            nameof(ImagePath),
-            typeof(string),
-            typeof(ConfirmationRow));
 
         public string ImagePath
         {
-            get { return (string)GetValue(ImagePathProperty); }
-            set { SetValue(ImagePathProperty, value); }
+            get { return Items.Data[Id].imageName; }
         }
-
-        public static readonly DependencyProperty CostProperty = DependencyProperty.Register(
-            nameof(Cost),
-            typeof(float),
-            typeof(ConfirmationRow));
 
         public float Cost
         {
-            get { return (float)GetValue(CostProperty); }
-            set { SetValue(CostProperty, value); }
-        }
-
-        public static readonly DependencyProperty QuantityProperty = DependencyProperty.Register(
-            nameof(Quantity),
-            typeof(int),
-            typeof(ConfirmationRow));
-
-        public int Quantity
-        {
-            get { return (int)GetValue(QuantityProperty); }
-            set { SetValue(QuantityProperty, value); }
+            get { return Items.Data[Id].cost; }
         }
 
         public string QuantityString
@@ -89,6 +82,11 @@ namespace CPSC481_iMenu
         public ConfirmationRow()
         {
             InitializeComponent();
+        }
+
+        private void exit_Click(object sender, RoutedEventArgs e)
+        {
+            Items.Store.Remove(Items.Store.First(x => x.timestamp == Timestamp));
         }
     }
 }

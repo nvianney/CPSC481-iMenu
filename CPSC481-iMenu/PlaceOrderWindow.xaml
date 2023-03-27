@@ -76,7 +76,7 @@
                             </ItemsControl.ItemsPanel>
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <local:ConfirmationRow Id="{Binding id}" Title="{Binding name}" Cost="{Binding cost}" ImagePath="{Binding imageName}" Quantity="{Binding quantity}" />
+                                    <local:ConfirmationRow Id="{Binding itemId}" Timestamp="{Binding timestamp}" Quantity="{Binding quantity}" />
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>

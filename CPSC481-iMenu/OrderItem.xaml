@@ -45,7 +45,7 @@
                 </Grid.ColumnDefinitions>
                 <!-- Consider using an image -->
                 <Button Grid.Column="0" Content="-" HorizontalAlignment="Stretch" FontSize="22"/>
-                <TextBlock Grid.Column="1" FontSize="18" HorizontalAlignment="Center" Text="1" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="1" FontSize="18" HorizontalAlignment="Center" Text="{Binding Quantity, RelativeSource={RelativeSource AncestorType=UserControl}}" VerticalAlignment="Center"/>
                 <Button Grid.Column="2" Content="+" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="22"/>
                 <TextBlock Grid.Column="3" FontSize="18" HorizontalAlignment="Right" Text="{Binding Cost, RelativeSource={RelativeSource AncestorType=UserControl}}" VerticalAlignment="Center"/>
 

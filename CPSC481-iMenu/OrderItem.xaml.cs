@@ -48,7 +48,7 @@ namespace CPSC481_iMenu
             typeof(long),
             typeof(OrderItem));
 
-        public long Quantity
+        public long Quantity // NOTE: update quantity here
         {
             get { return (long)GetValue(QuantityProperty); }
             set { SetValue(QuantityProperty, value); }
@@ -68,9 +68,6 @@ namespace CPSC481_iMenu
         {
             get { return String.Format("${0:0.00}", Items.Data[Id].cost); }
         }
-
-        public int quantity = 1;
-
 
         public OrderItem()
         {

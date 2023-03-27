@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -17,15 +18,6 @@ using System.Windows.Shapes;
 namespace CPSC481_iMenu
 {
 
-    class RowItem
-    {
-        public int id { get; set; }
-        public String name { get; set; }
-        public float cost { get; set; }
-        public string imageName { get; set; }
-        public int quantity { get; set; }
-    }
-
     /// <summary>
     /// Interaction logic for PlaceOrderWindow.xaml
     /// </summary>
@@ -38,19 +30,15 @@ namespace CPSC481_iMenu
             InitializeComponent();
 
             //orderList.ItemsSource = Items.Store.ToList().ConvertAll(x => Items.Data[x.itemId]);
-            orderList.ItemsSource = Items.Store.ToList().ConvertAll(x =>
-                {
-                    DishModel m = Items.Data[x.itemId];
-                    return new RowItem()
-                    {
-                        id = m.itemId,
-                        name = m.name,
-                        cost = m.cost,
-                        imageName = m.imageName,
-                        quantity = x.quantity,
-                    };
-                }
-            );
+            orderList.ItemsSource = Items.Store.ToList();
+
+            Items.Store.CollectionChanged += StoreChanged;
+        }
+
+        private void StoreChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            Console.WriteLine("Update");
+            orderList.ItemsSource = Items.Store.ToList();
         }
 
         private void Call_Server_Button_Click(object sender, RoutedEventArgs e)
