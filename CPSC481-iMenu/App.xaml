@@ -1,12 +1,12 @@
 ﻿<Application x:Class="CPSC481_iMenu.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:CPSC481_iMenu"
              StartupUri="DietaryRestrictionsWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Styles.xaml"/>
+                <ResourceDictionary Source="/styles/ButtonStyle.xaml"/>
+                <ResourceDictionary Source="/styles/FilterItemStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
