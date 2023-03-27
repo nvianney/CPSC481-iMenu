@@ -33,10 +33,10 @@ namespace CPSC481_iMenu
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: Use those selected restrictions to filter the menu later
-            IList selectedDietaryRestrictions = DietaryRestrictionsListView.SelectedItems;
+            //Use those selected restrictions to filter the menu later
+            List<DietaryRestrictionModel> selectedDietaryRestrictions = DietaryRestrictionsListView.SelectedItems.Cast<DietaryRestrictionModel>().ToList();
 
-            MainWindow mainWindow = new MainWindow();
+            MainWindow mainWindow = new MainWindow(selectedDietaryRestrictions);
             mainWindow.Show();
                
             this.Close();

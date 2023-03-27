@@ -24,8 +24,9 @@ namespace CPSC481_iMenu
     {
         Dictionary<Button, bool> filterButtonToIsSelected;
         Dictionary<Button, DietaryRestrictions> filterButtonToDietaryRestrictionEnum;
+        SolidColorBrush selectedButtonColor = new SolidColorBrush(Color.FromRgb(230, 255, 253));
 
-        public MainWindow()
+        public MainWindow(List<DietaryRestrictionModel> selectedDietaryRestrictionsFromWelcomeScreen)
         {
             InitializeComponent();
 
@@ -53,6 +54,16 @@ namespace CPSC481_iMenu
                 {this.GlutenFreeButton, DietaryRestrictions.GLUTEN_FREE},
                 {this.DairyFreeButton, DietaryRestrictions.DAIRY_FREE},
             };
+
+            //Set some filters to 'selected' based on welcome screen selection
+
+            foreach (DietaryRestrictionModel dietaryRestriction in selectedDietaryRestrictionsFromWelcomeScreen) 
+            {
+                Button correspondingfilterButton = filterButtonToDietaryRestrictionEnum.FirstOrDefault(x => x.Value == dietaryRestriction.dietaryRestriction).Key;
+                filterButtonToIsSelected[correspondingfilterButton] = true;
+                correspondingfilterButton.Background = selectedButtonColor;
+                updateMenuItemsList();
+            }
         }
 
         private void StoreChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -87,7 +98,7 @@ namespace CPSC481_iMenu
             }
             else //Filter Button Selected
             {
-                filterButtonClicked.Background = new SolidColorBrush(Color.FromRgb(230, 255, 253));
+                filterButtonClicked.Background = selectedButtonColor;
             }
 
             updateMenuItemsList();
