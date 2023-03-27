@@ -11,8 +11,7 @@ namespace CPSC481_iMenu
     {
         NUT, DAIRY
     }
-
-    enum DietaryRestrictions
+    public enum DietaryRestrictions
     {
         VEGETARIAN,
         VEGAN,
@@ -20,6 +19,13 @@ namespace CPSC481_iMenu
         DIARY_FREE,
         PEANUT_FREE,
         SEAFOOD_FREE
+    }
+
+    public class DietaryRestrictionModel
+    {
+        public DietaryRestrictions dietaryRestriction { get; set; }
+        public String dietaryRestrictionName { get; set; }
+        public String imgSource { get; set; }
     }
 
     class DishModel
@@ -32,7 +38,7 @@ namespace CPSC481_iMenu
         public String[] ingredients { get; set; }
 
         Allergens[] allergens;
-        DietaryRestrictions[] dietaryRestrictions;
+        DietaryRestrictionModel[] dietaryRestrictions;
     }
 
     /*

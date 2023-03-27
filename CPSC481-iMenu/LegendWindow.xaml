@@ -1,0 +1,95 @@
+﻿<Window x:Class="CPSC481_iMenu.LegendWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CPSC481_iMenu" xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="iMenu - Restaurant Ordering System" Height ="6in" Width="6in">
+    <!-- Landscape view: 10in x 9in -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <!-- First element sizing -->
+            <RowDefinition Height = "136" />
+            <!-- Second element sizing -->
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <!-- Toolbar -->
+
+        <!-- Content -->
+        <Grid Background="#FFF99494" HorizontalAlignment="Center" Width="556" Height="180" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="192*" />
+                <ColumnDefinition Width="225*" />
+                <ColumnDefinition Width="139*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="0" Source="/Image1.png" Margin="-13,0,41,0" Height="128" VerticalAlignment="Center" />
+
+            <Button Grid.Column="2" Height="76" VerticalAlignment="Center" HorizontalAlignment="Center" Width="116" Click="Button_Click">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="X" VerticalAlignment="Center" FontSize="36" FontWeight="Bold" Margin="4,0,0,0" />
+                </StackPanel>
+            </Button>
+            <Label Grid.Column="1" Content="Legend" HorizontalAlignment="Center" Width="138" FontSize="36" FontWeight="Bold" Height="76" VerticalAlignment="Center"/>
+
+        </Grid>
+        <StackPanel Grid.Row="1" Margin="10,10,10,10">
+            <Grid Height="402" ShowGridLines="True">
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="65*"/>
+                    <RowDefinition Height="68*"/>
+                    <RowDefinition Height="68*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <ScrollViewer Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="385" Margin="10,0,0,0" Grid.RowSpan="3" Grid.Row="1" VerticalAlignment="Center" Width="539">
+                    <Grid>
+                        <Image HorizontalAlignment="Left" Height="110" VerticalAlignment="Top" Width="103" Source="allergy_images/dairy free.png"/>
+                        <Image HorizontalAlignment="Left" Height="110" Margin="0,133,0,0" VerticalAlignment="Top" Width="103" Source="allergy_images/egg free.png"/>
+                        <Image HorizontalAlignment="Left" Height="110" Margin="278,0,0,0" VerticalAlignment="Top" Width="103" Source="allergy_images/nut pree.png"/>
+                        <Image HorizontalAlignment="Left" Height="110" Margin="278,136,0,0" VerticalAlignment="Top" Width="103" Source="allergy_images/sugar free.png"/>
+                        <Image HorizontalAlignment="Left" Height="110" Margin="0,272,0,0" VerticalAlignment="Top" Width="103" Source="allergy_images/trans fat free.png"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="102,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="85" Width="156"><Run FontWeight="Bold" Text="Common Food Items:"/><LineBreak/><Run Text="- "/><Run Language="en-ca" Text=" Salads"/><LineBreak/><Run Language="en-ca" Text="- Cranberry Meatballs"/><LineBreak/><Run Language="en-ca" Text="- Grilled Southwestern Steak Salad"/></TextBlock>
+                        <TextBlock HorizontalAlignment="Left" Margin="102,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="85" Width="156"><Run FontWeight="Bold" Text="Common Food Items:"/><LineBreak/><Run Text="- "/><Run Language="en-ca" Text=" Cream of Mushroom Soup"/><LineBreak/><Run Text="- "/><Run Language="en-ca" Text=" Chicken Kebabs"/><LineBreak/><Run Text="- "/><Run Language="en-ca" Text=" Bell Pepper Nachos"/></TextBlock>
+                        <TextBlock HorizontalAlignment="Left" Margin="102,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="78" Width="156"><Run FontWeight="Bold" Text="Common Food Items:"/><LineBreak/><Run Text="- "/><Run Text="Chicken Fajita"/><LineBreak/><Run Text="- "/><Run Text="Grilled Vegetables"/><LineBreak/><Run Text="- "/><Run Text="Bean Wrap"/></TextBlock>
+                        <TextBlock HorizontalAlignment="Left" Margin="380,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="85" Width="156"><Run FontWeight="Bold" Text="Common Food Items:"/><LineBreak/><Run Text="- "/><Run Text=" "/><Run Language="en-ca" Text="Cucumber Sandwich"/><LineBreak/><Run Text="- "/><Run Language="en-ca" Text=" Cheesy Meatball Casserole"/><LineBreak/><Run Text="- "/><Run Language="en-ca" Text=" American Goulash "/></TextBlock>
+                        <TextBlock HorizontalAlignment="Left" Margin="383,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="84" Width="156"><Run FontWeight="Bold" Text="Common Food Items:"/><LineBreak/><Run Text="- "/><Run Language="en-ca" Text=" Broccoli, Cheese Omelet"/><LineBreak/><Run Text="- "/><Run Language="en-ca" Text=" Ceasar Salad"/><LineBreak/><Run Text="- "/><Run Language="en-ca" Text=" Shrimp Salad"/></TextBlock>
+                        <Image HorizontalAlignment="Left" Height="110" Margin="278,266,0,0" VerticalAlignment="Top" Width="103" Source="/allergy_images/sugar free.png"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="380,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="83" Width="156"><Run FontWeight="Bold" Text="Common Food Items:"/><LineBreak/><Run Text="- "/><Run Language="en-ca" Text=" Broccoli, Cheese Omelet"/><LineBreak/><Run Text="- "/><Run Language="en-ca" Text=" Ceasar Salad"/><LineBreak/><Run Text="- "/><Run Language="en-ca" Text=" Shrimp Salad"/></TextBlock>
+                        <!--<Button Content="Show Food Items" HorizontalAlignment="Left" Margin="116,85,0,0" VerticalAlignment="Top" Width="128" Click="Button_Click_1" FontWeight="Bold" FontSize="14" Height="28"/> -->
+                        <Image HorizontalAlignment="Left" Height="109" VerticalAlignment="Top" Width="88" Source="/dairy free.png"/>
+                        <Image HorizontalAlignment="Left" Height="109" Margin="274,0,0,0" VerticalAlignment="Top" Width="88" Source="/nut pree.png"/>
+                        <Image HorizontalAlignment="Left" Height="109" Margin="274,123,0,0" VerticalAlignment="Top" Width="88" Source="/sugar free.png"/>
+                        <Image HorizontalAlignment="Left" Height="109" Margin="274,263,0,0" VerticalAlignment="Top" Width="88" Source="/sugar free.png"/>
+                        <Image HorizontalAlignment="Left" Height="109" VerticalAlignment="Top" Width="88" Source="/trans fat free.png" Margin="0,263,0,0"/>
+                        <Image HorizontalAlignment="Left" Height="109" VerticalAlignment="Top" Width="88" Source="/gluten free.png" Margin="0,131,0,0"/>
+
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>
+
+
+<!-- Food Item Images taken from: -->
+<!--
+    https://www.freepik.com/free-vector/flat-design-food-allergy-label-set_28540965.htm#query=seafood%20alergy%20iconn&position=0&from_view=search&track=ais
+    
+    https://www.freepik.com/free-vector/earth-around-with-food-vegetable_30159704.htm#query=vegtarian%20food%20clip%20art&position=7&from_view=search&track=ais
+
+    https://www.freepik.com/free-photo/gluten-free-food-various-pasta-bread-snacks-wooden_9970845.htm#query=gluten%20free&position=2&from_view=search&track=ais
+
+    https://www.freepik.com/free-vector/flat-design-food-allergy-set_28343850.htm#page=2&query=dairy%20free%20food&position=6&from_view=search&track=ais
+
+    https://www.womansday.com/food-recipes/g2559/gluten-free-dinner-recipes/
+
+    https://www.modestnutrition.com/tag/no-trans-fat-recipes/ 
+
+    https://www.eatingwell.com/gallery/7594585/30-days-no-sugar-added-recipes/?slide=aabb80f0-492b-4f83-8a96-45325f52719e#aabb80f0-492b-4f83-8a96-45325f52719e
+    -->

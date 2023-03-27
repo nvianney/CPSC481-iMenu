@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
@@ -40,6 +41,14 @@ namespace CPSC481_iMenu
         {
             PlaceOrderWindow window = new PlaceOrderWindow();
             window.Show();
+        }
+
+        private void btn_legend_Click(object sender, RoutedEventArgs e)
+        {
+            LegendWindow window = new LegendWindow();
+            window.Show();
+
+            //this.Close();
         }
     }
 }
