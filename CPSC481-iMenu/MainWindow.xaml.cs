@@ -24,7 +24,9 @@ namespace CPSC481_iMenu
     {
         Dictionary<Button, bool> filterButtonToIsSelected;
         Dictionary<Button, DietaryRestrictions> filterButtonToDietaryRestrictionEnum;
-        SolidColorBrush selectedButtonColor = new SolidColorBrush(Color.FromRgb(230, 255, 253));
+        Dictionary<Button, MenuItemCategory> sidebarButtonToMenuItemCategoryEnum;
+        Button sidebarButtonSelected;
+        SolidColorBrush selectedButtonColor = new SolidColorBrush(Color.FromRgb(187, 231, 252));
 
         public MainWindow(List<DietaryRestrictionModel> selectedDietaryRestrictionsFromWelcomeScreen)
         {
@@ -34,6 +36,9 @@ namespace CPSC481_iMenu
 
             // O(n^2). Also bad code
             Items.Store.CollectionChanged += StoreChanged;
+
+            sidebarButtonSelected = this.StartersButton;
+            sidebarButtonSelected.Background = selectedButtonColor;
 
             filterButtonToIsSelected = new Dictionary<Button, bool>()
             {
@@ -55,15 +60,25 @@ namespace CPSC481_iMenu
                 {this.DairyFreeButton, DietaryRestrictions.DAIRY_FREE},
             };
 
-            //Set some filters to 'selected' based on welcome screen selection
+            sidebarButtonToMenuItemCategoryEnum = new Dictionary<Button, MenuItemCategory>()
+            {
+                {this.StartersButton, MenuItemCategory.STARTER},
+                {this.MainsButton, MenuItemCategory.MAIN},
+                {this.SidesButton, MenuItemCategory.SIDE},
+                {this.DrinksButton, MenuItemCategory.DRINK},
+                {this.DessertsButton, MenuItemCategory.DESSERT},
+            };
 
+            //Set some filters to 'selected' based on welcome screen selection
             foreach (DietaryRestrictionModel dietaryRestriction in selectedDietaryRestrictionsFromWelcomeScreen) 
             {
                 Button correspondingfilterButton = filterButtonToDietaryRestrictionEnum.FirstOrDefault(x => x.Value == dietaryRestriction.dietaryRestriction).Key;
                 filterButtonToIsSelected[correspondingfilterButton] = true;
                 correspondingfilterButton.Background = selectedButtonColor;
-                updateMenuItemsList();
             }
+
+            updateMenuItemsList();
+
         }
 
         private void StoreChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -104,6 +119,19 @@ namespace CPSC481_iMenu
             updateMenuItemsList();
         }
 
+        private void Sidebar_Button_Click(object sender, RoutedEventArgs e) 
+        {
+            Button sidebarButtonClicked = (Button)e.Source;
+
+            if (sidebarButtonClicked != sidebarButtonSelected) //different button than current has been pressed
+            {
+                sidebarButtonSelected.Background = new SolidColorBrush(Colors.White);
+                sidebarButtonClicked.Background = selectedButtonColor;
+                sidebarButtonSelected = sidebarButtonClicked;
+                updateMenuItemsList();
+            }
+        }
+
         private List<DishModel> filterItemsOnDietaryRestrictions(List<DishModel> menuItems, List<DietaryRestrictions> dietaryRestrictions) 
         {
             List<DishModel> filteredMenuItems = menuItems;
@@ -117,8 +145,16 @@ namespace CPSC481_iMenu
             return filteredMenuItems;
         }
 
+        private List<DishModel> filterItemsOnMenuCategory(List<DishModel> menuItems, MenuItemCategory menuItemCategory)
+        {
+            List<DishModel> filteredMenuItems = menuItems.Where(o => o.menuItemCategory.menuItemCategory == menuItemCategory).ToList();
+
+            return filteredMenuItems;
+        }
+
         private void updateMenuItemsList() 
         {
+            //Filter menu for dietary restrictions
             Dictionary<Button, bool> currentFilters = filterButtonToIsSelected.Where(o => o.Value is true).ToDictionary(i => i.Key, i => i.Value);
 
             List<DietaryRestrictions> currentDietaryRestrictions = new List<DietaryRestrictions>();
@@ -130,6 +166,11 @@ namespace CPSC481_iMenu
 
             List<DishModel> filteredMenuItems = filterItemsOnDietaryRestrictions(Items.Data, currentDietaryRestrictions);
 
+            //Filter menu for categories
+            MenuItemCategory currentMenuItemCategory = sidebarButtonToMenuItemCategoryEnum[sidebarButtonSelected];
+            filteredMenuItems = filterItemsOnMenuCategory(filteredMenuItems, currentMenuItemCategory);
+
+            //Apply changes
             menuList.ItemsSource = filteredMenuItems;
             Items.Store.CollectionChanged += StoreChanged;
         }
