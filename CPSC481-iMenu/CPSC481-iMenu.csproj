@@ -18,10 +18,6 @@
     <None Remove="Image1.png" />
     <None Remove="PeanutFree.png" />
     <None Remove="PeanutFree2.png" />
-    <None Remove="sidebar\dessert.png" />
-    <None Remove="sidebar\drink.png" />
-    <None Remove="sidebar\main.png" />
-    <None Remove="starter.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,6 +42,7 @@
     <Resource Include="sidebar\drink.png" />
     <Resource Include="sidebar\main.png" />
     <Resource Include="sidebar\starter.png" />
+	<Resource Include="sidebar\sides.png" />
   </ItemGroup>
 
   <ItemGroup>
