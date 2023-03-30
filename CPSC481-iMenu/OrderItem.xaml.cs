@@ -75,6 +75,7 @@ namespace CPSC481_iMenu
         }
 
 
+
         // private void Button_Click_Add_Quantity(object sender, RoutedEventArgs e)
         // {
         //     //Ref: https://www.tutorialspoint.com/Chash-Program-to-Convert-Integer-to-String#:~:text=To%20convert%20an%20integer%20to,use%20the%20ToString()%20method
@@ -160,6 +161,7 @@ namespace CPSC481_iMenu
         //         mainWindow.delete_confirmation_canvas.Visibility = Visibility.Visible;
         //     }
         // }
+
 
 
         private void exit_Click(object sender, RoutedEventArgs e)

@@ -24,7 +24,9 @@ namespace CPSC481_iMenu
     public partial class MainWindow : Window
     {
 
+
         private static Boolean canDelete = false;
+
 
         Dictionary<Button, bool> filterButtonToIsSelected;
         Dictionary<Button, DietaryRestrictions> filterButtonToDietaryRestrictionEnum;
@@ -89,6 +91,7 @@ namespace CPSC481_iMenu
 
             //this.Close();
         }
+
 
         private void Call_Server_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -217,6 +220,7 @@ namespace CPSC481_iMenu
         {
             Change_language_pop_up.Visibility = Visibility.Collapsed;
         }
+
         private void Filter_Button_Click(object sender, RoutedEventArgs e)
         {
             Button filterButtonClicked = (Button) e.Source;
@@ -263,7 +267,6 @@ namespace CPSC481_iMenu
 
             menuList.ItemsSource = filteredMenuItems;
             Items.Store.CollectionChanged += StoreChanged;
-
         }
 
        
