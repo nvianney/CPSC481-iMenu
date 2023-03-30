@@ -29,7 +29,7 @@
             <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Table No. 05" FontSize="22" FontWeight="Bold" />
 
             <!--<Button Grid.Column="2" Margin="16,8,16,8" BorderBrush="#FFED5353" BorderThickness="5,5,5,5" Background="White">-->
-            <Button Name ="Call_Server_Button" Grid.Column="2" Margin="16,8,16,8" Click="Call_Server_Button_Click">
+            <Button Grid.Column="2" Margin="16,8,16,8" Click="Call_Server_Button_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/call server bell.png" Margin="0,0,4,0" />
                     <TextBlock Text="Call Server" VerticalAlignment="Center" FontSize="36" FontWeight="Bold" Margin="4,0,0,0" />
@@ -54,11 +54,10 @@
                 <!-- Options bar-->
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="674*" />
-                        <RowDefinition Height="49*"/>
+                        <RowDefinition Height="*" />
                         <RowDefinition Height="60" />
                     </Grid.RowDefinitions>
-                    <StackPanel Grid.Column="0" Background="#FFD8FFAB" Grid.RowSpan="2">
+                    <StackPanel Grid.Column="0" Background="#FFD8FFAB">
                         <Button Height="80" Margin="0,8,0,8">
                             <Image Height="80" Source="/sidebar/starter.png" />
                         </Button>
@@ -73,7 +72,7 @@
                         </Button>
                     </StackPanel>
                     <!-- Instead of having a bar at the buttom to display the legend I made a box on the corner-->
-                    <Button Grid.Row="1" Height="60" Width="60" Content="?" FontSize="40" FontWeight="Bold" Background="#FFE86464" Click="Help_Button_Click" Margin="0,49,0,0" Grid.RowSpan="2" />
+                    <Button Height="60" Width="60" Content="?" FontSize="40" FontWeight="Bold" Background="#FFE86464" Margin="0,723,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Click="Help_Button_Click"/>
                 </Grid>
 
                 <!-- Menu -->
@@ -82,47 +81,62 @@
                         <RowDefinition Height="*" />
                         <RowDefinition Height="50" />
                     </Grid.RowDefinitions>
-                    <ScrollViewer Grid.Column="1" Grid.Row="0" >
+                    <ScrollViewer Grid.Column="1" Grid.Row="0">
                         <StackPanel Background="#FFE4E4E4">
-                            <Grid>
+                            <Grid >
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
                                 </Grid.ColumnDefinitions>
-                                <Button Grid.Column="1" Height="40" Content="Filter" FontSize="20" />
+
+                                <Grid Grid.Column="0" Grid.Row="0" Width="95" Height="70">
+                                    <Button Name="VegetarianButton" Margin ="3" Style="{StaticResource FilterItemStyle}" Click="Filter_Button_Click"/>
+                                    <Image Source="allergy_images/Vegetarian.png" Height="55" Width="55"/>
+                                </Grid>
+
+                                <Grid Grid.Column="1" Grid.Row="0" Width="95" Height="70">
+                                    <Button Name="VeganButton" Margin ="3" Style="{StaticResource FilterItemStyle}" Click="Filter_Button_Click"/>
+                                    <Image Source="allergy_images/Vegan.png" Height="50"/>
+                                </Grid>
+
+                                <Grid Grid.Column="2" Grid.Row="0" Width="95" Height="70">
+                                    <Button Name="GlutenFreeButton" Margin ="3" Style="{StaticResource FilterItemStyle}" Click="Filter_Button_Click"/>
+                                    <Image Source="allergy_images/gluten free.png" Height="50"/>
+                                </Grid>
+
+                                <Grid Grid.Column="3" Grid.Row="0" Width="95" Height="70">
+                                    <Button Name="DairyFreeButton" Margin ="3" Style="{StaticResource FilterItemStyle}" Click="Filter_Button_Click"/>
+                                    <Image Source="allergy_images/dairy free.png" Height="50"/>
+                                </Grid>
+
+                                <Grid Grid.Column="4" Grid.Row="0" Width="95" Height="70">
+                                    <Button Name="NutFreeButton" Margin ="3" Style="{StaticResource FilterItemStyle}" Click="Filter_Button_Click"/>
+                                    <Image Source="allergy_images/nut pree.png" Height="50"/>
+                                </Grid>
+
+                                <Grid Grid.Column="5" Grid.Row="0" Width="95" Height="70">
+                                    <Button Name="SeafoodFreeButton" Margin ="3" Style="{StaticResource FilterItemStyle}" Click="Filter_Button_Click"/>
+                                    <Image Source="allergy_images/Seafood.png" Height="50"/>
+                                </Grid>
+
                             </Grid>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
-                                <local:MenuItem Grid.Column="0" />
-                                <local:MenuItem Grid.Column="1" />
-                            </Grid>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
-                                <local:MenuItem Grid.Column="0" />
-                                <local:MenuItem Grid.Column="1" />
-                            </Grid>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
-                                <local:MenuItem Grid.Column="0" />
-                                <local:MenuItem Grid.Column="1" />
-                            </Grid>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
-                                <local:MenuItem Grid.Column="0" />
-                                <local:MenuItem Grid.Column="1" />
-                            </Grid>
+                            <Separator/>
+                            <ItemsControl Name="menuList">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <UniformGrid Columns="2" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                         <local:MenuItem Id="{Binding itemId}" Title="{Binding name}" Description="{Binding description}" ImagePath="{Binding imageName}" /> 
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
 
                         </StackPanel>
                     </ScrollViewer>
@@ -132,7 +146,7 @@
                 </Grid>
             </Grid>
 
-            <Grid Grid.Column="1" Background="#FFF5CFCF" >
+            <Grid Grid.Column="1" Background="#FFE6E6E6">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="90" />
                     <RowDefinition Height="*" />
@@ -140,21 +154,53 @@
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" FontSize="24" Text="Your order" FontWeight="Bold" Margin="24,0,0,8" VerticalAlignment="Bottom"/>
                 <ScrollViewer Grid.Row="1">
-                    <StackPanel Height="1355">
-                        <local:OrderItem x:Name="OrderItem1" RenderTransformOrigin="0.806,0.524" />
-                        <local:GlutenFreeOrderItem x:Name="Your_Order_GlutenFree_Item"/>
-                        <local:OrderItem x:Name="OrderItem2"/>
-                        <local:OrderItem x:Name="OrderItem3"/>
-                        <local:OrderItem x:Name="OrderItem4"/>
-                        <local:OrderItem x:Name="OrderItem5"/>
+                    <!--
+                    <StackPanel>
+                        <local:OrderItem />
+                        <local:OrderItem />
+                        <local:OrderItem />
+                    </StackPanel>-->
+                    <StackPanel>
+                        <ItemsControl Name="orderList">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <UniformGrid Columns="1" />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <local:OrderItem Id="{Binding itemId}" Timestamp="{Binding timestamp}" Quantity="{Binding quantity}" />
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
                     </StackPanel>
                 </ScrollViewer>
                 <Button x:Name="btn_order" Click="OrderButton_Click" Grid.Row="2" FontSize="23" FontWeight="Bold" Background="DarkGreen">
-                    Confirm Order
+                    Place Order
                 </Button>
             </Grid>
-
         </Grid>
+        <Canvas Grid.Row="1" Visibility="Collapsed">
+            <Rectangle Fill="#66000000" Canvas.Left="0" Canvas.Top="0" Canvas.Right="0" Canvas.Bottom="0" Width="960" Height="864"/>
+            <Grid Canvas.Left="50" Canvas.Top="30" Background="White">
+                <StackPanel Margin="16,16,16,16">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="40" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" FontSize="20" FontWeight="Bold">Tutorial</TextBlock>
+                        <Button x:Name="exit" Grid.Column="1" Content="X" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0" Background="#FFE86464" />
+                    </Grid>
+
+                    <TextBlock FontSize="18" Width="300" Height="150" TextWrapping="WrapWithOverflow" Margin="0,24,0,0">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis risus at urna tincidunt consectetur sit amet vel lacus. Donec turpis sapien, placerat et rutrum eu, dignissim et orci.
+                    </TextBlock>
+                </StackPanel>
+            </Grid>
+        </Canvas>
+
+
         <Canvas Name="Help_Canvas_Intro" Grid.Row="1" Visibility="Collapsed">
             <Rectangle Fill="#66000000" Canvas.Left="0" Canvas.Top="0" Canvas.Right="0" Canvas.Bottom="0" Width="960" Height="864"/>
             <Grid Canvas.Left="50" Canvas.Top="30" Background="White" HorizontalAlignment="Center" Height="265" VerticalAlignment="Top">
@@ -359,10 +405,10 @@
                 </StackPanel>
             </Grid>
         </Canvas>
-        
+
         <!-- Language changed message pop-up -->
         <!-- pop-up for when sever button is pressed -->
-        <Canvas Name="Change_language_pop_up" Grid.Row="1" Visibility="Visible">
+        <Canvas Name="Change_language_pop_up" Grid.Row="1" Visibility="Collapsed">
             <Rectangle Fill="#66000000" Canvas.Left="0" Canvas.Top="0" Canvas.Right="0" Canvas.Bottom="0" Width="960" Height="864"/>
             <Grid Canvas.Left="314" Canvas.Top="275" Background="White" Height="262" Width="334">
                 <StackPanel Margin="16,16,16,16">
@@ -381,7 +427,6 @@
                 </StackPanel>
             </Grid>
         </Canvas>
-
 
 
 

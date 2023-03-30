@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,7 @@ using System.Windows.Shapes;
 
 namespace CPSC481_iMenu
 {
+
     /// <summary>
     /// Interaction logic for PlaceOrderWindow.xaml
     /// </summary>
@@ -26,6 +28,17 @@ namespace CPSC481_iMenu
         public PlaceOrderWindow()
         {
             InitializeComponent();
+
+            //orderList.ItemsSource = Items.Store.ToList().ConvertAll(x => Items.Data[x.itemId]);
+            orderList.ItemsSource = Items.Store.ToList();
+
+            Items.Store.CollectionChanged += StoreChanged;
+        }
+
+        private void StoreChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            Console.WriteLine("Update");
+            orderList.ItemsSource = Items.Store.ToList();
         }
 
         private void Call_Server_Button_Click(object sender, RoutedEventArgs e)
@@ -43,6 +56,7 @@ namespace CPSC481_iMenu
             //    Call_Server_Label.Content = "Opps";
 
             call_server_canvas.Visibility = Visibility.Visible;
+
         }
 
         private bool IsButtonPressed(bool button_given)

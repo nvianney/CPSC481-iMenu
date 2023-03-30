@@ -8,24 +8,21 @@
              d:DesignHeight="300" d:DesignWidth="600" Background="White" Margin="0,8,0,8">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="133*" />
-            <ColumnDefinition Width="118*" />
-            <ColumnDefinition Width="103*"/>
-            <ColumnDefinition Width="112*" />
-            <ColumnDefinition Width="67*" />
-            <ColumnDefinition Width="67*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="0.5*" />
         </Grid.ColumnDefinitions>
 
-        <Image x:Name="image" Grid.Column="0" Source="/ChummyJoes.png" Margin="8,8,8,8" />
-        <TextBlock Grid.Column="1" VerticalAlignment="Center" FontSize="18" Height="24" Margin="15,0,15,0"><Run Language="en-ca" Text="Fish"/><Run Text=" Burger"/></TextBlock>
-        <StackPanel Grid.Column="3" VerticalAlignment="Center" Height="40" Margin="5,0,1,0">
-            <TextBlock Text="$25.00*5=" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12"/>
-            <TextBlock Text="$125.00" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"/>
+        <Image x:Name="image" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="{Binding ImagePath, RelativeSource={RelativeSource AncestorType=UserControl}}" Margin="8,8,8,8" />
+        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" Text="{Binding Title, RelativeSource={RelativeSource AncestorType=UserControl}}"></TextBlock>
+        <StackPanel Grid.Column="2" VerticalAlignment="Center">
+            <TextBlock Text="{Binding QuantityString, RelativeSource={RelativeSource AncestorType=UserControl}}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12"/>
+            <TextBlock Text="{Binding TotalCostString, RelativeSource={RelativeSource AncestorType=UserControl}}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"/>
         </StackPanel>
-        <Button Grid.Column="4" Content="Edit" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="24" />
-        <Button x:Name="exit" Grid.Column="5" Content="X" Background="#FFE86464" VerticalAlignment="Center" HorizontalAlignment="Center" Width="30" Height="30" Click="exit_Click" />
-        <Image Grid.Column="2" HorizontalAlignment="Left" Height="48" Margin="8,10,0,0" VerticalAlignment="Top" Width="48" Source="/dairy free.png"/>
-        <Image Grid.Column="2" HorizontalAlignment="Left" Height="50" Margin="61,8,0,0" VerticalAlignment="Top" Width="52" Source="/nut pree.png" Grid.ColumnSpan="2"/>
+        <Button Grid.Column="3" Content="Edit" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="25" />
+        <Button x:Name="exit" Grid.Column="4" Content="X" Background="#FFE86464" VerticalAlignment="Center" HorizontalAlignment="Center" Width="30" Height="30" Click="exit_Click"/>
 
 
     </Grid>

@@ -87,7 +87,7 @@ namespace CPSC481_iMenu
 
             if (mainWindow != null)
             {
-                mainWindow.Your_Order_GlutenFree_Item.Visibility = Visibility.Collapsed;
+               // mainWindow.Your_Order_GlutenFree_Item.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -110,7 +110,7 @@ namespace CPSC481_iMenu
 
             if (mainWindow != null)
             {
-                mainWindow.delete_confirmation_canvas.Visibility = Visibility.Visible;
+                //mainWindow.delete_confirmation_canvas.Visibility = Visibility.Visible;
                 
             }
         }
