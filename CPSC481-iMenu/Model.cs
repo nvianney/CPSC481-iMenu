@@ -32,7 +32,7 @@ namespace CPSC481_iMenu
            { DietaryRestrictions.VEGAN, new DietaryRestrictionModel(){ dietaryRestriction = DietaryRestrictions.VEGAN, dietaryRestrictionName = "Vegan", imgSource = "allergy_images/Vegan.png" }},
            { DietaryRestrictions.GLUTEN_FREE, new DietaryRestrictionModel() { dietaryRestriction = DietaryRestrictions.GLUTEN_FREE, dietaryRestrictionName = "Gluten Free", imgSource = "allergy_images/gluten free.png" } },
            { DietaryRestrictions.DAIRY_FREE, new DietaryRestrictionModel() { dietaryRestriction = DietaryRestrictions.DAIRY_FREE, dietaryRestrictionName = "Dairy Free", imgSource = "allergy_images/dairy free.png" } },
-           { DietaryRestrictions.PEANUT_FREE, new DietaryRestrictionModel(){ dietaryRestriction = DietaryRestrictions.PEANUT_FREE, dietaryRestrictionName = "Peanut Free", imgSource = "allergy_images/nut pree.png" }},
+           { DietaryRestrictions.PEANUT_FREE, new DietaryRestrictionModel(){ dietaryRestriction = DietaryRestrictions.PEANUT_FREE, dietaryRestrictionName = "Nut Free", imgSource = "allergy_images/nut pree.png" }},
            { DietaryRestrictions.SEAFOOD_FREE, new DietaryRestrictionModel(){ dietaryRestriction = DietaryRestrictions.SEAFOOD_FREE, dietaryRestrictionName = "Seafood Free", imgSource = "allergy_images/Seafood.png" }}
         };
     }

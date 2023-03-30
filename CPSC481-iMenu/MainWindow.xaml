@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPSC481_iMenu"
         mc:Ignorable="d"
-        Title="Menu Window" Height="9in" Width="13in">
+        Title="Menu Window" Height="9in" Width="10in">
     <!-- Landscape view: 10in x 9in -->
 
     <Grid>
@@ -83,7 +83,7 @@
                     </Grid.RowDefinitions>
                     <ScrollViewer Grid.Column="1" Grid.Row="0">
                         <StackPanel Background="#FFE4E4E4">
-                            <Grid Background="Transparent">
+                            <Grid >
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="1*" />
                                     <ColumnDefinition Width="1*" />
@@ -92,16 +92,39 @@
                                     <ColumnDefinition Width="1*" />
                                     <ColumnDefinition Width="1*" />
                                 </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="50" />
-                                </Grid.RowDefinitions>
-                                <Button Name="VeganButton" Grid.Column="0" Grid.Row="0" Margin ="4" Content="Vegan" FontSize="20" FontFamily="Segoe UI Light" Style="{StaticResource FilterItemStyle}" Padding="10,10,10,10" Click="Filter_Button_Click"/>
-                                <Button Name="VegetarianButton" Grid.Column="1" Grid.Row="0" Margin ="4" Content="Vegetarian" FontSize="20" FontFamily="Segoe UI Light" Style="{StaticResource FilterItemStyle}" Padding="10,10,10,10" Click="Filter_Button_Click"/>
-                                <Button Name="NutFreeButton" Grid.Column="2" Grid.Row="0" Margin ="4" Content="Peanut-free" FontSize="20" FontFamily="Segoe UI Light" Style="{StaticResource FilterItemStyle}" Padding="10,10,10,10"  Click="Filter_Button_Click"/>
-                                <Button Name="SeafoodFreeButton" Grid.Column="3" Grid.Row="0" Margin ="4" Content="Seafood-free" FontSize="20" FontFamily="Segoe UI Light" Style="{StaticResource FilterItemStyle}" Padding="10,10,10,10" Click="Filter_Button_Click"/>
-                                <Button Name="DairyFreeButton" Grid.Column="4" Grid.Row="0" Margin ="4" Content="Dairy-free" FontSize="20" FontFamily="Segoe UI Light" Style="{StaticResource FilterItemStyle}" Padding="10,10,10,10"  Click="Filter_Button_Click"/>
-                                <Button Name="GlutenFreeButton" Grid.Column="5" Grid.Row="0" Margin ="4" Content="Gluten-free" FontSize="20" FontFamily="Segoe UI Light" Style="{StaticResource FilterItemStyle}" Padding="10,10,10,10" Click="Filter_Button_Click"/>
+
+                                <Grid Grid.Column="0" Grid.Row="0" Width="95" Height="70">
+                                    <Button Name="VegetarianButton" Margin ="3" Style="{StaticResource FilterItemStyle}" Click="Filter_Button_Click"/>
+                                    <Image Source="allergy_images/Vegetarian.png" Height="55" Width="55"/>
+                                </Grid>
+
+                                <Grid Grid.Column="1" Grid.Row="0" Width="95" Height="70">
+                                    <Button Name="VeganButton" Margin ="3" Style="{StaticResource FilterItemStyle}" Click="Filter_Button_Click"/>
+                                    <Image Source="allergy_images/Vegan.png" Height="50"/>
+                                </Grid>
+
+                                <Grid Grid.Column="2" Grid.Row="0" Width="95" Height="70">
+                                    <Button Name="GlutenFreeButton" Margin ="3" Style="{StaticResource FilterItemStyle}" Click="Filter_Button_Click"/>
+                                    <Image Source="allergy_images/gluten free.png" Height="50"/>
+                                </Grid>
+
+                                <Grid Grid.Column="3" Grid.Row="0" Width="95" Height="70">
+                                    <Button Name="DairyFreeButton" Margin ="3" Style="{StaticResource FilterItemStyle}" Click="Filter_Button_Click"/>
+                                    <Image Source="allergy_images/dairy free.png" Height="50"/>
+                                </Grid>
+
+                                <Grid Grid.Column="4" Grid.Row="0" Width="95" Height="70">
+                                    <Button Name="NutFreeButton" Margin ="3" Style="{StaticResource FilterItemStyle}" Click="Filter_Button_Click"/>
+                                    <Image Source="allergy_images/nut pree.png" Height="50"/>
+                                </Grid>
+
+                                <Grid Grid.Column="5" Grid.Row="0" Width="95" Height="70">
+                                    <Button Name="SeafoodFreeButton" Margin ="3" Style="{StaticResource FilterItemStyle}" Click="Filter_Button_Click"/>
+                                    <Image Source="allergy_images/Seafood.png" Height="50"/>
+                                </Grid>
+                                
                             </Grid>
+                            <Separator/>
                             <ItemsControl Name="menuList">
                                 <ItemsControl.ItemsPanel>
                                     <ItemsPanelTemplate>
