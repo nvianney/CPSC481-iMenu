@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>CPSC481_iMenu</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="call server bell.png" />
+    <None Remove="ChummyJoes.png" />
+    <None Remove="circle.png" />
+    <None Remove="expand.png" />
+    <None Remove="DairyFree.png" />
+    <None Remove="DairyFree2.png" />
+    <None Remove="Image1.png" />
+    <None Remove="PeanutFree.png" />
+    <None Remove="PeanutFree2.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="call server bell.png" />
+    <Resource Include="ChummyJoes.png" />
+    <Resource Include="circle.png">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="expand.png" />
+	<Resource Include="Image1.png" />
+	<Resource Include="allergy_images\Seafood.png" />
+	<Resource Include="allergy_images\Vegan.png" />
+	<Resource Include="allergy_images\Vegetarian.png" />
+	<Resource Include="allergy_images\dairy free.png" />
+	<Resource Include="allergy_images\nut pree.png" />
+	<Resource Include="allergy_images\gluten free.png" />
+	<Resource Include="allergy_images\trans fat free.png" />
+	<Resource Include="allergy_images\sugar free.png" />
+	<Resource Include="allergy_images\egg free.png" />
+	<Resource Include="allergy_images\contains fish.png" />
+	<Resource Include="sidebar\dessert.png" />
+    <Resource Include="sidebar\drink.png" />
+    <Resource Include="sidebar\main.png" />
+    <Resource Include="sidebar\starter.png" />
+	<Resource Include="sidebar\sides.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="MenuItem.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="LegendWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+</Project>

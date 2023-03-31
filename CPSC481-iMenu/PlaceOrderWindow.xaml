@@ -31,7 +31,7 @@
             <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Table No. 05" FontSize="22" FontWeight="Bold" />
 
             <!--<Button Grid.Column="2" Margin="16,8,16,8" BorderBrush="#FFED5353" BorderThickness="5,5,5,5" Background="White">-->
-            <Button Grid.Column="2" Margin="16,8,16,8">
+            <Button Grid.Column="2" Margin="16,8,16,8" Click="Call_Server_Button_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/call server bell.png" Margin="0,0,4,0" />
                     <TextBlock Text="Call Server" VerticalAlignment="Center" FontSize="36" FontWeight="Bold" Margin="4,0,0,0" />
@@ -103,10 +103,56 @@
                 <CheckBox Grid.Column="0" x:Name="Confirmation_Checkbox" FontSize="18" Checked="Confirmation_Checkbox_Checked" IsChecked="False" Margin="16,16,16,16">
                     <TextBlock TextWrapping="WrapWithOverflow">By checking this box, you agree that the items are correct and are aware of the allergies it may contain.</TextBlock>
                 </CheckBox>
-                <Button x:Name="btn_order" Grid.Column="1" FontSize="18" VerticalAlignment="Bottom" Height="50">
-                    Confirm Order
+                <Button x:Name="btn_order" Grid.Column="1" FontSize="18" VerticalAlignment="Bottom" Height="50" Click="Place_Order_Button_Click" IsEnabled="False" FontWeight="Bold">
+                    Place Order
                 </Button>
             </Grid>
         </Grid>
+
+        <!-- pop-up for when sever button is pressed -->
+        <Canvas Name="call_server_canvas" Grid.Row="1" Visibility="Collapsed">
+            <Rectangle Fill="#66000000" Canvas.Left="0" Canvas.Top="0" Canvas.Right="0" Canvas.Bottom="0" Width="960" Height="864"/>
+            <Grid Canvas.Left="314" Canvas.Top="275" Background="White" Height="262" Width="334">
+                <StackPanel Margin="16,16,16,16">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="40" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" FontSize="20" FontWeight="Bold">Call Server</TextBlock>
+                        <Button x:Name="call_server_X_button" Grid.Column="1" Content="X" VerticalAlignment="Bottom" Background="#FFE86464" Height="27" Click="call_server_close_Click" />
+                    </Grid>
+                    <TextBlock FontSize="18" Width="300" Height="70" TextWrapping="WrapWithOverflow" Margin="0,24,0,0" HorizontalAlignment="Center"><Run Text="A server is coming to help.           Please wait!"/><LineBreak/><LineBreak/><LineBreak/></TextBlock>
+                    <TextBlock></TextBlock>
+                    <Button x:Name="call_server_cancel_button" Width="192" Height="40" Content="Cancel Request" FontSize="16" FontWeight="Bold" Background="#FFE86464" Click="call_server_cancel_button_Click" />
+                    <TextBlock></TextBlock>
+                    <!--<TextBlock HorizontalAlignment="Center">This dialog will close in 5 seconds.</TextBlock> -->
+                </StackPanel>
+            </Grid>
+        </Canvas>
+        <!-- pop-up for when Confirm order button is pressed -->
+        <Canvas Name="place_order_canvas" Grid.Row="1" Visibility="Collapsed">
+            <Rectangle Fill="#66000000" Canvas.Left="0" Canvas.Top="0" Canvas.Right="0" Canvas.Bottom="0" Width="960" Height="864"/>
+            <Grid Canvas.Left="314" Canvas.Top="275" Background="White" Height="262" Width="334">
+                <StackPanel Margin="16,16,16,16">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="40" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" FontSize="20" FontWeight="Bold">Place Order</TextBlock>
+                        <Button x:Name="a" Grid.Column="1" Content="X" VerticalAlignment="Bottom" Background="#FFE86464" Height="27" Click="place_order_canvas_close_Click" />
+                    </Grid>
+                    <TextBlock FontSize="18" Width="300" Height="28" TextWrapping="WrapWithOverflow" Margin="0,24,0,0" HorizontalAlignment="Center"><Run Text="Your order has been placed."/>
+                      <LineBreak/><LineBreak/><LineBreak/></TextBlock>
+                    <TextBlock></TextBlock>
+                    <TextBlock FontSize="18" Width="300" Height="34" TextWrapping="WrapWithOverflow" Margin="0,24,0,0" HorizontalAlignment="Center">Thank you for using the system!</TextBlock>
+                    <!-- <Button x:Name="ad" Width="192" Height="40" Content="Cancel Request" FontSize="16" FontWeight="Bold" Background="#FFE86464" Click="call_server_cancel_button_Click" /> -->
+                    <TextBlock></TextBlock>
+                    <TextBlock HorizontalAlignment="Center">You will be re-directed to main screen in 5 seconds!</TextBlock>
+                </StackPanel>
+            </Grid>
+        </Canvas>
+
     </Grid>
 </Window>

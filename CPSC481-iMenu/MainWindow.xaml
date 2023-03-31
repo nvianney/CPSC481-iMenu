@@ -29,7 +29,7 @@
             <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Table No. 05" FontSize="22" FontWeight="Bold" />
 
             <!--<Button Grid.Column="2" Margin="16,8,16,8" BorderBrush="#FFED5353" BorderThickness="5,5,5,5" Background="White">-->
-            <Button Grid.Column="2" Margin="16,8,16,8">
+            <Button Grid.Column="2" Margin="16,8,16,8" Click="Call_Server_Button_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/call server bell.png" Margin="0,0,4,0" />
                     <TextBlock Text="Call Server" VerticalAlignment="Center" FontSize="36" FontWeight="Bold" Margin="4,0,0,0" />
@@ -75,7 +75,7 @@
                         </Button>
                     </StackPanel>
                     <!-- Instead of having a bar at the buttom to display the legend I made a box on the corner-->
-                    <Button Grid.Row="1" Height="60" Width="60" Content="?" FontSize="40" FontWeight="Bold" Background="#FFE86464"/>
+                    <Button Height="60" Width="60" Content="?" FontSize="40" FontWeight="Bold" Background="#FFE86464" Margin="0,713,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Click="Help_Button_Click"/>
                 </Grid>
 
                 <!-- Menu -->
@@ -125,7 +125,7 @@
                                     <Button Name="SeafoodFreeButton" Margin ="3" Style="{StaticResource FilterItemStyle}" Click="Filter_Button_Click"/>
                                     <Image Source="allergy_images/Seafood.png" Height="50"/>
                                 </Grid>
-                                
+
                             </Grid>
                             <ItemsControl Name="menuList">
                                 <ItemsControl.ItemsPanel>
@@ -135,7 +135,9 @@
                                 </ItemsControl.ItemsPanel>
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
-                                        <local:MenuItem Id="{Binding itemId}" Title="{Binding name}" Description="{Binding description}" ImagePath="{Binding imageName}" />
+
+                                         <local:MenuItem Id="{Binding itemId}" Title="{Binding name}" Description="{Binding description}" ImagePath="{Binding imageName}" /> 
+
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
                             </ItemsControl>
@@ -200,7 +202,237 @@
                     </TextBlock>
                 </StackPanel>
             </Grid>
+        </Canvas>
+
+
+        <Canvas Name="Help_Canvas_Intro" Grid.Row="1" Visibility="Collapsed">
+            <Rectangle Fill="#66000000" Canvas.Left="0" Canvas.Top="0" Canvas.Right="0" Canvas.Bottom="0" Width="960" Height="864"/>
+            <Grid Canvas.Left="50" Canvas.Top="30" Background="White" HorizontalAlignment="Center" Height="265" VerticalAlignment="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="219*"/>
+                    <RowDefinition Height="46*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Margin="16,16,16,16" Grid.RowSpan="2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="109" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" FontSize="20" FontWeight="Bold">Tutorial</TextBlock>
+                        <Button x:Name="Help_Exit" Content="Exit Tutorial" Background="#FFE86464" Click="Help_Exit_Click" FontWeight="Bold" Grid.Column="1" />
+                    </Grid>
+
+                    <TextBlock FontSize="18" Width="300" Height="150" TextWrapping="WrapWithOverflow" Margin="0,24,0,0">
+                        Welcome to the tutorial section of iMenu. This tutorial sections aims to provide to some tips and tricks on how to use this system.<LineBreak></LineBreak><LineBreak></LineBreak> Feel free to exit anytime.
+                    </TextBlock>
+
+                </StackPanel>
+
+                <Button Name ="NextTipIntro" Content="Next Tip" HorizontalAlignment="Left" Margin="233,14,0,0" VerticalAlignment="Top" Grid.Row="1" Height="22" Width="83" Click="NextTipIntro_Click" FontWeight="Bold"/>
+            </Grid>
 
         </Canvas>
+
+        <!-- Help Tutorial tip#2-->
+        <Canvas Name="Help_Tip2" Grid.Row="1" Visibility="Collapsed">
+            <Rectangle Fill="#66000000" Canvas.Left="0" Canvas.Top="0" Canvas.Right="0" Canvas.Bottom="0" Width="960" Height="864"/>
+            <Grid Canvas.Left="50" Canvas.Top="30" Background="White" HorizontalAlignment="Center" Height="265" VerticalAlignment="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="219*"/>
+                    <RowDefinition Height="46*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Margin="16,16,16,16" Grid.RowSpan="2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="109" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" FontSize="20" FontWeight="Bold">Tutorial</TextBlock>
+                        <Button x:Name="Help_Exit_Tip_2" Content="Exit Tutorial" Background="#FFE86464" Click="Help_Exit_Click" FontWeight="Bold" Grid.Column="1" />
+                    </Grid>
+                    <TextBlock FontSize="18" Width="300" Height="150" TextWrapping="WrapWithOverflow" Margin="0,24,0,0">
+                        Tip#2<LineBreak></LineBreak><LineBreak></LineBreak> Tip#2
+                    </TextBlock>
+                </StackPanel>
+                <Button Name ="NextTip2" Content="Next Tip" HorizontalAlignment="Left" Margin="233,14,0,0" VerticalAlignment="Top" Grid.Row="1" Height="22" Width="83" Click="NextTip2_Click" FontWeight="Bold"/>
+                <Button Name ="PreviousTip2" Content="Previous Tip" HorizontalAlignment="Left" Margin="16,14,0,0" VerticalAlignment="Top" Grid.Row="1" Height="22" Width="83" Click="PreviousTip2_Click" FontWeight="Bold"/>
+            </Grid>
+            <Rectangle Height="722" Canvas.Left="647" Stroke="White" Canvas.Top="10" Width="289" RadiusX="6.54" RadiusY="6.54" StrokeThickness="5" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+        </Canvas>
+        <!-- Help Tutorial tip#3-->
+        <Canvas Name="Help_Tip3" Grid.Row="1" Visibility="Collapsed">
+            <Rectangle Fill="#66000000" Canvas.Left="0" Canvas.Top="0" Canvas.Right="0" Canvas.Bottom="0" Width="960" Height="864"/>
+            <Grid Canvas.Left="50" Canvas.Top="30" Background="White" HorizontalAlignment="Center" Height="265" VerticalAlignment="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="219*"/>
+                    <RowDefinition Height="46*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Margin="16,16,16,16" Grid.RowSpan="2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="109" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" FontSize="20" FontWeight="Bold">Tutorial</TextBlock>
+                        <Button x:Name="Help_Exit_Tip_3" Content="Exit Tutorial" Background="#FFE86464" Click="Help_Exit_Click" FontWeight="Bold" Grid.Column="1" />
+                    </Grid>
+                    <TextBlock FontSize="18" Width="300" Height="150" TextWrapping="WrapWithOverflow" Margin="0,24,0,0">
+                        Tip#3<LineBreak></LineBreak><LineBreak></LineBreak> Tip#3
+                    </TextBlock>
+                </StackPanel>
+                <Button Name ="NextTip3" Content="Next Tip" HorizontalAlignment="Left" Margin="233,14,0,0" VerticalAlignment="Top" Grid.Row="1" Height="22" Width="83" Click="NextTip3_Click" FontWeight="Bold"/>
+                <Button Name ="PreviousTip3" Content="Previous Tip" HorizontalAlignment="Left" Margin="16,14,0,0" VerticalAlignment="Top" Grid.Row="1" Height="22" Width="83" Click="PreviousTip3_Click" FontWeight="Bold"/>
+            </Grid>
+            <Rectangle Height="70" Canvas.Left="641" Stroke="White" Width="311" RadiusX="6.54" RadiusY="6.54" HorizontalAlignment="Left" VerticalAlignment="Center" StrokeThickness="5" Canvas.Top="-62"/>
+
+        </Canvas>
+        <!-- Help Tutorial tip#4-->
+        <Canvas Name="Help_Tip4" Grid.Row="1" Visibility="Collapsed">
+            <Rectangle Fill="#66000000" Canvas.Left="0" Canvas.Top="0" Canvas.Right="0" Canvas.Bottom="0" Width="960" Height="864"/>
+            <Grid Canvas.Left="50" Canvas.Top="30" Background="White" HorizontalAlignment="Center" Height="265" VerticalAlignment="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="219*"/>
+                    <RowDefinition Height="46*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Margin="16,16,16,16" Grid.RowSpan="2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="109" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" FontSize="20" FontWeight="Bold">Tutorial</TextBlock>
+                        <Button x:Name="Help_Exit_Tip_4" Content="Exit Tutorial" Background="#FFE86464" Click="Help_Exit_Click" FontWeight="Bold" Grid.Column="1" />
+                    </Grid>
+                    <TextBlock FontSize="18" Width="300" Height="150" TextWrapping="WrapWithOverflow" Margin="0,24,0,0">
+                        Tip#4<LineBreak></LineBreak><LineBreak></LineBreak> Tip#4
+                    </TextBlock>
+                </StackPanel>
+                <Button Name ="NextTip4" Content="Next Tip" HorizontalAlignment="Left" Margin="233,14,0,0" VerticalAlignment="Top" Grid.Row="1" Height="22" Width="83" Click="NextTip4_Click" FontWeight="Bold"/>
+                <Button Name ="PreviousTip4" Content="Previous Tip" HorizontalAlignment="Left" Margin="16,14,0,0" VerticalAlignment="Top" Grid.Row="1" Height="22" Width="83" Click="PreviousTip4_Click" FontWeight="Bold"/>
+            </Grid>
+            <Rectangle Height="69" Canvas.Left="624" Stroke="White" Width="320" RadiusX="6.54" RadiusY="6.54" HorizontalAlignment="Left" VerticalAlignment="Center" StrokeThickness="5" Canvas.Top="688"/>
+
+        </Canvas>
+
+        <!-- Delete confirmation canvas, blanks out the remaining screeen shows option to keep the item or delete the item-->
+        <Canvas Name="delete_confirmation_canvas" Grid.Row="1" Visibility="Collapsed">
+            <Rectangle Fill="#66000000" Canvas.Left="0" Canvas.Top="0" Canvas.Right="0" Canvas.Bottom="0" Width="960" Height="864"/>
+            <Grid Canvas.Left="314" Canvas.Top="275" Background="White" Height="262" Width="334">
+                <StackPanel Margin="16,16,16,16">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="40" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" FontSize="20" FontWeight="Bold">Delete Confirmation</TextBlock>
+                        <Button x:Name="delete_confirmation_close" Grid.Column="1" Content="X" VerticalAlignment="Bottom" Background="#FFE86464" Height="27" Click="delete_confirmation_close_Click" />
+                    </Grid>
+
+                    <TextBlock FontSize="18" Width="300" Height="70" TextWrapping="WrapWithOverflow" Margin="0,24,0,0" HorizontalAlignment="Center"><Run Text="You are about to delete the selected Item."/><LineBreak/><LineBreak/><LineBreak/></TextBlock>
+                    <Button x:Name="delete_confirmation_no_button" Width="192" Height="40" Content="No, Keep the Item" FontSize="16" FontWeight="Bold" Background="#FFABED23" Click="delete_confirmation_no_button_Click" />
+                    <TextBlock></TextBlock>
+                    <Button x:Name="delete_confirmation_yes_button" Width="192" Height="40" Content="Yes, Delete the Item" FontSize="16" FontWeight="Bold" Background="#FFE86464" Click="delete_confirmation_yes_button_Click" />
+                </StackPanel>
+            </Grid>
+        </Canvas>
+
+        <!-- pop-up for when sever button is pressed -->
+        <Canvas Name="call_server_canvas" Grid.Row="1" Visibility="Collapsed">
+            <Rectangle Fill="#66000000" Canvas.Left="0" Canvas.Top="0" Canvas.Right="0" Canvas.Bottom="0" Width="960" Height="864"/>
+            <Grid Canvas.Left="314" Canvas.Top="275" Background="White" Height="262" Width="334">
+                <StackPanel Margin="16,16,16,16">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="95" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" FontSize="20" FontWeight="Bold">Call Server</TextBlock>
+                        <Button x:Name="call_server_X_button" Grid.Column="1" Content="Close Pop-up" VerticalAlignment="Center" Background="#FFE86464" Height="27" Click="call_server_close_Click" FontWeight="Bold" />
+                    </Grid>
+
+                    <TextBlock FontSize="18" Width="300" Height="70" TextWrapping="WrapWithOverflow" Margin="0,24,0,0" HorizontalAlignment="Center"><Run Text="A server is coming to help.           Please wait!"/><LineBreak/><LineBreak/><LineBreak/></TextBlock>
+                    <TextBlock></TextBlock>
+                    <Button x:Name="call_server_cancel_button" Width="192" Height="40" Content="Cancel Request" FontSize="16" FontWeight="Bold" Background="#FFE86464" Click="call_server_cancel_button_Click" />
+                    <TextBlock></TextBlock>
+                    <!--<TextBlock HorizontalAlignment="Center">This dialog will close in 5 seconds.</TextBlock> -->
+                </StackPanel>
+            </Grid>
+        </Canvas>
+        <Button Grid.Row="1" FontSize="40" FontWeight="Bold" Background="#FFFCE8E8" Margin="0,661,899,59" Click="Open_Settings">
+            <Image Source="/Settings image.png" Height="53" Width="53"></Image>
+        </Button>
+
+
+        <!-- Settings pop-up-->
+        <Canvas Name="Settings_Pop_up" Grid.Row="1" Visibility="Collapsed">
+            <Rectangle Fill="#66000000" Canvas.Left="0" Canvas.Top="0" Canvas.Right="0" Canvas.Bottom="0" Width="960" Height="864"/>
+            <Grid Canvas.Left="314" Canvas.Top="275" Background="White" Height="432" Width="334" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <StackPanel Margin="16,16,16,16">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="95" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" FontSize="20" FontWeight="Bold">Settings</TextBlock>
+                        <Button  Name="Close_Settings_popup" Grid.Column="1" Content="Close Pop-up" VerticalAlignment="Center" Background="#FFE86464" Height="27" FontWeight="Bold" Click="Close_Settings_popup_Click"  />
+                    </Grid>
+
+                    <TextBlock FontSize="18" Width="300" Height="70" TextWrapping="WrapWithOverflow" Margin="0,24,0,0" HorizontalAlignment="Center"><LineBreak/>Select the language of the interface:<LineBreak/><LineBreak/></TextBlock>
+                    <ComboBox Height="36" SelectedIndex="0" FontWeight="Bold" FontSize="18">
+                        <Label FontWeight="Bold">English</Label>
+                        <Label FontWeight="Bold">French</Label>
+                        <Label FontWeight="Bold">Japanese</Label>
+                    </ComboBox>
+                    <TextBlock></TextBlock>
+                    <Button x:Name="Change_language_button" Width="192" Height="40" Content="Change Language" FontSize="16" FontWeight="Bold" Background="#FFE86464" Click="Change_language_button_Click" />
+                    <TextBlock></TextBlock>
+                    <TextBlock FontSize="18" Width="300" Height="31" TextWrapping="WrapWithOverflow" Margin="0,24,0,0" HorizontalAlignment="Center">Disable/Enable Pop-ups</TextBlock>
+                    <!--<Button x:Name="enable_pop_ups" Width="192" Height="40" Content="No, Keep the Pop-ups" FontSize="16" FontWeight="Bold" Background="#FFABED23" Click="" />-->
+                    <!--<Button x:Name="disable_pop_ups" Width="192" Height="40" Content="Yes, Disable the Pop-ups" FontSize="16" FontWeight="Bold" Background="#FFE86464" Click="delete_confirmation_yes_button_Click" /> -->
+                    <TabControl Height="100">
+                        <TabItem Header="Enable Pop-ups" FontWeight="Bold">
+                            <Label Content="Pop-ups are now enabled in the system" HorizontalAlignment="Center" VerticalAlignment="Center" Height="26" Width="236" RenderTransformOrigin="0.521,0.484"/>
+                        </TabItem>
+
+                        <TabItem Header="Disable Pop-ups" FontWeight="Bold">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="295*"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Content="Pop-ups are now disabled in the system" HorizontalAlignment="Center" VerticalAlignment="Center" Height="26" Width="236"/>
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                    <!--<TextBlock HorizontalAlignment="Center">This dialog will close in 5 seconds.</TextBlock> -->
+                </StackPanel>
+            </Grid>
+        </Canvas>
+
+        <!-- Language changed message pop-up -->
+        <!-- pop-up for when sever button is pressed -->
+        <Canvas Name="Change_language_pop_up" Grid.Row="1" Visibility="Collapsed">
+            <Rectangle Fill="#66000000" Canvas.Left="0" Canvas.Top="0" Canvas.Right="0" Canvas.Bottom="0" Width="960" Height="864"/>
+            <Grid Canvas.Left="314" Canvas.Top="275" Background="White" Height="262" Width="334">
+                <StackPanel Margin="16,16,16,16">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="95" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" FontSize="20" FontWeight="Bold">Change Language</TextBlock>
+                        <Button x:Name="Change_language_pop_up_close" Grid.Column="1" Content="Close Pop-up" VerticalAlignment="Center" Background="#FFE86464" Height="27" FontWeight="Bold" Click="Change_language_pop_up_close_Click" />
+                    </Grid>
+
+                    <TextBlock FontSize="18" Width="300" Height="70" TextWrapping="WrapWithOverflow" Margin="0,24,0,0" HorizontalAlignment="Center"><Run Text="Language has been changed           Please wait until the system refreshes!"/><LineBreak/><LineBreak/><LineBreak/></TextBlock>
+                    <TextBlock></TextBlock>
+                    <!--<TextBlock HorizontalAlignment="Center">This dialog will close in 5 seconds.</TextBlock> -->
+                </StackPanel>
+            </Grid>
+        </Canvas>
+
+
+
     </Grid>
 </Window>
