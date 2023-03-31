@@ -15,16 +15,9 @@
     <None Remove="expand.png" />
     <None Remove="DairyFree.png" />
     <None Remove="DairyFree2.png" />
-    <None Remove="gluten free.png" />
     <None Remove="Image1.png" />
-    <None Remove="nut pree.png" />
     <None Remove="PeanutFree.png" />
     <None Remove="PeanutFree2.png" />
-    <None Remove="Settings image.png" />
-    <None Remove="sidebar\dessert.png" />
-    <None Remove="sidebar\drink.png" />
-    <None Remove="sidebar\main.png" />
-    <None Remove="starter.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,7 +27,6 @@
       <CopyToOutputDirectory></CopyToOutputDirectory>
     </Resource>
     <Resource Include="expand.png" />
-    <Resource Include="gluten free.png" />
 	<Resource Include="Image1.png" />
 	<Resource Include="allergy_images\Seafood.png" />
 	<Resource Include="allergy_images\Vegan.png" />
@@ -46,12 +38,11 @@
 	<Resource Include="allergy_images\sugar free.png" />
 	<Resource Include="allergy_images\egg free.png" />
 	<Resource Include="allergy_images\contains fish.png" />
-	<Resource Include="nut pree.png" />
-	<Resource Include="Settings image.png" />
 	<Resource Include="sidebar\dessert.png" />
     <Resource Include="sidebar\drink.png" />
     <Resource Include="sidebar\main.png" />
     <Resource Include="sidebar\starter.png" />
+	<Resource Include="sidebar\sides.png" />
   </ItemGroup>
 
   <ItemGroup>

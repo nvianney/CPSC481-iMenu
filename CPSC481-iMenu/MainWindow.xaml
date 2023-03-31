@@ -57,18 +57,21 @@
                         <RowDefinition Height="*" />
                         <RowDefinition Height="60" />
                     </Grid.RowDefinitions>
-                    <StackPanel Grid.Column="0" Background="#FFD8FFAB">
-                        <Button Height="80" Margin="0,8,0,8">
-                            <Image Height="80" Source="/sidebar/starter.png" />
+                    <StackPanel Grid.Column="0" Background="AliceBlue">
+                        <Button Name="StartersButton" Background="White" Margin="0,0,0,0" BorderBrush="#312E5F" BorderThickness="1" Click="Sidebar_Button_Click">
+                            <Image Height="80" Source="/sidebar/starter.png" Stretch="Fill" />
                         </Button>
-                        <Button Height="80" Margin="0,8,0,8" >
-                            <Image Height="80" Source="/sidebar/main.png" />
+                        <Button Name="MainsButton" Background="White" Margin="0,0,0,0" BorderBrush="#312E5F" BorderThickness="1" Click="Sidebar_Button_Click">
+                            <Image Height="80" Source="/sidebar/main.png" Stretch="Fill"/>
                         </Button>
-                        <Button Height="80" Margin="0,8,0,8" >
-                            <Image Height="80" Source="/sidebar/drink.png" />
+                        <Button Name="SidesButton" Background="White" Margin="0,0,0,0" BorderBrush="#312E5F" BorderThickness="1" Click="Sidebar_Button_Click">
+                            <Image Height="80" Source="/sidebar/sides.png" Stretch="Fill"/>
                         </Button>
-                        <Button Height="80" Margin="0,8,0,8" >
-                            <Image Height="80" Source="/sidebar/dessert.png" />
+                        <Button Name="DrinksButton" Background="White" Margin="0,0,0,0" BorderBrush="#312E5F" BorderThickness="1" Click="Sidebar_Button_Click">
+                            <Image Height="80" Source="/sidebar/drink.png" Stretch="Fill"/>
+                        </Button>
+                        <Button Name="DessertsButton" Background="White" Margin="0,0,0,0" BorderBrush="#312E5F" BorderThickness="1" Click="Sidebar_Button_Click">
+                            <Image Height="80" Source="/sidebar/dessert.png" Stretch="Fill" />
                         </Button>
                     </StackPanel>
                     <!-- Instead of having a bar at the buttom to display the legend I made a box on the corner-->
@@ -124,7 +127,6 @@
                                 </Grid>
 
                             </Grid>
-                            <Separator/>
                             <ItemsControl Name="menuList">
                                 <ItemsControl.ItemsPanel>
                                     <ItemsPanelTemplate>
