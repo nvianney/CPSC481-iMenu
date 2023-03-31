@@ -72,7 +72,7 @@
                         </Button>
                     </StackPanel>
                     <!-- Instead of having a bar at the buttom to display the legend I made a box on the corner-->
-                    <Button Height="60" Width="60" Content="?" FontSize="40" FontWeight="Bold" Background="#FFE86464" Margin="0,723,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Click="Help_Button_Click"/>
+                    <Button Height="60" Width="60" Content="?" FontSize="40" FontWeight="Bold" Background="#FFE86464" Margin="0,713,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Click="Help_Button_Click"/>
                 </Grid>
 
                 <!-- Menu -->

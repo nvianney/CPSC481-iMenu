@@ -73,6 +73,7 @@ namespace CPSC481_iMenu
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            //add a condition if the item is already in the order, increase its quantity
             Items.Store.Add(
                 new Items.AddedItem()
                 {
