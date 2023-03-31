@@ -12,6 +12,7 @@
                 <RowDefinition Height="0.2*" />
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="0.18*" />
+                <RowDefinition Height="0.18*" />
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0">
@@ -39,14 +40,16 @@
                 <Image x:Name="expand_menu" Grid.Column="0" Stretch="UniformToFill" Source="{Binding ImagePath, RelativeSource={RelativeSource AncestorType=UserControl}}" />
 
             </Grid>
-
-            <Grid Grid.Row="2">
+            
+            <TextBlock Grid.Row="2"  Text="{Binding Description, RelativeSource={RelativeSource AncestorType=UserControl}}" VerticalAlignment="Center" Margin="0,0,0,0" FontSize="12" TextWrapping="Wrap"/>
+            
+            <Grid Grid.Row="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="55" />
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Grid.Column="0" Text="{Binding Description, RelativeSource={RelativeSource AncestorType=UserControl}}" VerticalAlignment="Center" Margin="0,0,0,0" FontSize="12" TextWrapping="Wrap"/>
+                <TextBlock Grid.Column="0" VerticalAlignment="Center" Margin="0,0,0,0" FontSize="18" TextWrapping="Wrap" Text="{Binding CostString, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
 
                 <!-- Consider using an image -->
                 <Button Grid.Column="1" Content="Add" HorizontalAlignment="Stretch" FontSize="22" Click="Button_Click"/>
