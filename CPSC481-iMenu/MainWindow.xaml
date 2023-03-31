@@ -141,6 +141,7 @@
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
                             </ItemsControl>
+                            <TextBlock Name="NoResultsMessage" TextWrapping="Wrap" Text="No results match your filtering criteria." HorizontalAlignment="Center" Margin="0,16,0,-6"/>
 
                         </StackPanel>
                     </ScrollViewer>
@@ -173,7 +174,7 @@
                             </ItemsControl.ItemsPanel>
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <local:OrderItem Id="{Binding itemId}" Timestamp="{Binding timestamp}" Quantity="{Binding quantity}" />
+                                    <local:OrderItem Id="{Binding itemId}" Timestamp="{Binding timestamp}" Quantity="{Binding quantity}" Height="200" />
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>

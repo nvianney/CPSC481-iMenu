@@ -5,13 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CPSC481_iMenu"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="275">
+             d:DesignHeight="200" d:DesignWidth="275">
     <Grid Background="White" Margin="12,12,12,12">
         <Grid Margin="12,12,12,12" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.25*" />
+                <RowDefinition Height="0.3*" />
                 <RowDefinition Height="1*" />
-                <RowDefinition Height="0.2*" />
+                <RowDefinition Height="0.3*" />
                 <RowDefinition Height="0.1*" />
             </Grid.RowDefinitions>
 
@@ -32,7 +32,7 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Image x:Name="image" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="UniformToFill" Source="{Binding ImagePath, RelativeSource={RelativeSource AncestorType=UserControl}}" />
+                <Image x:Name="image" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="/ChummyJoes.png" Stretch="UniformToFill" />
 
             </Grid>
 
