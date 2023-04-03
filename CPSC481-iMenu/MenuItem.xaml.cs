@@ -54,6 +54,22 @@ namespace CPSC481_iMenu
             set { SetValue(DescriptionProperty, value); }
         }
 
+        public static readonly DependencyProperty CostProperty = DependencyProperty.Register(
+            nameof(Cost),
+            typeof(float),
+            typeof(MenuItem));
+
+        public float Cost
+        {
+            get { return (float)GetValue(CostProperty); }
+            set { SetValue(CostProperty, value); }
+        }
+
+        public string CostString
+        {
+            get { return String.Format("${0:0.00}", Cost); }
+        }
+
         public static readonly DependencyProperty ImagePathProperty = DependencyProperty.Register(
             nameof(ImagePath),
             typeof(string),

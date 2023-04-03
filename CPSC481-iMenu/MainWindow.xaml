@@ -98,32 +98,32 @@
 
                                 <Grid Grid.Column="0" Grid.Row="0" Width="95" Height="70">
                                     <Button Name="VegetarianButton" Margin ="3" Style="{StaticResource FilterItemStyle}" Click="Filter_Button_Click"/>
-                                    <Image Source="allergy_images/Vegetarian.png" Height="55" Width="55"/>
+                                    <Image Source="allergy_images/Vegetarian.png" Height="55" Width="55" IsHitTestVisible="False"/>
                                 </Grid>
 
                                 <Grid Grid.Column="1" Grid.Row="0" Width="95" Height="70">
                                     <Button Name="VeganButton" Margin ="3" Style="{StaticResource FilterItemStyle}" Click="Filter_Button_Click"/>
-                                    <Image Source="allergy_images/Vegan.png" Height="50"/>
+                                    <Image Source="allergy_images/Vegan.png" Height="50" IsHitTestVisible="False"/>
                                 </Grid>
 
                                 <Grid Grid.Column="2" Grid.Row="0" Width="95" Height="70">
                                     <Button Name="GlutenFreeButton" Margin ="3" Style="{StaticResource FilterItemStyle}" Click="Filter_Button_Click"/>
-                                    <Image Source="allergy_images/gluten free.png" Height="50"/>
+                                    <Image Source="allergy_images/gluten free.png" Height="50" IsHitTestVisible="False"/>
                                 </Grid>
 
                                 <Grid Grid.Column="3" Grid.Row="0" Width="95" Height="70">
                                     <Button Name="DairyFreeButton" Margin ="3" Style="{StaticResource FilterItemStyle}" Click="Filter_Button_Click"/>
-                                    <Image Source="allergy_images/dairy free.png" Height="50"/>
+                                    <Image Source="allergy_images/dairy free.png" Height="50" IsHitTestVisible="False"/>
                                 </Grid>
 
                                 <Grid Grid.Column="4" Grid.Row="0" Width="95" Height="70">
                                     <Button Name="NutFreeButton" Margin ="3" Style="{StaticResource FilterItemStyle}" Click="Filter_Button_Click"/>
-                                    <Image Source="allergy_images/nut pree.png" Height="50"/>
+                                    <Image Source="allergy_images/nut pree.png" Height="50" IsHitTestVisible="False"/>
                                 </Grid>
 
                                 <Grid Grid.Column="5" Grid.Row="0" Width="95" Height="70">
                                     <Button Name="SeafoodFreeButton" Margin ="3" Style="{StaticResource FilterItemStyle}" Click="Filter_Button_Click"/>
-                                    <Image Source="allergy_images/Seafood.png" Height="50"/>
+                                    <Image Source="allergy_images/Seafood.png" Height="50" IsHitTestVisible="False"/>
                                 </Grid>
 
                             </Grid>
@@ -136,11 +136,12 @@
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
 
-                                         <local:MenuItem Id="{Binding itemId}" Title="{Binding name}" Description="{Binding description}" ImagePath="{Binding imageName}" /> 
+                                         <local:MenuItem Id="{Binding itemId}" Title="{Binding name}" Description="{Binding description}" Cost="{Binding cost}" ImagePath="{Binding imageName}" /> 
 
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
                             </ItemsControl>
+                            <TextBlock Name="NoResultsMessage" TextWrapping="Wrap" Text="No results match your filtering criteria." HorizontalAlignment="Center" Margin="0,16,0,-6"/>
 
                         </StackPanel>
                     </ScrollViewer>
@@ -173,7 +174,7 @@
                             </ItemsControl.ItemsPanel>
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <local:OrderItem Id="{Binding itemId}" Timestamp="{Binding timestamp}" Quantity="{Binding quantity}" />
+                                    <local:OrderItem Id="{Binding itemId}" Timestamp="{Binding timestamp}" Quantity="{Binding quantity}" Height="200" />
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>

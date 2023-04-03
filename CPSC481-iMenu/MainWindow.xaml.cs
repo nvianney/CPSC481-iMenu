@@ -91,6 +91,7 @@ namespace CPSC481_iMenu
         {
             Console.WriteLine("Update");
             orderList.ItemsSource = Items.Store.ToList();
+
         }
 
         public void OrderButton_Click(object sender, RoutedEventArgs e)
@@ -308,7 +309,18 @@ namespace CPSC481_iMenu
             //Apply changes
             menuList.ItemsSource = filteredMenuItems;
             Items.Store.CollectionChanged += StoreChanged;
+
+            if (filteredMenuItems.Count == 0)
+            {
+                NoResultsMessage.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                NoResultsMessage.Visibility = Visibility.Collapsed;
+            }
         }
+
+
 
        
     }
