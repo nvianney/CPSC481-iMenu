@@ -252,7 +252,7 @@
                         <Button x:Name="Help_Exit_Tip_2" Content="Exit Tutorial" Background="#FFE86464" Click="Help_Exit_Click" FontWeight="Bold" Grid.Column="1" />
                     </Grid>
                     <TextBlock FontSize="18" Width="300" Height="150" TextWrapping="WrapWithOverflow" Margin="0,24,0,0">
-                        Tip#2<LineBreak></LineBreak><LineBreak></LineBreak> Tip#2
+                    <TextBlock FontWeight="Bold" FontSize="20"> Your Order Panel</TextBlock><LineBreak></LineBreak><LineBreak></LineBreak> This section displays your current order list.
                     </TextBlock>
                 </StackPanel>
                 <Button Name ="NextTip2" Content="Next Tip" HorizontalAlignment="Left" Margin="233,14,0,0" VerticalAlignment="Top" Grid.Row="1" Height="22" Width="83" Click="NextTip2_Click" FontWeight="Bold"/>
@@ -279,7 +279,7 @@
                         <Button x:Name="Help_Exit_Tip_3" Content="Exit Tutorial" Background="#FFE86464" Click="Help_Exit_Click" FontWeight="Bold" Grid.Column="1" />
                     </Grid>
                     <TextBlock FontSize="18" Width="300" Height="150" TextWrapping="WrapWithOverflow" Margin="0,24,0,0">
-                        Tip#3<LineBreak></LineBreak><LineBreak></LineBreak> Tip#3
+                        <TextBlock FontWeight="Bold" FontSize="20"> Call Server Button</TextBlock><LineBreak></LineBreak><LineBreak></LineBreak>If you need any assistance during any step, you can click this button to call the server to help.
                     </TextBlock>
                 </StackPanel>
                 <Button Name ="NextTip3" Content="Next Tip" HorizontalAlignment="Left" Margin="233,14,0,0" VerticalAlignment="Top" Grid.Row="1" Height="22" Width="83" Click="NextTip3_Click" FontWeight="Bold"/>
@@ -306,10 +306,10 @@
                         <Button x:Name="Help_Exit_Tip_4" Content="Exit Tutorial" Background="#FFE86464" Click="Help_Exit_Click" FontWeight="Bold" Grid.Column="1" />
                     </Grid>
                     <TextBlock FontSize="18" Width="300" Height="150" TextWrapping="WrapWithOverflow" Margin="0,24,0,0">
-                        Tip#4<LineBreak></LineBreak><LineBreak></LineBreak> Tip#4
+                         <TextBlock FontWeight="Bold" FontSize="20"> Place Order Button</TextBlock><LineBreak></LineBreak><LineBreak></LineBreak>Once you are ready to place your order, click this button. You will be redirected to Order Confirmation screen.
                     </TextBlock>
                 </StackPanel>
-                <Button Name ="NextTip4" Content="Next Tip" HorizontalAlignment="Left" Margin="233,14,0,0" VerticalAlignment="Top" Grid.Row="1" Height="22" Width="83" Click="NextTip4_Click" FontWeight="Bold"/>
+                <Button Name ="NextTip4" Content="End Tutorial" HorizontalAlignment="Left" Margin="233,14,0,0" VerticalAlignment="Top" Grid.Row="1" Height="22" Width="83" Click="NextTip4_Click" FontWeight="Bold"/>
                 <Button Name ="PreviousTip4" Content="Previous Tip" HorizontalAlignment="Left" Margin="16,14,0,0" VerticalAlignment="Top" Grid.Row="1" Height="22" Width="83" Click="PreviousTip4_Click" FontWeight="Bold"/>
             </Grid>
             <Rectangle Height="69" Canvas.Left="624" Stroke="White" Width="320" RadiusX="6.54" RadiusY="6.54" HorizontalAlignment="Left" VerticalAlignment="Center" StrokeThickness="5" Canvas.Top="688"/>
@@ -382,8 +382,9 @@
                     <TextBlock FontSize="18" Width="300" Height="70" TextWrapping="WrapWithOverflow" Margin="0,24,0,0" HorizontalAlignment="Center"><LineBreak/>Select the language of the interface:<LineBreak/><LineBreak/></TextBlock>
                     <ComboBox Height="36" SelectedIndex="0" FontWeight="Bold" FontSize="18">
                         <Label FontWeight="Bold">English</Label>
-                        <Label FontWeight="Bold">French</Label>
-                        <Label FontWeight="Bold">Japanese</Label>
+                        <Label FontWeight="Bold">Français</Label>
+                        <Label FontWeight="Bold">日本</Label>
+                        <Label FontWeight="Bold">हिंदी</Label>
                     </ComboBox>
                     <TextBlock></TextBlock>
                     <Button x:Name="Change_language_button" Width="192" Height="40" Content="Change Language" FontSize="16" FontWeight="Bold" Background="#FFE86464" Click="Change_language_button_Click" />

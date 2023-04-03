@@ -18,6 +18,7 @@
     <None Remove="Image1.png" />
     <None Remove="PeanutFree.png" />
     <None Remove="PeanutFree2.png" />
+    <None Remove="Settings image.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,6 +39,7 @@
 	<Resource Include="allergy_images\sugar free.png" />
 	<Resource Include="allergy_images\egg free.png" />
 	<Resource Include="allergy_images\contains fish.png" />
+	<Resource Include="Settings image.png" />
 	<Resource Include="sidebar\dessert.png" />
     <Resource Include="sidebar\drink.png" />
     <Resource Include="sidebar\main.png" />
