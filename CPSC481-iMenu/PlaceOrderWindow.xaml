@@ -130,10 +130,11 @@
                 </StackPanel>
             </Grid>
         </Canvas>
+
         <!-- pop-up for when Confirm order button is pressed -->
         <Canvas Name="place_order_canvas" Grid.Row="1" Visibility="Collapsed">
             <Rectangle Fill="#66000000" Canvas.Left="0" Canvas.Top="0" Canvas.Right="0" Canvas.Bottom="0" Width="960" Height="864"/>
-            <Grid Canvas.Left="314" Canvas.Top="275" Background="White" Height="262" Width="334">
+            <Grid Canvas.Left="312" Canvas.Top="284" Background="White" Height="296" Width="336">
                 <StackPanel Margin="16,16,16,16">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -149,7 +150,12 @@
                     <TextBlock FontSize="18" Width="300" Height="34" TextWrapping="WrapWithOverflow" Margin="0,24,0,0" HorizontalAlignment="Center">Thank you for using the system!</TextBlock>
                     <!-- <Button x:Name="ad" Width="192" Height="40" Content="Cancel Request" FontSize="16" FontWeight="Bold" Background="#FFE86464" Click="call_server_cancel_button_Click" /> -->
                     <TextBlock></TextBlock>
-                    <TextBlock HorizontalAlignment="Center">You will be re-directed to main screen in 5 seconds!</TextBlock>
+                   
+                    <!-- Track order button -->
+                    <Button x:Name="btn_trackOrder" FontSize="20" Background="#FFF5BABA" Click="btn_trackOrder_Click" Width="202" Height="50" FontWeight="Bold" Content="Track Order" />
+                    <TextBlock></TextBlock>
+
+                    <TextBlock HorizontalAlignment="Center">You will be re-directed to main screen in 10 seconds!</TextBlock>
                 </StackPanel>
             </Grid>
         </Canvas>

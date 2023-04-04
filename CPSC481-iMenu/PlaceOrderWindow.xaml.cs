@@ -138,5 +138,28 @@ namespace CPSC481_iMenu
         {
             place_order_canvas.Visibility = Visibility.Collapsed;
         }
+
+        private void btn_trackOrder_Click(object sender, RoutedEventArgs e)
+        {
+            //this.Close();
+            //find Main Window (for this project it is set to DietryRestrictionScreen as that is opened first
+            //make the order tracker visible
+            //Track_Order_Result_Popup
+            MainWindow menuWindow;
+            foreach (Window window in Application.Current.Windows)
+            {
+                if(window.Title.Equals("Menu Window"))
+                {
+                    menuWindow = (MainWindow)window;
+                    menuWindow.Track_Order_Result_Popup.Visibility = Visibility.Visible;
+                    this.Close();
+                    break;
+                }
+            }
+           
+
+
+
+        }
     }
 }
