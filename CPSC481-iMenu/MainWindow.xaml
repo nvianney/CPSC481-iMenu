@@ -383,7 +383,7 @@
                     <ComboBox Height="36" SelectedIndex="0" FontWeight="Bold" FontSize="18">
                         <Label FontWeight="Bold">English</Label>
                         <Label FontWeight="Bold">Français</Label>
-                        <Label FontWeight="Bold">日本</Label>
+                        <Label FontWeight="Bold">日本語</Label>
                         <Label FontWeight="Bold">हिंदी</Label>
                     </ComboBox>
                     <TextBlock></TextBlock>

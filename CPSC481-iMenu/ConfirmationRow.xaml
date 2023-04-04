@@ -5,9 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CPSC481_iMenu"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="600" Background="White" Margin="0,8,0,8">
+             d:DesignHeight="300" d:DesignWidth="850" Background="White" Margin="0,8,0,8">
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
@@ -16,13 +17,34 @@
         </Grid.ColumnDefinitions>
 
         <Image x:Name="image" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="{Binding ImagePath, RelativeSource={RelativeSource AncestorType=UserControl}}" Margin="8,8,8,8" />
-        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" Text="{Binding Title, RelativeSource={RelativeSource AncestorType=UserControl}}"></TextBlock>
-        <StackPanel Grid.Column="2" VerticalAlignment="Center">
+        <StackPanel Grid.Column="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Image x:Name="Vegetarian" Grid.Column="0" Grid.Row="0" Source="{Binding ImageAllergyPath, RelativeSource={RelativeSource AncestorType=UserControl}}" />
+                <Image x:Name="Vegan" Grid.Column="1" Grid.Row="1" Source="{Binding ImageAllergyPath, RelativeSource={RelativeSource AncestorType=UserControl}}" />
+                <Image x:Name="GlutenFree" Grid.Column="0" Grid.Row="2" Source="{Binding ImageAllergyPath, RelativeSource={RelativeSource AncestorType=UserControl}}" />
+                <Image x:Name="DairayFree" Grid.Column="1" Grid.Row="0" Source="{Binding ImageAllergyPath, RelativeSource={RelativeSource AncestorType=UserControl}}" />
+                <Image x:Name="NutFree" Grid.Column="0" Grid.Row="1" Source="{Binding ImageAllergyPath, RelativeSource={RelativeSource AncestorType=UserControl}}" />
+                <Image x:Name="SeafoodFree" Grid.Column="1" Grid.Row="2" Source="{Binding ImageAllergyPath, RelativeSource={RelativeSource AncestorType=UserControl}}" />
+
+            </Grid>
+        </StackPanel>
+        <TextBlock Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" Text="{Binding Title, RelativeSource={RelativeSource AncestorType=UserControl}}"></TextBlock>
+        <StackPanel Grid.Column="3" VerticalAlignment="Center">
             <TextBlock Text="{Binding QuantityString, RelativeSource={RelativeSource AncestorType=UserControl}}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12"/>
             <TextBlock Text="{Binding TotalCostString, RelativeSource={RelativeSource AncestorType=UserControl}}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"/>
         </StackPanel>
-        <Button Grid.Column="3" Content="Edit" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="25" />
-        <Button x:Name="exit" Grid.Column="4" Content="X" Background="#FFE86464" VerticalAlignment="Center" HorizontalAlignment="Center" Width="30" Height="30" Click="exit_Click"/>
+        <Button Grid.Column="4" Content="Edit" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="25" />
+        <Button x:Name="exit" Grid.Column="5" Content="X" Background="#FFE86464" VerticalAlignment="Center" HorizontalAlignment="Center" Width="30" Height="30" Click="exit_Click"/>
 
 
     </Grid>
