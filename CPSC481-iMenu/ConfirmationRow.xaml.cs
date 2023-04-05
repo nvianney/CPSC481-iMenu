@@ -20,16 +20,6 @@ namespace CPSC481_iMenu
     /// </summary>
     public partial class ConfirmationRow : UserControl
     {
-        public static readonly DependencyProperty TimestampProperty = DependencyProperty.Register(
-            nameof(Timestamp),
-            typeof(long),
-            typeof(ConfirmationRow));
-
-        public long Timestamp
-        {
-            get { return (long)GetValue(TimestampProperty); }
-            set { SetValue(TimestampProperty, value); }
-        }
 
         public static readonly DependencyProperty IdProperty = DependencyProperty.Register(
             nameof(Id),
@@ -86,7 +76,7 @@ namespace CPSC481_iMenu
 
         private void exit_Click(object sender, RoutedEventArgs e)
         {
-            Items.Store.Remove(Items.Store.First(x => x.timestamp == Timestamp));
+            Items.Store.Remove(Items.Store.First(x => x.itemId == Id));
         }
     }
 }

@@ -241,7 +241,6 @@ namespace CPSC481_iMenu
 
         internal class AddedItem
         {
-            public long timestamp { get; set; }
             public int itemId { get; set; }
             public int quantity { get; set; }
         }
