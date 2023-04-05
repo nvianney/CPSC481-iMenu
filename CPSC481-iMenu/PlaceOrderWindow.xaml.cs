@@ -23,7 +23,12 @@ namespace CPSC481_iMenu
     /// </summary>
     public partial class PlaceOrderWindow : Window
     {
-        bool isCallServerPressed = false;
+        bool isCallServerPressed = false; 
+
+        public string TotalCostStr
+        {
+            get { return String.Format("Total: ${0:0.00}", Items.Store.Sum((item) => item.quantity * Items.Data[item.itemId].cost)); }
+        }
 
         public PlaceOrderWindow()
         {
