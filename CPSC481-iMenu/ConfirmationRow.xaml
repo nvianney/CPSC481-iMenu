@@ -17,26 +17,19 @@
         </Grid.ColumnDefinitions>
 
         <Image x:Name="image" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="{Binding ImagePath, RelativeSource={RelativeSource AncestorType=UserControl}}" Margin="8,8,8,8" />
-        <StackPanel Grid.Column="1">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-
-                <Image x:Name="Vegetarian" Grid.Column="0" Grid.Row="0" Source="{Binding ImageAllergyPath, RelativeSource={RelativeSource AncestorType=UserControl}}" />
-                <Image x:Name="Vegan" Grid.Column="1" Grid.Row="1" Source="{Binding ImageAllergyPath, RelativeSource={RelativeSource AncestorType=UserControl}}" />
-                <Image x:Name="GlutenFree" Grid.Column="0" Grid.Row="2" Source="{Binding ImageAllergyPath, RelativeSource={RelativeSource AncestorType=UserControl}}" />
-                <Image x:Name="DairayFree" Grid.Column="1" Grid.Row="0" Source="{Binding ImageAllergyPath, RelativeSource={RelativeSource AncestorType=UserControl}}" />
-                <Image x:Name="NutFree" Grid.Column="0" Grid.Row="1" Source="{Binding ImageAllergyPath, RelativeSource={RelativeSource AncestorType=UserControl}}" />
-                <Image x:Name="SeafoodFree" Grid.Column="1" Grid.Row="2" Source="{Binding ImageAllergyPath, RelativeSource={RelativeSource AncestorType=UserControl}}" />
-
-            </Grid>
+        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                <ItemsControl ItemsSource="{Binding ImageAllergyPath, RelativeSource={RelativeSource AncestorType=UserControl}}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Image Grid.Column="0" Grid.Row="0" Source="{Binding imgSource}" Margin="0.5" Width="30" Height="30" Stretch="UniformToFill"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
         </StackPanel>
         <TextBlock Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" Text="{Binding Title, RelativeSource={RelativeSource AncestorType=UserControl}}"></TextBlock>
         <StackPanel Grid.Column="3" VerticalAlignment="Center">

@@ -73,7 +73,7 @@ namespace CPSC481_iMenu
         public float cost { get; set; }
         public String[] ingredients { get; set; }
 
-        public DietaryRestrictionModel[] dietaryRestrictions;
+        public DietaryRestrictionModel[] dietaryRestrictions { get; set; }
         public MenuItemCategoryModel menuItemCategory;
     }
 
