@@ -372,6 +372,37 @@ namespace CPSC481_iMenu
                             },
                             menuItemCategory = MenuItemCategoryList.menuItemCategories[MenuItemCategory.DRINK]
                         },
+                        new DishModel()
+                        {
+                            name = "Grapefruit Crudo",
+                            description = "Bittersweet grapefruit segments get the raw fish treatment in this winter salad. Crunchy radishes, spicy-floral Fresno chile, toasted cashews, and creamy avocado add texture while a bright, savory dressing made from salty fish sauce and lime juice balance flavor. (If your grapefruit is more bitter than sweet, add an additional teaspoon of honey.) Calling it a crudo gives you permission to get as fancy with the assembly and styling as you like. ",
+                            imageName = "/ChummyJoes.png",
+                            cost = 8.50f,
+                            dietaryRestrictions = new DietaryRestrictionModel[]{
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGETARIAN],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGAN],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.GLUTEN_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.DAIRY_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.SEAFOOD_FREE],
+                            },
+                            menuItemCategory = MenuItemCategoryList.menuItemCategories[MenuItemCategory.STARTER]
+                        },
+                        new DishModel()
+                        {
+                            name = "Shrimp Cocktail",
+                            description = "made out of fresh oranges",
+                            imageName = "/ChummyJoes.png",
+                            cost = 5.00f,
+                            dietaryRestrictions = new DietaryRestrictionModel[]{
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGETARIAN],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGAN],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.GLUTEN_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.DAIRY_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.SEAFOOD_FREE],
+                            },
+                            menuItemCategory = MenuItemCategoryList.menuItemCategories[MenuItemCategory.DRINK]
+                        },
 
                     };
 
