@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static CPSC481_iMenu.Items;
 
 namespace CPSC481_iMenu
 {
@@ -20,17 +21,6 @@ namespace CPSC481_iMenu
     /// </summary>
     public partial class OrderItem : UserControl
     {
-
-        public static readonly DependencyProperty TimestampProperty = DependencyProperty.Register(
-            nameof(Timestamp),
-            typeof(long),
-            typeof(OrderItem));
-
-        public long Timestamp
-        {
-            get { return (long)GetValue(TimestampProperty); }
-            set { SetValue(TimestampProperty, value); }
-        }
 
         public static readonly DependencyProperty IdProperty = DependencyProperty.Register(
             nameof(Id),
@@ -166,7 +156,26 @@ namespace CPSC481_iMenu
 
         private void exit_Click(object sender, RoutedEventArgs e)
         {
-            Items.Store.Remove(Items.Store.First(x => x.timestamp == Timestamp));
+            Items.Store.Remove(Items.Store.First(x => x.itemId == Id));
+        }
+
+        private void Minus_Click(object sender, RoutedEventArgs e)
+        {
+            int index = Items.Store.ToList().FindIndex(x => x.itemId == Id);
+            AddedItem item = Items.Store[index];
+            Items.Store.RemoveAt(index);
+            item.quantity = Math.Max(1, item.quantity - 1);
+            Items.Store.Insert(index, item);
+
+        }
+
+        private void Plus_Click(object sender, RoutedEventArgs e)
+        {
+            int index = Items.Store.ToList().FindIndex(x => x.itemId == Id);
+            AddedItem item = Items.Store[index];
+            Items.Store.RemoveAt(index);
+            item.quantity = Math.Max(1, item.quantity + 1);
+            Items.Store.Insert(index, item);
         }
 
     }
