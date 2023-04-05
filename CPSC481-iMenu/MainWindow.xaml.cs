@@ -384,6 +384,10 @@ namespace CPSC481_iMenu
             }
         }
 
-     
+        private void btn_track_another_order_Click(object sender, RoutedEventArgs e)
+        {
+            Track_Order_Result_Popup.Visibility = Visibility.Collapsed;
+            Track_Order_Popup.Visibility = Visibility.Visible;
+        }
     }
 }

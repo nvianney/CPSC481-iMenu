@@ -75,7 +75,7 @@
                         </Button>
                     </StackPanel>
                     <!-- Instead of having a bar at the buttom to display the legend I made a box on the corner-->
-                    <Button Height="60" Width="60" Content="?" FontSize="40" FontWeight="Bold" Background="#FFE86464" Margin="0,713,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Click="Help_Button_Click"/>
+                    <Button Width="60" Content="?" FontSize="40" FontWeight="Bold" Background="#FFE86464" Margin="0,713,0,0" Grid.RowSpan="2" Click="Help_Button_Click" Height="60" VerticalAlignment="Top"/>
                 </Grid>
 
                 <!-- Menu -->
@@ -481,9 +481,16 @@
                         <TextBlock Grid.Column="0" FontSize="20" FontWeight="Bold">Order Tracker</TextBlock>
                         <Button x:Name="Track_Order_Popup_Close" Grid.Column="1" Content="Close Pop-up" VerticalAlignment="Center" Background="#FFE86464" Height="27" FontWeight="Bold" Click="Track_Order_Popup_Close_Click" />
                     </Grid>
-                    <TextBlock FontSize="18" Width="300" Height="70" TextWrapping="WrapWithOverflow" Margin="0,24,0,0" HorizontalAlignment="Center"><Run Text="Please enter the phone number used to place the order: "/><LineBreak/><LineBreak/><LineBreak/></TextBlock>
+                    <TextBlock FontSize="18" Width="300" Height="32" TextWrapping="WrapWithOverflow" Margin="0,24,0,0" HorizontalAlignment="Center"><Run Text="Select the order number from the list: "/><LineBreak/><LineBreak/><LineBreak/></TextBlock>
                     <TextBlock></TextBlock>
-                    <TextBox Name ="phn_number" Background="#FFF1D9D9" FontSize="18" MouseEnter="TextBox_MouseEnter" MouseLeave="TextBox_MouseLeave" InputScope="TelephoneNumber" MaxLength="10" Text="555-555-55555" >
+                    <ComboBox Height="36" SelectedIndex="0" FontWeight="Bold" FontSize="18">
+                        <Label FontWeight="Bold">#12345</Label>
+                        <Label FontWeight="Bold">#23456</Label>
+                        <Label FontWeight="Bold">#34567</Label>
+                        <Label FontWeight="Bold">#45678</Label>
+                    </ComboBox>
+                    <TextBlock></TextBlock>
+                    <TextBox Visibility ="Collapsed" Name ="phn_number" Background="#FFF1D9D9" FontSize="18" MouseEnter="TextBox_MouseEnter" MouseLeave="TextBox_MouseLeave" InputScope="TelephoneNumber" MaxLength="10" Text="555-555-55555" >
                     </TextBox>
                     <TextBlock></TextBlock>
                     <Button x:Name="btn_order_status" Width="192" Height="40" Content="Check Status" FontSize="16" FontWeight="Bold" Background="#FFE86464" Click="btn_order_status_Click"  />
@@ -494,7 +501,7 @@
         <!-- Order Tracker Result -->
         <Canvas Name="Track_Order_Result_Popup" Grid.Row="1" Visibility="Collapsed" >
             <Rectangle Fill="#66000000" Canvas.Left="0" Canvas.Top="0" Canvas.Right="0" Canvas.Bottom="0" Width="960" Height="864"/>
-            <Grid Canvas.Left="153" Canvas.Top="216" Background="White" Height="275" Width="654" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Grid Canvas.Left="153" Canvas.Top="216" Background="White" Height="333" Width="649" HorizontalAlignment="Left" VerticalAlignment="Top">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="28*"/>
                     <RowDefinition Height="103*"/>
@@ -535,6 +542,7 @@
                     <TextBlock Width="609" Height="23"><Run Text="Additonal Notes: Chef James is preparing your food"/></TextBlock>
                     <TextBlock Margin="224,0,0,0" FontWeight="Bold" FontSize="14" HorizontalAlignment="Left" Width="198" Height="23" VerticalAlignment="Center"><Run Text="Expected Arrival: 10 Minutes"/></TextBlock>
                     <TextBlock></TextBlock>
+                    <Button Name="btn_track_another_order" FontSize="20" Background="#FFF5BABA" Width="207" Height="45" FontWeight="Bold" Content="Track Another Order" HorizontalAlignment="Right" Click="btn_track_another_order_Click" />
                     <!--
                     <Button   Click="Call_Server_Button_Click" RenderTransformOrigin="0.5,0.5" Height="41" Width="256">
                         <StackPanel Orientation="Horizontal">
