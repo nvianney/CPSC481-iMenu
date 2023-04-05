@@ -103,9 +103,18 @@
                 <CheckBox Grid.Column="0" x:Name="Confirmation_Checkbox" FontSize="18" Checked="Confirmation_Checkbox_Checked" IsChecked="False" Margin="16,16,16,16">
                     <TextBlock TextWrapping="WrapWithOverflow">By checking this box, you agree that the items are correct and are aware of the allergies it may contain.</TextBlock>
                 </CheckBox>
-                <Button x:Name="btn_order" Grid.Column="1" FontSize="18" VerticalAlignment="Bottom" Height="50" Click="Place_Order_Button_Click" IsEnabled="False" FontWeight="Bold">
-                    Place Order
-                </Button>
+
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="{Binding TotalCostStr, RelativeSource={RelativeSource AncestorType=Window}}" VerticalAlignment="Center" FontSize="24" HorizontalAlignment="Left" Margin="0,0,16,0" />
+                    <Button x:Name="btn_order" Grid.Row="1" FontSize="18" VerticalAlignment="Bottom" Height="50" Click="Place_Order_Button_Click" IsEnabled="False" FontWeight="Bold">
+                        Place Order
+                    </Button>
+                </Grid>
+
             </Grid>
         </Grid>
 
