@@ -390,16 +390,13 @@ namespace CPSC481_iMenu
                         new DishModel()
                         {
                             name = "Shrimp Cocktail",
-                            description = "made out of fresh oranges",
+                            description = "Chilled shrimp paired with tangy cocktail sauce.",
                             imageName = "/food_images/ShrimpCocktail.jpg",
                             cost = 10.75f,
                             dietaryRestrictions = new DietaryRestrictionModel[]{
-                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGETARIAN],
-                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGAN],
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.GLUTEN_FREE],
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.DAIRY_FREE],
-                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.SEAFOOD_FREE],
                             },
                             menuItemCategory = MenuItemCategoryList.menuItemCategories[MenuItemCategory.STARTER]
                         },
