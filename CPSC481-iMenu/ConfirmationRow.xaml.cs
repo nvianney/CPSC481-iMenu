@@ -78,5 +78,10 @@ namespace CPSC481_iMenu
         {
             Items.Store.Remove(Items.Store.First(x => x.itemId == Id));
         }
+
+        public DietaryRestrictionModel[] ImageAllergyPath
+        {
+            get { return Items.Data[Id].dietaryRestrictions; }
+        }
     }
 }
