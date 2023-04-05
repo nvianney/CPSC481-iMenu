@@ -32,7 +32,7 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Image x:Name="image" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="/ChummyJoes.png" Stretch="UniformToFill" />
+                <Image x:Name="image" Grid.Column="0" HorizontalAlignment="Stretch" Stretch="UniformToFill" Source="{Binding ImagePath, RelativeSource={RelativeSource AncestorType=UserControl}}" />
 
             </Grid>
 
