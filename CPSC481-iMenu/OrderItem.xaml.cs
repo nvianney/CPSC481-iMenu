@@ -21,17 +21,6 @@ namespace CPSC481_iMenu
     public partial class OrderItem : UserControl
     {
 
-        public static readonly DependencyProperty TimestampProperty = DependencyProperty.Register(
-            nameof(Timestamp),
-            typeof(long),
-            typeof(OrderItem));
-
-        public long Timestamp
-        {
-            get { return (long)GetValue(TimestampProperty); }
-            set { SetValue(TimestampProperty, value); }
-        }
-
         public static readonly DependencyProperty IdProperty = DependencyProperty.Register(
             nameof(Id),
             typeof(int),
@@ -166,7 +155,15 @@ namespace CPSC481_iMenu
 
         private void exit_Click(object sender, RoutedEventArgs e)
         {
-            Items.Store.Remove(Items.Store.First(x => x.timestamp == Timestamp));
+            Items.Store.Remove(Items.Store.First(x => x.itemId == Id));
+        }
+
+        private void Minus_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void Plus_Click(object sender, RoutedEventArgs e)
+        {
         }
 
     }

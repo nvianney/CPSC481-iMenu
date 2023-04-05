@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static CPSC481_iMenu.Items;
 
 namespace CPSC481_iMenu
 {
@@ -89,15 +90,32 @@ namespace CPSC481_iMenu
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //add a condition if the item is already in the order, increase its quantity
-            Items.Store.Add(
-                new Items.AddedItem()
+            int index = Items.Store.ToList().FindIndex((elem) => elem.itemId == Id);
+
+            if (index != -1)
+            {
+                List<AddedItem> items = Items.Store.ToList().ConvertAll((item) =>
                 {
-                    timestamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(),
-                    itemId = Id,
-                    quantity = 1,
-                }
-            );
+                    if (item.itemId == Id)
+                    {
+                        item.quantity += 1;
+                    }
+                    return item;
+                });
+
+                Items.Store.Clear();
+                items.ForEach(item => Items.Store.Add(item));
+            }
+            else
+            {
+                Items.Store.Add(
+                    new Items.AddedItem()
+                    {
+                        itemId = Id,
+                        quantity = 1,
+                    }
+                );
+            }
         }
     }
 }
