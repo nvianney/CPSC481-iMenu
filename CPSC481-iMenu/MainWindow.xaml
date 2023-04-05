@@ -75,7 +75,7 @@
                         </Button>
                     </StackPanel>
                     <!-- Instead of having a bar at the buttom to display the legend I made a box on the corner-->
-                    <Button Height="60" Width="60" Content="?" FontSize="40" FontWeight="Bold" Background="#FFE86464" Margin="0,713,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Click="Help_Button_Click"/>
+                    <Button Width="60" Content="?" FontSize="40" FontWeight="Bold" Background="#FFE86464" Margin="0,713,0,0" Grid.RowSpan="2" Click="Help_Button_Click" Height="60" VerticalAlignment="Top"/>
                 </Grid>
 
                 <!-- Menu -->
@@ -136,17 +136,20 @@
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
 
-                                         <local:MenuItem Id="{Binding itemId}" Title="{Binding name}" Description="{Binding description}" Cost="{Binding cost}" ImagePath="{Binding imageName}" /> 
+                                        <local:MenuItem Id="{Binding itemId}" Title="{Binding name}" Description="{Binding description}" Cost="{Binding cost}" ImagePath="{Binding imageName}" />
 
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
                             </ItemsControl>
-                            <TextBlock Name="NoResultsMessage" TextWrapping="Wrap" Text="No results match your filtering criteria." HorizontalAlignment="Center" Margin="0,16,0,-6"/>
+                            <TextBlock Name="NoResultsMessage" TextWrapping="Wrap" Text="No results match your filtering criteria." HorizontalAlignment="Center" Margin="0,16,0,-6" FontWeight="Bold" FontSize="18"/>
 
                         </StackPanel>
                     </ScrollViewer>
-                    <Button x:Name="btn_legend" FontSize="18" Grid.Row="1" Background="WhiteSmoke" Click="btn_legend_Click" >
+                    <Button x:Name="btn_legend" FontSize="18" Background="WhiteSmoke" Click="btn_legend_Click" Margin="388,0,0,0" Grid.RowSpan="2" HorizontalAlignment="Left" Width="202" Height="50" VerticalAlignment="Bottom" >
                         Legend
+                    </Button>
+                    <Button x:Name="btn_trackOrder" FontSize="18" Background="WhiteSmoke"  Margin="98,0,0,0" Grid.RowSpan="2" Click="btn_trackOrder_Click" HorizontalAlignment="Left" Width="202" Height="50" VerticalAlignment="Bottom" FontWeight="Bold" >
+                        Track Order
                     </Button>
                 </Grid>
             </Grid>
@@ -219,7 +222,7 @@
                             <ColumnDefinition />
                             <ColumnDefinition Width="109" />
                         </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" FontSize="20" FontWeight="Bold">Tutorial</TextBlock>
+                        <TextBlock Grid.Column="0" FontSize="20" FontWeight="Bold">Tutorial (1/5)</TextBlock>
                         <Button x:Name="Help_Exit" Content="Exit Tutorial" Background="#FFE86464" Click="Help_Exit_Click" FontWeight="Bold" Grid.Column="1" />
                     </Grid>
 
@@ -248,7 +251,7 @@
                             <ColumnDefinition />
                             <ColumnDefinition Width="109" />
                         </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" FontSize="20" FontWeight="Bold">Tutorial</TextBlock>
+                        <TextBlock Grid.Column="0" FontSize="20" FontWeight="Bold">Tutorial (2/5)</TextBlock>
                         <Button x:Name="Help_Exit_Tip_2" Content="Exit Tutorial" Background="#FFE86464" Click="Help_Exit_Click" FontWeight="Bold" Grid.Column="1" />
                     </Grid>
                     <TextBlock FontSize="18" Width="300" Height="150" TextWrapping="WrapWithOverflow" Margin="0,24,0,0">
@@ -275,7 +278,7 @@
                             <ColumnDefinition />
                             <ColumnDefinition Width="109" />
                         </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" FontSize="20" FontWeight="Bold">Tutorial</TextBlock>
+                        <TextBlock Grid.Column="0" FontSize="20" FontWeight="Bold">Tutorial (3/5)</TextBlock>
                         <Button x:Name="Help_Exit_Tip_3" Content="Exit Tutorial" Background="#FFE86464" Click="Help_Exit_Click" FontWeight="Bold" Grid.Column="1" />
                     </Grid>
                     <TextBlock FontSize="18" Width="300" Height="150" TextWrapping="WrapWithOverflow" Margin="0,24,0,0">
@@ -288,6 +291,7 @@
             <Rectangle Height="70" Canvas.Left="641" Stroke="White" Width="311" RadiusX="6.54" RadiusY="6.54" HorizontalAlignment="Left" VerticalAlignment="Center" StrokeThickness="5" Canvas.Top="-62"/>
 
         </Canvas>
+
         <!-- Help Tutorial tip#4-->
         <Canvas Name="Help_Tip4" Grid.Row="1" Visibility="Collapsed">
             <Rectangle Fill="#66000000" Canvas.Left="0" Canvas.Top="0" Canvas.Right="0" Canvas.Bottom="0" Width="960" Height="864"/>
@@ -302,18 +306,47 @@
                             <ColumnDefinition />
                             <ColumnDefinition Width="109" />
                         </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" FontSize="20" FontWeight="Bold">Tutorial</TextBlock>
+                        <TextBlock Grid.Column="0" FontSize="20" FontWeight="Bold">Tutorial (4/5)</TextBlock>
                         <Button x:Name="Help_Exit_Tip_4" Content="Exit Tutorial" Background="#FFE86464" Click="Help_Exit_Click" FontWeight="Bold" Grid.Column="1" />
                     </Grid>
                     <TextBlock FontSize="18" Width="300" Height="150" TextWrapping="WrapWithOverflow" Margin="0,24,0,0">
                          <TextBlock FontWeight="Bold" FontSize="20"> Place Order Button</TextBlock><LineBreak></LineBreak><LineBreak></LineBreak>Once you are ready to place your order, click this button. You will be redirected to Order Confirmation screen.
                     </TextBlock>
                 </StackPanel>
-                <Button Name ="NextTip4" Content="End Tutorial" HorizontalAlignment="Left" Margin="233,14,0,0" VerticalAlignment="Top" Grid.Row="1" Height="22" Width="83" Click="NextTip4_Click" FontWeight="Bold"/>
+                <Button Name ="NextTip4" Content="Next Tip" HorizontalAlignment="Left" Margin="233,14,0,0" VerticalAlignment="Top" Grid.Row="1" Height="22" Width="83" Click="NextTip4_Click" FontWeight="Bold"/>
                 <Button Name ="PreviousTip4" Content="Previous Tip" HorizontalAlignment="Left" Margin="16,14,0,0" VerticalAlignment="Top" Grid.Row="1" Height="22" Width="83" Click="PreviousTip4_Click" FontWeight="Bold"/>
             </Grid>
             <Rectangle Height="69" Canvas.Left="624" Stroke="White" Width="320" RadiusX="6.54" RadiusY="6.54" HorizontalAlignment="Left" VerticalAlignment="Center" StrokeThickness="5" Canvas.Top="688"/>
+        </Canvas>
 
+        <!-- Help Tip 4 (Track Order)-->
+        <!-- Help Tutorial tip#4-->
+        <Canvas Name="Help_Tip5" Grid.Row="1" Visibility="Collapsed">
+            <Rectangle Fill="#66000000" Canvas.Left="0" Canvas.Top="0" Canvas.Right="0" Canvas.Bottom="0" Width="960" Height="864"/>
+            <Grid Canvas.Left="50" Canvas.Top="30" Background="White" HorizontalAlignment="Center" Height="265" VerticalAlignment="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="219*"/>
+                    <RowDefinition Height="46*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Margin="16,16,16,16" Grid.RowSpan="2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="109" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" FontSize="20" FontWeight="Bold">Tutorial (5/5)</TextBlock>
+                        <Button x:Name="Help_Exit_Tip_5" Content="Exit Tutorial" Background="#FFE86464" Click="Help_Exit_Click" FontWeight="Bold" Grid.Column="1" />
+                    </Grid>
+                    <TextBlock FontSize="18" Width="300" Height="150" TextWrapping="WrapWithOverflow" Margin="0,24,0,0">
+                         <InlineUIContainer>
+                         <TextBlock FontWeight="Bold" FontSize="20"><Run Language="en-ca" Text="Track"/><Run Text=" Order Button"/></TextBlock>
+                        </InlineUIContainer><LineBreak></LineBreak><LineBreak></LineBreak>Once you placed your order, use this button to track it.
+                    </TextBlock>
+                </StackPanel>
+                <Button Name ="NextTip5" Content="End Tutorial" HorizontalAlignment="Left" Margin="233,14,0,0" VerticalAlignment="Top" Grid.Row="1" Height="22" Width="83"  FontWeight="Bold" Click="NextTip5_Click"/>
+                <Button Name ="PreviousTip5" Content="Previous Tip" HorizontalAlignment="Left" Margin="16,14,0,0" VerticalAlignment="Top" Grid.Row="1" Height="22" Width="83" FontWeight="Bold" Click="PreviousTip5_Click"/>
+            </Grid>
+            <Rectangle Height="69" Canvas.Left="136" Stroke="White" Width="246" RadiusX="6.54" RadiusY="6.54" HorizontalAlignment="Center" VerticalAlignment="Top" StrokeThickness="5" Canvas.Top="700"/>
         </Canvas>
 
         <!-- Delete confirmation canvas, blanks out the remaining screeen shows option to keep the item or delete the item-->
@@ -433,6 +466,97 @@
                 </StackPanel>
             </Grid>
         </Canvas>
+
+
+        <!-- Order Tracker Canvas -->
+        <Canvas Name="Track_Order_Popup" Grid.Row="1" Visibility="Collapsed">
+            <Rectangle Fill="#66000000" Canvas.Left="0" Canvas.Top="0" Canvas.Right="0" Canvas.Bottom="0" Width="960" Height="864"/>
+            <Grid Canvas.Left="314" Canvas.Top="275" Background="White" Height="262" Width="334">
+                <StackPanel Margin="16,16,16,16">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="95" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" FontSize="20" FontWeight="Bold">Order Tracker</TextBlock>
+                        <Button x:Name="Track_Order_Popup_Close" Grid.Column="1" Content="Close Pop-up" VerticalAlignment="Center" Background="#FFE86464" Height="27" FontWeight="Bold" Click="Track_Order_Popup_Close_Click" />
+                    </Grid>
+                    <TextBlock FontSize="18" Width="300" Height="32" TextWrapping="WrapWithOverflow" Margin="0,24,0,0" HorizontalAlignment="Center"><Run Text="Select the order number from the list: "/><LineBreak/><LineBreak/><LineBreak/></TextBlock>
+                    <TextBlock></TextBlock>
+                    <ComboBox Height="36" SelectedIndex="0" FontWeight="Bold" FontSize="18">
+                        <Label FontWeight="Bold">#12345</Label>
+                        <Label FontWeight="Bold">#23456</Label>
+                        <Label FontWeight="Bold">#34567</Label>
+                        <Label FontWeight="Bold">#45678</Label>
+                    </ComboBox>
+                    <TextBlock></TextBlock>
+                    <TextBox Visibility ="Collapsed" Name ="phn_number" Background="#FFF1D9D9" FontSize="18" MouseEnter="TextBox_MouseEnter" MouseLeave="TextBox_MouseLeave" InputScope="TelephoneNumber" MaxLength="10" Text="555-555-55555" >
+                    </TextBox>
+                    <TextBlock></TextBlock>
+                    <Button x:Name="btn_order_status" Width="192" Height="40" Content="Check Status" FontSize="16" FontWeight="Bold" Background="#FFE86464" Click="btn_order_status_Click"  />
+                </StackPanel>
+            </Grid>
+        </Canvas>
+
+        <!-- Order Tracker Result -->
+        <Canvas Name="Track_Order_Result_Popup" Grid.Row="1" Visibility="Collapsed" >
+            <Rectangle Fill="#66000000" Canvas.Left="0" Canvas.Top="0" Canvas.Right="0" Canvas.Bottom="0" Width="960" Height="864"/>
+            <Grid Canvas.Left="153" Canvas.Top="216" Background="White" Height="333" Width="649" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="28*"/>
+                    <RowDefinition Height="103*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Margin="16,16,16,16" Grid.RowSpan="2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="95" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" FontSize="20" FontWeight="Bold">Order Status</TextBlock>
+                        <Button x:Name="Track_Order_Result_Popup_Close" Grid.Column="1" Content="Close Pop-up" VerticalAlignment="Center" Background="#FFE86464" Height="27" FontWeight="Bold" Click="Track_Order_Result_Popup_Close_Click" />
+                    </Grid>
+                    <TextBlock></TextBlock>
+                    <Border BorderThickness="2" BorderBrush="Black" Height="124">
+                        <Grid ShowGridLines="True" Margin="0,0,0,-2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <ProgressBar Grid.Row="0" Height="23" VerticalAlignment="Center"  BorderThickness="2,2,2,2" ClipToBounds="True" SnapsToDevicePixels="True" LargeChange="10" SmallChange="10" Value="50" Grid.ColumnSpan="5" HorizontalAlignment="Left" Width="606"/>
+
+                            <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" >Order Placed</Label>
+                            <Label Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" >Order Confirmed</Label>
+                            <Label Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" >Food Preparation</Label>
+                            <Label Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" >Quality Check</Label>
+                            <Label Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" >Order Complete</Label>
+                        </Grid>
+                    </Border>
+                    <TextBlock></TextBlock>
+                    <TextBlock Width="609" Height="23"><Run Text="Additonal Notes: Chef James is preparing your food"/></TextBlock>
+                    <TextBlock Margin="224,0,0,0" FontWeight="Bold" FontSize="14" HorizontalAlignment="Left" Width="198" Height="23" VerticalAlignment="Center"><Run Text="Expected Arrival: 10 Minutes"/></TextBlock>
+                    <TextBlock></TextBlock>
+                    <Button Name="btn_track_another_order" FontSize="20" Background="#FFF5BABA" Width="207" Height="45" FontWeight="Bold" Content="Track Another Order" HorizontalAlignment="Right" Click="btn_track_another_order_Click" />
+                    <!--
+                    <Button   Click="Call_Server_Button_Click" RenderTransformOrigin="0.5,0.5" Height="41" Width="256">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/call server bell.png" Margin="0,0,4,0" />
+                            <TextBlock Text="Call Server" VerticalAlignment="Center" FontSize="36" FontWeight="Bold" Margin="4,0,0,0" />
+                        </StackPanel>
+                    </Button>
+                    -->
+
+                </StackPanel>
+            </Grid>
+
+        </Canvas>
+
 
 
 

@@ -172,6 +172,7 @@ namespace CPSC481_iMenu
             Help_Tip2.Visibility = Visibility.Collapsed;
             Help_Tip3.Visibility = Visibility.Collapsed;
             Help_Tip4.Visibility = Visibility.Collapsed;
+            Help_Tip5.Visibility = Visibility.Collapsed;
         }
 
       
@@ -207,13 +208,24 @@ namespace CPSC481_iMenu
         private void NextTip4_Click(object sender, RoutedEventArgs e)
         {
             Help_Tip4.Visibility = Visibility.Collapsed;
-            //Help_Tip5.Visibility = Visibility.Visible;
+            Help_Tip5.Visibility = Visibility.Visible;
         }
 
         private void PreviousTip4_Click(object sender, RoutedEventArgs e)
         {
             Help_Tip4.Visibility = Visibility.Collapsed;
             Help_Tip3.Visibility = Visibility.Visible;
+        }
+        private void PreviousTip5_Click(object sender, RoutedEventArgs e)
+        {
+            Help_Tip4.Visibility = Visibility.Visible;
+            Help_Tip5.Visibility = Visibility.Collapsed;
+
+        }
+
+        private void NextTip5_Click(object sender, RoutedEventArgs e)
+        {
+            Help_Tip5.Visibility = Visibility.Collapsed;
         }
 
         private void Open_Settings(Object sender, RoutedEventArgs e)
@@ -320,8 +332,62 @@ namespace CPSC481_iMenu
             }
         }
 
+        private void btn_trackOrder_Click(object sender, RoutedEventArgs e)
+        {
+            Track_Order_Popup.Visibility = Visibility.Visible;
+        }
 
+        private void Track_Order_Popup_Close_Click(object sender, RoutedEventArgs e)
+        { 
+            Track_Order_Popup.Visibility = Visibility.Collapsed;
+        }
 
-       
+        private void TextBox_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if(phn_number.Text.Equals("555-555-5555"))
+            {
+                //keep displaying the label text
+            }
+            else
+            {
+                //do something
+            }
+        }
+
+        private void TextBox_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (phn_number.Text.Equals("555-555-5555"))
+            {
+                //keep displaying the label text
+            }
+        }
+
+        private void btn_order_status_Click(object sender, RoutedEventArgs e)
+        {
+            //show status
+            Track_Order_Result_Popup.Visibility=Visibility.Visible;
+            Track_Order_Popup.Visibility = Visibility.Collapsed;
+
+        }
+
+        private void Track_Order_Result_Popup_Close_Click(object sender, RoutedEventArgs e)
+        {
+            Track_Order_Result_Popup.Visibility = Visibility.Collapsed;
+        }
+        private void startButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Simulate a lengthy operation
+            for (int i = 0; i <= 100; i++)
+            {
+                Thread.Sleep(50); // simulate some work being done
+                //progressBar.Value = i;
+            }
+        }
+
+        private void btn_track_another_order_Click(object sender, RoutedEventArgs e)
+        {
+            Track_Order_Result_Popup.Visibility = Visibility.Collapsed;
+            Track_Order_Popup.Visibility = Visibility.Visible;
+        }
     }
 }
