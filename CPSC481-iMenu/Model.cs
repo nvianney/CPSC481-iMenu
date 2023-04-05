@@ -226,6 +226,152 @@ namespace CPSC481_iMenu
                             },
                             menuItemCategory = MenuItemCategoryList.menuItemCategories[MenuItemCategory.STARTER]
                         },
+                        new DishModel()
+                        {
+                            name = "Wings",
+                            description = "deep fried chicken wings",
+                            imageName = "/ChummyJoes.png",
+                            cost = 7.34f,
+                            dietaryRestrictions = new DietaryRestrictionModel[]{
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.GLUTEN_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.DAIRY_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.SEAFOOD_FREE],
+                            },
+                            menuItemCategory = MenuItemCategoryList.menuItemCategories[MenuItemCategory.SIDE]
+                        },
+                        new DishModel()
+                        {
+                            name = "Crab Cake",
+                            description = "crab, shrimp, corn with panko crust, apple fennel salad, house-made tartar",
+                            imageName = "/ChummyJoes.png",
+                            cost = 20.75f,
+                            dietaryRestrictions = new DietaryRestrictionModel[]{
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.DAIRY_FREE],
+                            },
+                            menuItemCategory = MenuItemCategoryList.menuItemCategories[MenuItemCategory.STARTER]
+                        },
+                        new DishModel()
+                        {
+                            name = "Katsu Chicken Penut Salad",
+                            description = "crispy chicken breast, julienne vegetables, arugula, miso ginger dressing",
+                            imageName = "/ChummyJoes.png",
+                            cost = 24.25f,
+                            dietaryRestrictions = new DietaryRestrictionModel[]{
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.SEAFOOD_FREE],
+                            },
+                            menuItemCategory = MenuItemCategoryList.menuItemCategories[MenuItemCategory.MAIN]
+                        },
+                        new DishModel()
+                        {
+                            name = "Sushi Cone",
+                            description = "tempura prawn, avocado, spicy mayo, tobiko",
+                            imageName = "/ChummyJoes.png",
+                            cost = 7.34f,
+                            dietaryRestrictions = new DietaryRestrictionModel[]{
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
+                            },
+                            menuItemCategory = MenuItemCategoryList.menuItemCategories[MenuItemCategory.SIDE]
+                        },
+                        new DishModel()
+                        {
+                            name = "Roasted Corn Guacamole",
+                            description = "Cilantro, fresh line, cherry tomatoes, serranos, feta cheese, warm tortilla chips",
+                            imageName = "/ChummyJoes.png",
+                            cost = 7.44f,
+                            dietaryRestrictions = new DietaryRestrictionModel[]{
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGETARIAN],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.DAIRY_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.SEAFOOD_FREE],
+                            },
+                            menuItemCategory = MenuItemCategoryList.menuItemCategories[MenuItemCategory.SIDE]
+                        },
+                        new DishModel()
+                        {
+                            name = "Avocado Roll",
+                            description = "chili mayo, micro cilantro, teriyaki glaze",
+                            imageName = "/ChummyJoes.png",
+                            cost = 12.46f,
+                            dietaryRestrictions = new DietaryRestrictionModel[]{
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGETARIAN],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGAN],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
+                            },
+                            menuItemCategory = MenuItemCategoryList.menuItemCategories[MenuItemCategory.SIDE]
+                        },
+                        new DishModel()
+                        {
+                            name = "Fish Tacos",
+                            description = "two shrimps + fish tacos, guacamole, valentina's",
+                            imageName = "/ChummyJoes.png",
+                            cost = 15.75f,
+                            dietaryRestrictions = new DietaryRestrictionModel[]{
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
+                            },
+                            menuItemCategory = MenuItemCategoryList.menuItemCategories[MenuItemCategory.MAIN]
+                        },
+                        new DishModel()
+                        {
+                            name = "Crispy Tofu Bowl",
+                            description = "Korean chili spiced tofu, edamame, miso dressing, brown rice",
+                            imageName = "/ChummyJoes.png",
+                            cost = 20.50f,
+                            dietaryRestrictions = new DietaryRestrictionModel[]{
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGETARIAN],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGAN],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.GLUTEN_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.DAIRY_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.SEAFOOD_FREE],
+                            },
+                            menuItemCategory = MenuItemCategoryList.menuItemCategories[MenuItemCategory.MAIN]
+                        },
+                        new DishModel()
+                        {
+                            name = "Apple Pie",
+                            description = "hand-folded pastry, toasted almonds, Canadian maple ice cream",
+                            imageName = "/ChummyJoes.png",
+                            cost = 12.00f,
+                            dietaryRestrictions = new DietaryRestrictionModel[]{
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGETARIAN],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.SEAFOOD_FREE],
+                            },
+                            menuItemCategory = MenuItemCategoryList.menuItemCategories[MenuItemCategory.DESSERT]
+                        },
+                        new DishModel()
+                        {
+                            name = "Apple Juice",
+                            description = "made out of fresh apples",
+                            imageName = "/ChummyJoes.png",
+                            cost = 5.00f,
+                            dietaryRestrictions = new DietaryRestrictionModel[]{
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGETARIAN],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGAN],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.GLUTEN_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.DAIRY_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.SEAFOOD_FREE],
+                            },
+                            menuItemCategory = MenuItemCategoryList.menuItemCategories[MenuItemCategory.DRINK]
+                        },
+                        new DishModel()
+                        {
+                            name = "Sprite",
+                            description = "flavourd soft drink",
+                            imageName = "/ChummyJoes.png",
+                            cost = 5.00f,
+                            dietaryRestrictions = new DietaryRestrictionModel[]{
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGETARIAN],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGAN],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.GLUTEN_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.DAIRY_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.SEAFOOD_FREE],
+                            },
+                            menuItemCategory = MenuItemCategoryList.menuItemCategories[MenuItemCategory.DRINK]
+                        },
 
                     };
 
