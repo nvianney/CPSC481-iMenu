@@ -36,7 +36,7 @@
             <TextBlock Text="{Binding QuantityString, RelativeSource={RelativeSource AncestorType=UserControl}}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12"/>
             <TextBlock Text="{Binding TotalCostString, RelativeSource={RelativeSource AncestorType=UserControl}}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"/>
         </StackPanel>
-        <Button Grid.Column="4" Content="Edit" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="25" />
+        <Button Grid.Column="4" Content="Edit" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="25" Click="Edit_Click" />
         <Button x:Name="exit" Grid.Column="5" Content="X" Background="#FFE86464" VerticalAlignment="Center" HorizontalAlignment="Center" Width="30" Height="30" Click="exit_Click"/>
 
 

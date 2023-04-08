@@ -120,7 +120,8 @@ namespace CPSC481_iMenu
 
         private void Expand_Button_Click(object sender, RoutedEventArgs e)
         {
-            ItemWindow itemWindow = new ItemWindow();
+            ItemWindow itemWindow = new ItemWindow(Id,false,ImagePath);
+            itemWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
             itemWindow.Show();
         }
     }

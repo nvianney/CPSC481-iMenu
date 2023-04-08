@@ -26,8 +26,8 @@
                     <ColumnDefinition Width="80" />
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Grid.Column="0" Text="Item 1" VerticalAlignment="Center" FontSize="30" TextWrapping="Wrap" FontWeight="Bold" Height="40" HorizontalAlignment="Left"/>
-                <TextBlock Grid.Column="1" Text="Descripton here abcdefghi jklmnopqr stuvwxyz 123456" VerticalAlignment="Center" FontSize="16" TextWrapping="Wrap" Height="43"/>
+                <TextBlock Grid.Column="0" x:Name='ItemTitle' Text="Item 1" VerticalAlignment="Center" FontSize="30" TextWrapping="Wrap" FontWeight="Bold" Height="40" HorizontalAlignment="Left"/>
+                <TextBlock Grid.Column="1" x:Name="ItemDescription" Text="Descripton here abcdefghi jklmnopqr stuvwxyz 123456" VerticalAlignment="Center" FontSize="16" TextWrapping="Wrap" Height="43"/>
                 <Button x:Name="exit" Grid.Column="2" Content="X" Background="#FFE86464" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="44" Height="39" Click="exit_Click" />
 
             </Grid>
@@ -36,9 +36,9 @@
                     <ColumnDefinition Width="29*" />
                     <ColumnDefinition Width="19*" />
                 </Grid.ColumnDefinitions>
-                <Image Grid.Column="0" x:Name="itemImage" Source="/ChummyJoes.png" HorizontalAlignment="Left" />
+                <Image Grid.Column="0" x:Name="ItemImage" Source="/ChummyJoes.png" HorizontalAlignment="Left" />
                 <Label Grid.Column="1" Name ="IngredientTitle" FontSize="25" Content="Ingredients" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="17,0,0,0" Width="134"/>
-                 
+
                 <!--later change to stack panel-->
                 <ListView Grid.Column="1" x:Name="ItemIngredientsList" RenderTransformOrigin="0.5,0.5" HorizontalContentAlignment="Left" Padding="10,10,10,10" HorizontalAlignment="Center" BorderBrush="Black" d:ItemsSource="{d:SampleData ItemCount=6}" ScrollViewer.VerticalScrollBarVisibility="Visible" Width="212" Margin="17,48,0,0">
                     <ListView.ItemTemplate>
@@ -52,33 +52,31 @@
                 <!--<Button x:Name="exit" Grid.Column="2" Content="X"  Margin="15,22,15,21" Background="#FFE86464" FontSize="20" />-->
 
             </Grid>
-            <!--<TextBlock Grid.Row="0" x:Name="title" Grid.Column="0" Text="Item 1 abcdefghi" VerticalAlignment="Center" Margin="0,0,0,0" FontSize="16" />-->
 
-            <!--<Grid Grid.Row="1" Margin="0,16,0,16">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-
-                <Image x:Name="image" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="UniformToFill" Source="/ChummyJoes.png" />
-
-            </Grid>-->
 
             <Grid Grid.Row="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="4*" />
-                    <ColumnDefinition Width="4*" />
-                    <ColumnDefinition Width="4*" />
-                    <ColumnDefinition Width="4*" />
-                    <ColumnDefinition Width="4*" />
-                    <ColumnDefinition Width="4*" />
-                </Grid.ColumnDefinitions>
-
-                <!--<TextBlock Grid.Column="0" Text="Descripton here abcdefghi jklmnopqr stuvwxyz 123456" VerticalAlignment="Center" Margin="0,0,0,0" FontSize="12" TextWrapping="Wrap"/>-->
-                <Image Grid.Column="0" x:Name="DairyFreeSymbol" Source="/DairyFree2.png" Margin="4,5,4,5"/>
-                <Image Grid.Column="1" Name="PeanutFreeSymbol" Source="/PeanutFree2.png" Margin="4,5,4,5"/>
-
-
+                <ItemsControl ItemsSource="{Binding ImageAllergyPath, RelativeSource={RelativeSource AncestorType=UserControl}}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                            </Grid>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding}" Margin="4,5,4,5">
+                                <Image.ToolTip>
+                                    <ToolTip Content="{Binding}" />
+                                </Image.ToolTip>
+                            </Image>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
             </Grid>
+
             <Grid Grid.Row="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -86,40 +84,13 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Button Grid.Column="1" Content="-" FontSize="22" Margin="10,10,218,46"/>
-                <TextBlock Grid.Column="1" FontSize="18" HorizontalAlignment="Center" Text="1" VerticalAlignment="Top" Margin="0,18,0,0"/>
-                <Button Grid.Column="1" Content="+" FontSize="22" Margin="218,10,10,46"/>
-                <TextBlock Grid.Column="2" FontSize="18" HorizontalAlignment="Center" Text="$21.00" VerticalAlignment="Top" Margin="0,18,0,0"/>
-                <Button Grid.Column="1" Content="Add" FontSize="22" Margin="10,56,10,0"/>
+                <Button Grid.Column="1" Content="-" FontSize="22" Margin="10,10,218,46" Click="Minus_Click"/>
+                <TextBlock Grid.Column="1" x:Name="ItemQuantity" FontSize="18" HorizontalAlignment="Center" Text="1" VerticalAlignment="Top" Margin="0,18,0,0"/>
+                <Button Grid.Column="1" Content="+" FontSize="22" Margin="218,10,10,46" Click="Plus_Click"/>
+                <TextBlock Grid.Column="2" x:Name="ItemCost" FontSize="18" HorizontalAlignment="Center" Text="$21.00" VerticalAlignment="Top" Margin="0,18,0,0"/>
+                <Button Grid.Column="1" x:Name="AddButton" Content="Add" FontSize="22" Margin="10,56,10,0" Click="AddButton_Click"/>
             </Grid>
 
         </Grid>
     </Grid>
-    <!--<Grid>
-        <Label Name ="ItemName" FontSize="30" Content="Item 1" HorizontalAlignment="Left" Margin="55,34,0,0" VerticalAlignment="Top"/>
-        <Image x:Name="image" Source="/ChummyJoes.png" Margin="55,82,300,220" />
-        <TextBlock Name ="Description" Text="Descripton here abcdefghi jklmnopqr stuvwxyz 123456" VerticalAlignment="Top" Margin="408,53,29,0" FontSize="15" TextWrapping="Wrap" Height="63"/>
-        <Label Name ="IngredientTitle" FontSize="25" Content="Ingredients" HorizontalAlignment="Left" Margin="408,134,0,0" VerticalAlignment="Top"/>
-
-        <ListView x:Name="ItemIngredientsList" Height ="119" Margin="408,192,0,0" SelectionMode="Multiple" RenderTransformOrigin="0.5,0.5" HorizontalContentAlignment="Left" Padding="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" d:ItemsSource="{d:SampleData ItemCount=6}" ScrollViewer.VerticalScrollBarVisibility="Auto" Width="212">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{Binding}" FontSize="18" FontFamily="Segoe UI Light" />
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <Image x:Name="DairyFreeSymbol" Source="/DairyFree.png" Margin="36,307,551,200" />
-        <Label x:Name ="DairyFreeTitle" FontSize="10" Content="Dairy Free" HorizontalAlignment="Left" Margin="50,360,0,0" VerticalAlignment="Top" Height="22" Width="56"/>
-
-        <Image Name="PeanutFreeSymbol" Source="/PeanutFree.png" Margin="126,312,480,205" />
-        <Label Name ="PeanutFreeTitle" FontSize="10" Content="Peanut Free" HorizontalAlignment="Left" Margin="128,360,0,0" VerticalAlignment="Top" Height="22" Width="63"/>
-        <Button Content="-" FontSize="22" Margin="246,416,360,92" RenderTransformOrigin="0.561,0.489"/>
-        <TextBlock FontSize="18" HorizontalAlignment="Center" Text="1" VerticalAlignment="Top" Margin="0,430,0,0"/>
-        <Button Content="+" FontSize="22" Margin="362,416,246,92"/>
-        <TextBlock FontSize="18" HorizontalAlignment="Right" Text="$21.00" VerticalAlignment="Top" Margin="0,430,180,0"/>
-        <Button Content="Add To Cart" HorizontalAlignment="Center" Margin="0,487,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Segoe UI Light" Style="{StaticResource ButtonStyle}" Padding="10,10,10,10" Width="180" Height="50"/>
-
-    </Grid>-->
 </Window>

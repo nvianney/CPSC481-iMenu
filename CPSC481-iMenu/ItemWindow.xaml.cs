@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static CPSC481_iMenu.Items;
 
 namespace CPSC481_iMenu
 {
@@ -19,15 +20,93 @@ namespace CPSC481_iMenu
     /// </summary>
     public partial class ItemWindow : Window
     {
-        public ItemWindow()
+        private int id;
+        public ItemWindow(int Id, bool isEdit, string ImagePath, long Quantity=0, string TotalCostString = "0")
         {
             InitializeComponent();
             ItemIngredientsList.ItemsSource = new String[] {"Beef","Onion","Tomatoes", "Ketchup", "Mustard","Pickles","Hamburger Buns"};
+            //ItemIngredientsList.ItemsSource = menuItem.Ingredients; //replace later
+            id = Id;
+            DishModel dish = Items.Data[Id];
+
+            ItemTitle.Text = dish.name;
+            ItemDescription.Text = dish.description;
+            
+
+            ItemImage.Source = new BitmapImage(new Uri(ImagePath, UriKind.Relative));
+
+            if (isEdit)
+            {
+                AddButton.Content = "Update";
+                ItemCost.Text = TotalCostString;
+                ItemQuantity.Text = Quantity.ToString();
+            }
+            else
+            {
+                AddButton.Content = "Add";
+                ItemCost.Text = dish.cost.ToString();
+                ItemQuantity.Text = "1";
+            }
         }
 
         private void exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        public DietaryRestrictionModel[] ImageAllergyPath
+        {
+            get { return Items.Data[id].dietaryRestrictions; }
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            int index = Items.Store.ToList().FindIndex((elem) => elem.itemId == id);
+
+            if (index != -1)
+            {
+                List<AddedItem> items = Items.Store.ToList().ConvertAll((item) =>
+                {
+                    if (item.itemId == id)
+                    {
+                        item.quantity += int.Parse(ItemQuantity.Text);
+                    }
+                    return item;
+                });
+
+                Items.Store.Clear();
+                items.ForEach(item => Items.Store.Add(item));
+            }
+            else
+            {
+                Items.Store.Add(
+                    new Items.AddedItem()
+                    {
+                        itemId = id,
+                        quantity = int.Parse(ItemQuantity.Text),
+                    }
+                );
+            }
+        }
+
+        private void Minus_Click(object sender, RoutedEventArgs e)
+        {
+            int currentQuantity;
+            if (int.TryParse(ItemQuantity.Text, out currentQuantity))
+            {
+                // subtract 1 from current quantity and update the text
+                ItemQuantity.Text = (currentQuantity - 1).ToString();
+            }
+        }
+
+        private void Plus_Click(object sender, RoutedEventArgs e)
+        {
+            int currentQuantity;
+            if (int.TryParse(ItemQuantity.Text, out currentQuantity))
+            {
+                // add 1 to current quantity and update the text
+                ItemQuantity.Text = (currentQuantity + 1).ToString();
+            }
         }
     }
 }

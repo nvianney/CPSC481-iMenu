@@ -83,5 +83,12 @@ namespace CPSC481_iMenu
         {
             get { return Items.Data[Id].dietaryRestrictions; }
         }
+
+        private void Edit_Click(object sender, RoutedEventArgs e)
+        {
+            ItemWindow itemWindow = new ItemWindow(Id, true, ImagePath, Quantity, TotalCostString);
+            itemWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            itemWindow.Show();
+        }
     }
 }
