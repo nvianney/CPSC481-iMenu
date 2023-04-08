@@ -74,7 +74,7 @@
                             <Image Height="80" Source="/sidebar/dessert.png" Stretch="Fill" />
                         </Button>
                         <Button Name="SepcialsButton" Background="White" Margin="0,0,0,0" BorderBrush="#312E5F" BorderThickness="1" Click="Sidebar_Button_Click">
-                            <Image Height="80" Source="/sidebar/dessert.png" Stretch="Fill" />
+                            <Image Height="80" Source="/sidebar/special.png" Stretch="Fill" />
                         </Button>
                     </StackPanel>
                     <!-- Instead of having a bar at the buttom to display the legend I made a box on the corner-->

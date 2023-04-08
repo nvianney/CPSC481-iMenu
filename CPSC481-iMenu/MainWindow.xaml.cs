@@ -38,6 +38,8 @@ namespace CPSC481_iMenu
         {
             InitializeComponent();
 
+            Loaded += MainWindow_Loaded;
+
             menuList.ItemsSource = Items.Data;
 
             // O(n^2). Also bad code
@@ -85,7 +87,19 @@ namespace CPSC481_iMenu
             }
 
             updateMenuItemsList();
+            
 
+        }
+
+        private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            await Task.Delay(2000); // Wait for 2 seconds
+
+            //Display local specials pop up
+            LocalSpecialWindow localSpecialsPopup = new LocalSpecialWindow();
+            localSpecialsPopup.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            localSpecialsPopup.Owner = this;
+            localSpecialsPopup.Show();
         }
 
         private void StoreChanged(object sender, NotifyCollectionChangedEventArgs e)

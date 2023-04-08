@@ -15,19 +15,13 @@ using System.Windows.Shapes;
 namespace CPSC481_iMenu
 {
     /// <summary>
-    /// Interaction logic for ItemWindow.xaml
+    /// Interaction logic for LocalSpecialWindow.xaml
     /// </summary>
-    public partial class ItemWindow : Window
+    public partial class LocalSpecialWindow : Window
     {
-        public ItemWindow()
+        public LocalSpecialWindow()
         {
             InitializeComponent();
-            ItemIngredientsList.ItemsSource = new String[] {"Beef","Onion","Tomatoes", "Ketchup", "Mustard","Pickles","Hamburger Buns"};
-        }
-
-        private void exit_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }

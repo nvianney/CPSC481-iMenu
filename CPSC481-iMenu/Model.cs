@@ -405,9 +405,9 @@ namespace CPSC481_iMenu
                         new DishModel()
                         {
                             name = "Poutine",
-                            description = "Chilled shrimp paired with tangy cocktail sauce.",
-                            imageName = "/food_images/ShrimpCocktail.jpg",
-                            cost = 10.75f,
+                            description = "Crispy french fries topped with cheese curds and gravy, a classic Canadian dish known as Poutine.",
+                            imageName = "/food_images/Poutine.jpg",
+                            cost = 10.00f,
                             dietaryRestrictions = new DietaryRestrictionModel[]{
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
                             },

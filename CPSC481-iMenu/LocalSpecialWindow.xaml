@@ -1,0 +1,13 @@
+﻿<Window x:Class="CPSC481_iMenu.LocalSpecialWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CPSC481_iMenu"
+        mc:Ignorable="d"
+        Title="LocalSpecialWindow" Height ="7in" Width="7in">
+    <Grid>
+        <Label Content="LOCAL SPECIAL!!" HorizontalAlignment="Left" Margin="274,248,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

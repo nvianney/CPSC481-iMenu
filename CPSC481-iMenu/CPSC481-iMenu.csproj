@@ -27,6 +27,7 @@
     <None Remove="food_images\GrapefruitCrudo.jpg" />
     <None Remove="food_images\KatsuChickenSalad.jpg" />
     <None Remove="food_images\OrangeJuice.jpg" />
+    <None Remove="food_images\poutine.jpg" />
     <None Remove="food_images\SalmonSalad.jpg" />
     <None Remove="food_images\ShrimpCocktail.jpg" />
     <None Remove="food_images\Spaghetti.jpg" />
@@ -41,6 +42,7 @@
     <None Remove="PeanutFree.png" />
     <None Remove="PeanutFree2.png" />
     <None Remove="Settings image.png" />
+    <None Remove="sidebar\special.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -62,6 +64,7 @@
     <Resource Include="food_images\GrapefruitCrudo.jpg" />
     <Resource Include="food_images\KatsuChickenSalad.jpg" />
     <Resource Include="food_images\OrangeJuice.jpg" />
+    <Resource Include="food_images\poutine.jpg" />
     <Resource Include="food_images\SalmonSalad.jpg" />
     <Resource Include="food_images\ShrimpCocktail.jpg" />
     <Resource Include="food_images\Spaghetti.jpg" />
@@ -87,6 +90,7 @@
 	<Resource Include="sidebar\dessert.png" />
     <Resource Include="sidebar\drink.png" />
     <Resource Include="sidebar\main.png" />
+    <Resource Include="sidebar\special.png" />
     <Resource Include="sidebar\starter.png" />
 	<Resource Include="sidebar\sides.png" />
   </ItemGroup>
