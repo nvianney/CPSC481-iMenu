@@ -23,5 +23,10 @@ namespace CPSC481_iMenu
         {
             InitializeComponent();
         }
+
+        private void exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

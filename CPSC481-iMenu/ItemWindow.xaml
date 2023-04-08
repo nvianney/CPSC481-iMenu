@@ -88,7 +88,7 @@
                 <TextBlock Grid.Column="1" x:Name="ItemQuantity" FontSize="18" HorizontalAlignment="Center" Text="1" VerticalAlignment="Top" Margin="0,18,0,0"/>
                 <Button Grid.Column="1" Content="+" FontSize="22" Margin="218,10,10,46" Click="Plus_Click"/>
                 <TextBlock Grid.Column="2" x:Name="ItemCost" FontSize="18" HorizontalAlignment="Center" Text="$21.00" VerticalAlignment="Top" Margin="0,18,0,0"/>
-                <Button Grid.Column="1" x:Name="AddButton" Content="Add" FontSize="22" Margin="10,56,10,0" Click="AddButton_Click"/>
+                <Button Grid.Column="1" x:Name="AddButton" Content="Add" FontSize="22" Margin="10,56,10,0" Click="Button_Click"/>
             </Grid>
 
         </Grid>

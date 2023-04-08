@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace CPSC481_iMenu
 {
@@ -407,9 +408,22 @@ namespace CPSC481_iMenu
                             name = "Poutine",
                             description = "Crispy french fries topped with cheese curds and gravy, a classic Canadian dish known as Poutine.",
                             imageName = "/food_images/Poutine.jpg",
-                            cost = 10.00f,
+                            cost = 6.00f,
                             dietaryRestrictions = new DietaryRestrictionModel[]{
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.SEAFOOD_FREE],
+                            },
+                            menuItemCategory = MenuItemCategoryList.menuItemCategories[MenuItemCategory.SPECIAL]
+                        },
+                         new DishModel()
+                        {
+                            name = "Nanaimo bars",
+                            description = "Classic Canadian dessert consisting of three layers - a crumbly chocolate and coconut base, a custard-flavored middle, and chocolate ganache on top",
+                            imageName = "/food_images/NanaimoBars.jpg",
+                            cost = 6.00f,
+                            dietaryRestrictions = new DietaryRestrictionModel[]{
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.SEAFOOD_FREE],
                             },
                             menuItemCategory = MenuItemCategoryList.menuItemCategories[MenuItemCategory.SPECIAL]
                         },

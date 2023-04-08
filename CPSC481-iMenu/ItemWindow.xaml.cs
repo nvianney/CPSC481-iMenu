@@ -21,14 +21,17 @@ namespace CPSC481_iMenu
     public partial class ItemWindow : Window
     {
         private int id;
+        private bool isEdit;
         public ItemWindow(int Id, bool isEdit, string ImagePath, long Quantity=0, string TotalCostString = "0")
         {
             InitializeComponent();
             ItemIngredientsList.ItemsSource = new String[] {"Beef","Onion","Tomatoes", "Ketchup", "Mustard","Pickles","Hamburger Buns"};
             //ItemIngredientsList.ItemsSource = menuItem.Ingredients; //replace later
-            id = Id;
-            DishModel dish = Items.Data[Id];
 
+            this.id = Id;
+            this.isEdit = isEdit;
+
+            DishModel dish = Items.Data[Id];
             ItemTitle.Text = dish.name;
             ItemDescription.Text = dish.description;
             
@@ -56,10 +59,10 @@ namespace CPSC481_iMenu
 
         public DietaryRestrictionModel[] ImageAllergyPath
         {
-            get { return Items.Data[id].dietaryRestrictions; }
+            get { return Items.Data[id].dietaryRestrictions; } //not working....
         }
 
-        private void AddButton_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             int index = Items.Store.ToList().FindIndex((elem) => elem.itemId == id);
 
@@ -69,7 +72,14 @@ namespace CPSC481_iMenu
                 {
                     if (item.itemId == id)
                     {
-                        item.quantity += int.Parse(ItemQuantity.Text);
+                        if (isEdit)
+                        {
+                            item.quantity = int.Parse(ItemQuantity.Text);
+                        }
+                        else
+                        {
+                            item.quantity += int.Parse(ItemQuantity.Text);
+                        }
                     }
                     return item;
                 });
@@ -97,6 +107,7 @@ namespace CPSC481_iMenu
                 // subtract 1 from current quantity and update the text
                 ItemQuantity.Text = (currentQuantity - 1).ToString();
             }
+            //TODO: update ItemCost as well? 
         }
 
         private void Plus_Click(object sender, RoutedEventArgs e)

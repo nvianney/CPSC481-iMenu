@@ -26,6 +26,7 @@
     <None Remove="food_images\Fries.jpg" />
     <None Remove="food_images\GrapefruitCrudo.jpg" />
     <None Remove="food_images\KatsuChickenSalad.jpg" />
+    <None Remove="food_images\NanaimoBars.jpg" />
     <None Remove="food_images\OrangeJuice.jpg" />
     <None Remove="food_images\poutine.jpg" />
     <None Remove="food_images\SalmonSalad.jpg" />
@@ -63,6 +64,7 @@
     <Resource Include="food_images\Fries.jpg" />
     <Resource Include="food_images\GrapefruitCrudo.jpg" />
     <Resource Include="food_images\KatsuChickenSalad.jpg" />
+    <Resource Include="food_images\NanaimoBars.jpg" />
     <Resource Include="food_images\OrangeJuice.jpg" />
     <Resource Include="food_images\poutine.jpg" />
     <Resource Include="food_images\SalmonSalad.jpg" />

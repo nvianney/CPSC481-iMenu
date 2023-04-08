@@ -6,8 +6,64 @@
         xmlns:local="clr-namespace:CPSC481_iMenu"
         mc:Ignorable="d"
         Title="LocalSpecialWindow" Height ="7in" Width="7in">
-    <Grid>
-        <Label Content="LOCAL SPECIAL!!" HorizontalAlignment="Left" Margin="274,248,0,0" VerticalAlignment="Top"/>
+    <Grid Background="White" Margin="12,12,12,12">
+        <Grid Margin="12,12,12,12" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
 
+                <RowDefinition Height="1*" />
+
+                <RowDefinition Height="1*" />
+
+                <RowDefinition Height="1*" />
+
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <!-- hard coding the special items -->
+                <TextBlock Grid.Column="0" x:Name='title' Text="Special Dishes that are local to Canada" VerticalAlignment="Center" FontSize="30" TextWrapping="Wrap" FontWeight="Bold" Height="40" HorizontalAlignment="Left" Width="614" Grid.ColumnSpan="2" Margin="38,0,0,0"/>
+                <Button x:Name="exit" Grid.Column="1" Content="X" Background="#FFE86464" FontSize="20" VerticalAlignment="Top" Height="39" Click="exit_Click" Margin="13,0,0,0" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="15*" />
+                    <ColumnDefinition Width="15*" />
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" x:Name="Special1" Source="/food_images/poutine.jpg" HorizontalAlignment="Left" Margin="27,0,0,0" />
+                <Image Grid.Column="1" x:Name="Special2" Source="/food_images/NanaimoBars.jpg" HorizontalAlignment="Center" />
+                <!--<Button x:Name="exit" Grid.Column="2" Content="X"  Margin="15,22,15,21" Background="#FFE86464" FontSize="20" />-->
+
+            </Grid>
+
+
+            <Grid Grid.Row="1" Margin="0,152,0,89" Grid.RowSpan="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" TextWrapping="Wrap" FontSize="15" HorizontalAlignment="Center" Margin="0,0,20,0">
+                <Run Text="Poutine originates in Quebec and typically consists of french fries, cheese curds, and gravy."/>
+                <Run Language="en-ca" Text=" "/>
+                <Run Text="It is considered a quintessential Canadian food and is popular across the country."/><LineBreak/><LineBreak/>
+                <Run Text="The simple yet delicious combination of flavors and textures has made it a beloved comfort food and an iconic symbol of Canadian cuisine."/>         
+                </TextBlock>
+
+                <TextBlock Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="15" TextWrapping="Wrap" Margin="20,0,0,0">
+                <Run Text="Nanaimo bars are a no-bake dessert that originated in the city of Nanaimo, British Columbia, Canada."/><LineBreak/><LineBreak/>
+                <Run Text="They consist of a chocolate crumb base, a custard-flavored filling, and a chocolate ganache topping."/><LineBreak/><LineBreak/>
+                <Run Text="The bars are considered a classic Canadian treat and have become a popular dessert across the country."/>        
+                </TextBlock>
+            </Grid>
+
+            <Grid Grid.Row="3">
+                <TextBlock Text="Both items are only $6 each!" VerticalAlignment="Top" FontSize="30" TextWrapping="Wrap" FontWeight="Bold" Height="40" HorizontalAlignment="Center" Margin="0,97,0,0"/>
+            </Grid>
+
+        </Grid>
     </Grid>
 </Window>
