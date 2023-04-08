@@ -24,6 +24,7 @@ namespace CPSC481_iMenu
         SIDE,
         DRINK,
         DESSERT,
+        SPECIAL,
     }
 
     public class DietaryRestrictionModel
@@ -61,6 +62,7 @@ namespace CPSC481_iMenu
            { MenuItemCategory.SIDE, new MenuItemCategoryModel() { menuItemCategory = MenuItemCategory.SIDE, imgSource = "sidebar/sides.png" }},
            { MenuItemCategory.DRINK, new MenuItemCategoryModel() { menuItemCategory = MenuItemCategory.DRINK, imgSource = "sidebar/drink.png" }},
            { MenuItemCategory.DESSERT, new MenuItemCategoryModel(){ menuItemCategory = MenuItemCategory.DESSERT, imgSource = "sidebar/dessert.png"}},
+           { MenuItemCategory.SPECIAL, new MenuItemCategoryModel(){ menuItemCategory = MenuItemCategory.SPECIAL, imgSource = "sidebar/special.png"}},
         };
     }
 
