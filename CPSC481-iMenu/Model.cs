@@ -402,6 +402,17 @@ namespace CPSC481_iMenu
                             },
                             menuItemCategory = MenuItemCategoryList.menuItemCategories[MenuItemCategory.STARTER]
                         },
+                        new DishModel()
+                        {
+                            name = "Poutine",
+                            description = "Chilled shrimp paired with tangy cocktail sauce.",
+                            imageName = "/food_images/ShrimpCocktail.jpg",
+                            cost = 10.75f,
+                            dietaryRestrictions = new DietaryRestrictionModel[]{
+                                DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
+                            },
+                            menuItemCategory = MenuItemCategoryList.menuItemCategories[MenuItemCategory.SPECIAL]
+                        },
 
                     };
 

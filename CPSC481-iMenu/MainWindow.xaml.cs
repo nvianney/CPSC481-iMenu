@@ -73,6 +73,7 @@ namespace CPSC481_iMenu
                 {this.SidesButton, MenuItemCategory.SIDE},
                 {this.DrinksButton, MenuItemCategory.DRINK},
                 {this.DessertsButton, MenuItemCategory.DESSERT},
+                {this.SepcialsButton, MenuItemCategory.SPECIAL},
             };
 
             //Set some filters to 'selected' based on welcome screen selection
