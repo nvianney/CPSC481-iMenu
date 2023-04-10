@@ -104,9 +104,24 @@ namespace CPSC481_iMenu
                         new DishModel()
                         {
                             name = "Spaghetti",
-                            description = "Made with whole-wheat pasta and a 50/50 blend of beef and pork meatballs",
+                            description = "Whole-wheat spaghetti with tomato sauce and a 50/50 blend of beef and pork meatballs",
                             imageName = "/food_images/Spaghetti.jpg",
                             cost = 21.00f,
+                            ingredients = new string[]
+                            {
+                                "Whole-wheat pasta",
+                                "Beef",
+                                "Pork",
+                                "Breadcrumbs",
+                                "Onion",
+                                "Garlic",
+                                "Egg",
+                                "Milk",
+                                "Parmesan cheese",
+                                "Olive oil",
+                                "Salt",
+                                "Pepper"
+                            },
                             dietaryRestrictions = new DietaryRestrictionModel[]{
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.SEAFOOD_FREE],
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
@@ -117,9 +132,19 @@ namespace CPSC481_iMenu
                         new DishModel()
                         {
                             name = "Steak",
-                            description = "Angus beef",
+                            description = "Juicy steak cooked to perfection with a side of fries",
                             imageName = "/food_images/Steak.jpg",
                             cost = 25.00f,
+                            ingredients = new string[]
+                            {
+                                "Beef",
+                                "Potatoes",
+                                "Salt",
+                                "Pepper",
+                                "Butter",
+                                "Garlic",
+                                "Parsley"
+                            },
                             dietaryRestrictions = new DietaryRestrictionModel[]{
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.SEAFOOD_FREE],
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
@@ -130,9 +155,20 @@ namespace CPSC481_iMenu
                         new DishModel()
                         {
                             name = "Veggie Burger",
-                            description = "vegan patty with relish, tomato and lettuce on a whole-grain bun",
+                            description = "Veggie patty with relish, tomato and lettuce on a whole-grain bun",
                             imageName = "/food_images/VeggieBurger.jpg",
                             cost = 17.00f,
+                            ingredients = new string[]
+                            {
+                                "Veggie patty",
+                                "Relish",
+                                "Tomato",
+                                "Lettuce",
+                                "Pickles",
+                                "American cheese",
+                                "Ketchup and mayo",
+                                "Whole-grain bun"
+                            },
                             dietaryRestrictions = new DietaryRestrictionModel[]{
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGAN],
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGETARIAN],
@@ -145,9 +181,23 @@ namespace CPSC481_iMenu
                         new DishModel()
                         {
                             name = "Salmon salad",
-                            description = "chopped vegetables, flaky fish, and tangy citrus dressing",
+                            description = "Mixed greens, veggies, and flaky grilled salmon tossed in a tangy citrus dressing",
                             imageName = "/food_images/SalmonSalad.jpg",
                             cost = 13.00f,
+                            ingredients = new string[]
+                            {
+                                "Spinach",
+                                "Lettuce",
+                                "Arugula",
+                                "Cherry tomatoes",
+                                "Cucumbers",
+                                "Red onion",
+                                "Salmon fillet",
+                                "Lemon",
+                                "Olive oil",
+                                "Salt",
+                                "Pepper"
+                            },
                             dietaryRestrictions = new DietaryRestrictionModel[]{
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.GLUTEN_FREE],
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
@@ -158,9 +208,20 @@ namespace CPSC481_iMenu
                         new DishModel()
                         {
                             name = "Tiramisu cake",
-                            description = "layered cake with coffee and rum",
+                            description = "Layered cake with espresso and rum-soaked ladyfingers",
                             imageName = "/food_images/TiramisuCake.jpg",
                             cost = 8.00f,
+                            ingredients = new string[]
+                            {
+                                "Mascarpone cheese",
+                                "Espresso",
+                                "Rum",
+                                "Ladyfingers",
+                                "Egg yolks",
+                                "Sugar",
+                                "Heavy cream",
+                                "Cocoa powder"
+                            },
                             dietaryRestrictions = new DietaryRestrictionModel[]{
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.GLUTEN_FREE],
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGETARIAN],
@@ -171,10 +232,16 @@ namespace CPSC481_iMenu
                         },
                         new DishModel()
                         {
-                            name = "Fries",
-                            description = "deep fried potato sticks",
+                            name = "French fries",
+                            description = "Crispy and salty deep-fried potato sticks",
                             imageName = "/food_images/Fries.jpg",
                             cost = 6.00f,
+                            ingredients = new string[]
+                            {
+                                "Potatoes",
+                                "Salt",
+                                "Oil"
+                            },
                             dietaryRestrictions = new DietaryRestrictionModel[]{
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGETARIAN],
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGAN],
@@ -188,9 +255,13 @@ namespace CPSC481_iMenu
                         new DishModel()
                         {
                             name = "Coca-Cola",
-                            description = "flavoured soft drink",
+                            description = "Flavoured soft drink",
                             imageName = "/food_images/Coca-Cola.jpg",
                             cost = 4.00f,
+                            ingredients = new string[]
+                            {
+                                "Coca-Cola"
+                            },
                             dietaryRestrictions = new DietaryRestrictionModel[]{
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGETARIAN],
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGAN],
@@ -204,9 +275,13 @@ namespace CPSC481_iMenu
                         new DishModel()
                         {
                             name = "Orange Juice",
-                            description = "made out of fresh oranges",
+                            description = "Made out of fresh oranges",
                             imageName = "/food_images/OrangeJuice.jpg",
                             cost = 5.00f,
+                            ingredients = new string[]
+                            {
+                                "Oranges"
+                            },
                             dietaryRestrictions = new DietaryRestrictionModel[]{
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGETARIAN],
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGAN],
@@ -220,9 +295,18 @@ namespace CPSC481_iMenu
                         new DishModel()
                         {
                             name = "Calamari",
-                            description = "pieces of squid cooked for eating, usually cut into rings and fried",
+                            description = "Tender pieces of squid, usually cut into rings and fried",
                             imageName = "/food_images/Calamari.jpg",
                             cost = 11.00f,
+                            ingredients = new string[]
+                            {
+                                "Squid",
+                                "Flour",
+                                "Cornmeal",
+                                "Salt",
+                                "Pepper",
+                                "Oil"
+                            },
                             dietaryRestrictions = new DietaryRestrictionModel[]{
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.DAIRY_FREE],
@@ -231,10 +315,19 @@ namespace CPSC481_iMenu
                         },
                         new DishModel()
                         {
-                            name = "Wings",
-                            description = "deep fried chicken wings",
+                            name = "Chicken Wings",
+                            description = "Deep fried chicken wings",
                             imageName = "/food_images/Wings.jpg",
                             cost = 7.34f,
+                            ingredients = new string[]
+                            {
+                                "Chicken wings",
+                                "Flour",
+                                "Cornmeal",
+                                "Salt",
+                                "Pepper",
+                                "Oil"
+                            },
                             dietaryRestrictions = new DietaryRestrictionModel[]{
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.GLUTEN_FREE],
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
@@ -246,9 +339,27 @@ namespace CPSC481_iMenu
                         new DishModel()
                         {
                             name = "Crab Cake",
-                            description = "crab, shrimp, corn with panko crust, apple fennel salad, house-made tartar",
+                            description = "Crab, shrimp, corn with panko crust, apple fennel salad, house-made tartar",
                             imageName = "/food_images/CrabCake.jpg",
                             cost = 20.75f,
+                            ingredients = new string[]
+                            {
+                                "Crab meat",
+                                "Shrimp",
+                                "Corn",
+                                "Panko breadcrumbs",
+                                "Egg",
+                                "Mayonnaise",
+                                "Dijon mustard",
+                                "Lemon",
+                                "Green apple",
+                                "Fennel",
+                                "Red onion",
+                                "Mayonnaise",
+                                "Lemon juice",
+                                "Salt",
+                                "Pepper"
+                            },
                             dietaryRestrictions = new DietaryRestrictionModel[]{
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.DAIRY_FREE],
@@ -258,9 +369,32 @@ namespace CPSC481_iMenu
                         new DishModel()
                         {
                             name = "Katsu Chicken Penut Salad",
-                            description = "crispy chicken breast, julienne vegetables, arugula, miso ginger dressing",
+                            description = "Crispy chicken breast, julienne vegetables, arugula, miso ginger dressing",
                             imageName = "/food_images/KatsuChickenSalad.jpg",
                             cost = 24.25f,
+                            ingredients = new string[]
+                            {
+                                "Chicken breast",
+                                "Panko breadcrumbs",
+                                "Flour",
+                                "Egg",
+                                "Arugula",
+                                "Carrots",
+                                "Cucumber",
+                                "Red bell pepper",
+                                "Green onions",
+                                "Ginger",
+                                "Miso paste",
+                                "Rice vinegar",
+                                "Soy sauce",
+                                "Honey",
+                                "Garlic",
+                                "Lime juice",
+                                "Peanuts",
+                                "Salt",
+                                "Pepper",
+                                "Oil"
+                            },
                             dietaryRestrictions = new DietaryRestrictionModel[]{
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.SEAFOOD_FREE],
                             },
@@ -269,9 +403,21 @@ namespace CPSC481_iMenu
                         new DishModel()
                         {
                             name = "Sushi Cone",
-                            description = "tempura prawn, avocado, spicy mayo, tobiko",
+                            description = "A hand-held sushi cone with crispy tempura prawn, avocado, spicy mayo, and tobiko",
                             imageName = "/food_images/SushiCone.jpg",
                             cost = 7.34f,
+                            ingredients = new string[]
+                            {
+                                "Sushi rice",
+                                "Seaweed",
+                                "Prawn",
+                                "Avocado",
+                                "Spicy mayo",
+                                "Tobiko (flying fish roe)",
+                                "Soy sauce",
+                                "Wasabi",
+                                "Pickled ginger"
+                            },
                             dietaryRestrictions = new DietaryRestrictionModel[]{
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
                             },
@@ -280,9 +426,22 @@ namespace CPSC481_iMenu
                         new DishModel()
                         {
                             name = "Roasted Corn Guacamole",
-                            description = "Cilantro, fresh line, cherry tomatoes, serranos, feta cheese, warm tortilla chips",
+                            description = "Fresh guacamole with roasted corn. Served with warm tortilla chips.",
                             imageName = "/food_images/CornGuacamole.jpg",
                             cost = 7.44f,
+                            ingredients = new string[]
+                            {
+                                "Avocado",
+                                "Roasted corn",
+                                "Cilantro",
+                                "Lime",
+                                "Cherry tomatoes",
+                                "Serrano peppers",
+                                "Feta cheese",
+                                "Tortilla chips",
+                                "Salt",
+                                "Pepper"
+                            },
                             dietaryRestrictions = new DietaryRestrictionModel[]{
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGETARIAN],
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
@@ -294,9 +453,21 @@ namespace CPSC481_iMenu
                         new DishModel()
                         {
                             name = "Avocado Roll",
-                            description = "chili mayo, micro cilantro, teriyaki glaze",
+                            description = "Avocado, spicy mayo, tobiko",
                             imageName = "/food_images/AvocadoRoll.jpg",
                             cost = 12.46f,
+                            ingredients = new string[]
+                            {
+                                "Sushi rice",
+                                "Nori seaweed",
+                                "Tempura prawns",
+                                "Avocado",
+                                "Spicy mayo",
+                                "Tobiko (flying fish roe)",
+                                "Soy sauce",
+                                "Wasabi",
+                                "Pickled ginger"
+                            },
                             dietaryRestrictions = new DietaryRestrictionModel[]{
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGETARIAN],
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGAN],
@@ -307,11 +478,28 @@ namespace CPSC481_iMenu
                         new DishModel()
                         {
                             name = "Fish Tacos",
-                            description = "two shrimps + fish tacos, guacamole, valentina's",
+                            description = "Two tacos filled with crispy fish, topped with guacamole and a spicy sauce",
                             imageName = "/food_images/FishTaco.jpg",
                             cost = 15.75f,
                             dietaryRestrictions = new DietaryRestrictionModel[]{
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
+                            },
+                            ingredients = new string[]
+                            {
+                                "White fish fillets",
+                                "Corn tortillas",
+                                "Avocado",
+                                "Tomatoes",
+                                "Red onion",
+                                "Cilantro",
+                                "Lime juice",
+                                "Jalapeño peppers",
+                                "Garlic",
+                                "Cumin",
+                                "Paprika",
+                                "Salt",
+                                "Pepper",
+                                "Vegetable oil"
                             },
                             menuItemCategory = MenuItemCategoryList.menuItemCategories[MenuItemCategory.MAIN]
                         },
@@ -321,6 +509,29 @@ namespace CPSC481_iMenu
                             description = "Korean chili spiced tofu, edamame, miso dressing, brown rice",
                             imageName = "/food_images/TofuBowl.jpg",
                             cost = 20.50f,
+                            ingredients = new string[]
+                            {
+                                "Firm tofu",
+                                "Cornstarch",
+                                "Oil",
+                                "Korean chili paste",
+                                "Soy sauce",
+                                "Honey",
+                                "Garlic",
+                                "Ginger",
+                                "Edamame",
+                                "Brown rice",
+                                "Miso",
+                                "Rice vinegar",
+                                "Sesame oil",
+                                "Sesame seeds",
+                                "Green onions",
+                                "Carrots",
+                                "Cucumbers",
+                                "Red pepper",
+                                "Salt",
+                                "Pepper"
+                            },
                             dietaryRestrictions = new DietaryRestrictionModel[]{
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGETARIAN],
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGAN],
@@ -333,9 +544,20 @@ namespace CPSC481_iMenu
                         new DishModel()
                         {
                             name = "Apple Pie",
-                            description = "hand-folded pastry, toasted almonds, Canadian maple ice cream",
+                            description = "Classic apple pie with a flaky crust and cinnamon spice",
                             imageName = "/food_images/ApplePie.jpg",
                             cost = 12.00f,
+                            ingredients = new string[]
+                            {
+                                "Granny Smith apples",
+                                "Pie crust",
+                                "Butter",
+                                "Cinnamon",
+                                "Sugar",
+                                "Flour",
+                                "Lemon juice",
+                                "Vanilla extract"
+                            },
                             dietaryRestrictions = new DietaryRestrictionModel[]{
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGETARIAN],
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
@@ -346,9 +568,13 @@ namespace CPSC481_iMenu
                         new DishModel()
                         {
                             name = "Apple Juice",
-                            description = "made out of fresh apples",
+                            description = "Made out of fresh apples",
                             imageName = "/food_images/AppleJuice.jpg",
                             cost = 5.00f,
+                            ingredients = new string[]
+                            {
+                                "Apples",
+                            },
                             dietaryRestrictions = new DietaryRestrictionModel[]{
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGETARIAN],
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGAN],
@@ -362,9 +588,13 @@ namespace CPSC481_iMenu
                         new DishModel()
                         {
                             name = "Sprite",
-                            description = "flavourd soft drink",
+                            description = "Flavourd soft drink",
                             imageName = "/food_images/Sprite.jpg",
                             cost = 5.00f,
+                            ingredients = new string[]
+                            {
+                                "Sprite",
+                            },
                             dietaryRestrictions = new DietaryRestrictionModel[]{
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGETARIAN],
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGAN],
@@ -381,6 +611,13 @@ namespace CPSC481_iMenu
                             description = "Bittersweet grapefruit, crunchy radishes, spicy-floral Fresno chile, toasted cashews",
                             imageName = "/food_images/GrapefruitCrudo.jpg",
                             cost = 8.50f,
+                            ingredients = new string[]
+                            {
+                                "Grapefruit",
+                                "Radishes",
+                                "Fresno chile",
+                                "Cashews",
+                            },
                             dietaryRestrictions = new DietaryRestrictionModel[]{
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGETARIAN],
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.VEGAN],
@@ -396,6 +633,16 @@ namespace CPSC481_iMenu
                             description = "Chilled shrimp paired with tangy cocktail sauce.",
                             imageName = "/food_images/ShrimpCocktail.jpg",
                             cost = 10.75f,
+                            ingredients = new string[]
+                            {
+                                "Large shrimp",
+                                "Lemon",
+                                "Ketchup",
+                                "Worcestershire sauce",
+                                "Hot sauce",
+                                "Salt",
+                                "Pepper",
+                            },
                             dietaryRestrictions = new DietaryRestrictionModel[]{
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.GLUTEN_FREE],
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
@@ -406,9 +653,15 @@ namespace CPSC481_iMenu
                         new DishModel()
                         {
                             name = "Poutine",
-                            description = "Crispy french fries topped with cheese curds and gravy, a classic Canadian dish known as Poutine.",
+                            description = "Crispy french fries topped with cheese curds and gravy",
                             imageName = "/food_images/Poutine.jpg",
                             cost = 6.00f,
+                            ingredients = new string[]
+                            {
+                                "Potatoes",
+                                "Cheese curds",
+                                "Beef gravy",
+                            },
                             dietaryRestrictions = new DietaryRestrictionModel[]{
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.SEAFOOD_FREE],
@@ -418,9 +671,23 @@ namespace CPSC481_iMenu
                          new DishModel()
                         {
                             name = "Nanaimo bars",
-                            description = "Classic Canadian dessert consisting of three layers - a crumbly chocolate and coconut base, a custard-flavored middle, and chocolate ganache on top",
+                            description = "Dessert consisting a chocolate and coconut base, a custard middle, and chocolate ganache on top",
                             imageName = "/food_images/NanaimoBars.jpg",
                             cost = 6.00f,
+                            ingredients = new string[]
+                            {
+                                "Graham cracker crumbs",
+                                "Coconut flakes",
+                                "Butter",
+                                "Granulated sugar",
+                                "Cocoa powder",
+                                "Eggs",
+                                "Vanilla extract",
+                                "Heavy cream",
+                                "Unsalted butter",
+                                "Powdered sugar",
+                                "Semi-sweet chocolate chips",
+                            },
                             dietaryRestrictions = new DietaryRestrictionModel[]{
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.PEANUT_FREE],
                                 DietaryRestrictionList.dietaryRestrictions[DietaryRestrictions.SEAFOOD_FREE],

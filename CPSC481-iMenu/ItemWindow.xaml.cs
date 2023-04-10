@@ -25,8 +25,6 @@ namespace CPSC481_iMenu
         public ItemWindow(int Id, bool isEdit, string ImagePath, long Quantity=0, string TotalCostString = "0")
         {
             InitializeComponent();
-            ItemIngredientsList.ItemsSource = new String[] {"Beef","Onion","Tomatoes", "Ketchup", "Mustard","Pickles","Hamburger Buns"};
-            //ItemIngredientsList.ItemsSource = menuItem.Ingredients; //replace later
 
             this.id = Id;
             this.isEdit = isEdit;
@@ -34,7 +32,7 @@ namespace CPSC481_iMenu
             DishModel dish = Items.Data[Id];
             ItemTitle.Text = dish.name;
             ItemDescription.Text = dish.description;
-            
+            ItemIngredientsList.ItemsSource = dish.ingredients;
 
             ItemImage.Source = new BitmapImage(new Uri(ImagePath, UriKind.Relative));
 
