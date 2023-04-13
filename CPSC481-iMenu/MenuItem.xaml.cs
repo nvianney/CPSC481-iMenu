@@ -24,9 +24,9 @@ namespace CPSC481_iMenu
     {
 
         public static readonly DependencyProperty IdProperty = DependencyProperty.Register(
-            nameof(Id),
-            typeof(int),
-            typeof(MenuItem));
+                   nameof(Id),
+                   typeof(int),
+                   typeof(MenuItem));
 
         public int Id
         {
@@ -39,8 +39,9 @@ namespace CPSC481_iMenu
             typeof(string),
             typeof(MenuItem));
 
-        public string Title {
-            get { return (string )GetValue(TitleProperty); }
+        public string Title
+        {
+            get { return (string)GetValue(TitleProperty); }
             set { SetValue(TitleProperty, value); }
         }
 
@@ -120,8 +121,9 @@ namespace CPSC481_iMenu
 
         private void Expand_Button_Click(object sender, RoutedEventArgs e)
         {
-            ItemWindow itemWindow = new ItemWindow(Id,false,ImagePath);
-            itemWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            ItemWindow itemWindow = new ItemWindow(Id, false, ImagePath);
+            itemWindow.Owner = Window.GetWindow(this);
+            itemWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner; 
             itemWindow.Show();
         }
     }

@@ -139,7 +139,7 @@
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
 
-                                        <local:MenuItem Id="{Binding itemId}" Title="{Binding name}" Description="{Binding description}" ImagePath="{Binding imageName}" />
+                                        <local:MenuItem Id="{Binding itemId}" Title="{Binding name}" Cost="{Binding cost}" Description="{Binding description}" ImagePath="{Binding imageName}" />
 
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>

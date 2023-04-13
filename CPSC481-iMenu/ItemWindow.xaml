@@ -10,9 +10,9 @@
     <Grid Background="White" Margin="12,12,12,12">
         <Grid Margin="12,12,12,12" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="70*" />
+                <RowDefinition Height="92*" />
                 <!--item, description, close button-->
-                <RowDefinition Height="250*" />
+                <RowDefinition Height="228*" />
                 <!--pic, ingredients-->
                 <RowDefinition Height="99*" />
                 <!--symbols-->
@@ -21,26 +21,25 @@
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="7*" />
-                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="249*" />
+                    <ColumnDefinition Width="295*" />
                     <ColumnDefinition Width="80" />
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Grid.Column="0" x:Name='ItemTitle' Text="Item 1" VerticalAlignment="Center" FontSize="30" TextWrapping="Wrap" FontWeight="Bold" Height="40" HorizontalAlignment="Left"/>
-                <TextBlock Grid.Column="1" x:Name="ItemDescription" Text="Descripton here abcdefghi jklmnopqr stuvwxyz 123456" VerticalAlignment="Center" FontSize="15" TextWrapping="Wrap" Height="43"/>
-                <Button x:Name="exit" Grid.Column="2" Content="X" Background="#FFE86464" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="44" Height="39" Click="exit_Click" />
+                <TextBlock Grid.Column="0" x:Name='ItemTitle' Text="Item 1" VerticalAlignment="Center" FontSize="30" TextWrapping="Wrap" FontWeight="Bold" Height="92" HorizontalAlignment="Left" Width="244"/>
+                <TextBlock Grid.Column="1" x:Name="ItemDescription" Text="Descripton here abcdefghi jklmnopqr stuvwxyz 123456" FontSize="15" TextWrapping="Wrap" Margin="10,0,0,0"/>
+                <Button x:Name="exit" Grid.Column="2" Content="X" Background="#FFE86464" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Top" Width="44" Height="39" Click="exit_Click" />
 
             </Grid>
-            <Grid Margin="0,70,0,0" Grid.RowSpan="2">
+            <Grid Margin="0,91,0,0" Grid.RowSpan="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="29*" />
                     <ColumnDefinition Width="19*" />
                 </Grid.ColumnDefinitions>
-                <Image Grid.Column="0" x:Name="ItemImage" Source="/ChummyJoes.png" HorizontalAlignment="Left" />
-                <Label Grid.Column="1" Name ="IngredientTitle" FontSize="25" Content="Ingredients" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="17,0,0,0" Width="134"/>
+                <Image x:Name="ItemImage" Source="/ChummyJoes.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,0" />
+                <Label Grid.Column="1" Name ="IngredientTitle" FontSize="25" Content="Ingredients" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="4,0,0,0"/>
 
-                <!--later change to stack panel-->
-                <ListView Grid.Column="1" x:Name="ItemIngredientsList" RenderTransformOrigin="0.5,0.5" HorizontalContentAlignment="Left" Padding="10,10,10,10" HorizontalAlignment="Center" BorderBrush="Black" d:ItemsSource="{d:SampleData ItemCount=6}" ScrollViewer.VerticalScrollBarVisibility="Visible" Width="212" Margin="17,48,0,0">
+                <ListView Grid.Column="1" x:Name="ItemIngredientsList" RenderTransformOrigin="0.5,0.5" HorizontalContentAlignment="Left" Padding="10,10,10,10" HorizontalAlignment="Center" BorderBrush="Black" d:ItemsSource="{d:SampleData ItemCount=6}" ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="10,43,0,12" Width="213" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
@@ -54,24 +53,16 @@
             </Grid>
 
 
-            <Grid Grid.Row="1" Margin="0,238,0,0" Grid.RowSpan="2">
-                <ItemsControl ItemsSource="{Binding ImageAllergyPath, RelativeSource={RelativeSource AncestorType=UserControl}}">
+            <Grid Grid.Row="2" Margin="0,11,0,0">
+                <ItemsControl ItemsSource="{Binding ImageArray}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
-                            </Grid>
+                            <StackPanel Orientation="Horizontal"/>
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <Image Source="{Binding}" Margin="4,5,4,5">
-                                <Image.ToolTip>
-                                    <ToolTip Content="{Binding}" />
-                                </Image.ToolTip>
-                            </Image>
+                            <Image Source="{Binding}" HorizontalAlignment="Left" Margin="0,10,0,0"/>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>

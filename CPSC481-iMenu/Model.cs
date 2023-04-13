@@ -67,7 +67,7 @@ namespace CPSC481_iMenu
         };
     }
 
-    class DishModel
+     class DishModel
     {
         public int itemId { get; set; }
         public String name { get; set; }
@@ -460,10 +460,8 @@ namespace CPSC481_iMenu
                             {
                                 "Sushi rice",
                                 "Nori seaweed",
-                                "Tempura prawns",
                                 "Avocado",
                                 "Spicy mayo",
-                                "Tobiko (flying fish roe)",
                                 "Soy sauce",
                                 "Wasabi",
                                 "Pickled ginger"

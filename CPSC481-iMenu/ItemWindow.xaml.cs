@@ -20,8 +20,55 @@ namespace CPSC481_iMenu
     /// </summary>
     public partial class ItemWindow : Window
     {
+        public static readonly DependencyProperty IdProperty = DependencyProperty.Register(
+            nameof(Id),
+            typeof(int),
+            typeof(ItemWindow));
+
+        public int Id
+        {
+            get { return (int)GetValue(IdProperty); }
+            set { SetValue(IdProperty, value); }
+        }
+
+        public static readonly DependencyProperty QuantityProperty = DependencyProperty.Register(
+            nameof(Quantity),
+            typeof(long),
+            typeof(ItemWindow));
+
+        public long Quantity
+        {
+            get { return (long)GetValue(QuantityProperty); }
+            set { SetValue(QuantityProperty, value); }
+        }
+
+        public string Title
+        {
+            get { return Items.Data[Id].name; }
+        }
+
+        public string ImagePath
+        {
+            get { return Items.Data[Id].imageName; }
+        }
+
+        public float Cost
+        {
+            get { return Items.Data[Id].cost; }
+        }
+
+        public string QuantityString
+        {
+            get { return String.Format("${0:0.00}*{1}=", Cost, Quantity); }
+        }
+
+        public string TotalCostString
+        {
+            get { return String.Format("${0:0.00}", Cost * Quantity); }
+        }
         private int id;
         private bool isEdit;
+        private DietaryRestrictionModel[] dietaryRestrictions;
         public ItemWindow(int Id, bool isEdit, string ImagePath, long Quantity=0, string TotalCostString = "0")
         {
             InitializeComponent();
@@ -35,7 +82,13 @@ namespace CPSC481_iMenu
             ItemIngredientsList.ItemsSource = dish.ingredients;
 
             ItemImage.Source = new BitmapImage(new Uri(ImagePath, UriKind.Relative));
-
+            dietaryRestrictions = dish.dietaryRestrictions;
+            string[] imagePaths = new string[dietaryRestrictions.Length];
+            for (int i = 0; i < dietaryRestrictions.Length; i++)
+            {
+                imagePaths[i] = dietaryRestrictions[i].imgSource;
+            }
+            DataContext = new { ImageArray = imagePaths };
             if (isEdit)
             {
                 AddButton.Content = "Update";
@@ -53,11 +106,6 @@ namespace CPSC481_iMenu
         private void exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-        }
-
-        public DietaryRestrictionModel[] ImageAllergyPath
-        {
-            get { return Items.Data[id].dietaryRestrictions; } //not working....
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -105,7 +153,7 @@ namespace CPSC481_iMenu
                 // subtract 1 from current quantity and update the text
                 ItemQuantity.Text = (currentQuantity - 1).ToString();
             }
-            //TODO: update ItemCost as well? 
+           
         }
 
         private void Plus_Click(object sender, RoutedEventArgs e)
