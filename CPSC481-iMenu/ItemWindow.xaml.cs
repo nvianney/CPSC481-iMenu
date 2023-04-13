@@ -20,52 +20,7 @@ namespace CPSC481_iMenu
     /// </summary>
     public partial class ItemWindow : Window
     {
-        public static readonly DependencyProperty IdProperty = DependencyProperty.Register(
-            nameof(Id),
-            typeof(int),
-            typeof(ItemWindow));
-
-        public int Id
-        {
-            get { return (int)GetValue(IdProperty); }
-            set { SetValue(IdProperty, value); }
-        }
-
-        public static readonly DependencyProperty QuantityProperty = DependencyProperty.Register(
-            nameof(Quantity),
-            typeof(long),
-            typeof(ItemWindow));
-
-        public long Quantity
-        {
-            get { return (long)GetValue(QuantityProperty); }
-            set { SetValue(QuantityProperty, value); }
-        }
-
-        public string Title
-        {
-            get { return Items.Data[Id].name; }
-        }
-
-        public string ImagePath
-        {
-            get { return Items.Data[Id].imageName; }
-        }
-
-        public float Cost
-        {
-            get { return Items.Data[Id].cost; }
-        }
-
-        public string QuantityString
-        {
-            get { return String.Format("${0:0.00}*{1}=", Cost, Quantity); }
-        }
-
-        public string TotalCostString
-        {
-            get { return String.Format("${0:0.00}", Cost * Quantity); }
-        }
+        
         private int id;
         private bool isEdit;
         private DietaryRestrictionModel[] dietaryRestrictions;
@@ -77,10 +32,10 @@ namespace CPSC481_iMenu
             this.isEdit = isEdit;
 
             DishModel dish = Items.Data[Id];
+
             ItemTitle.Text = dish.name;
             ItemDescription.Text = dish.description;
             ItemIngredientsList.ItemsSource = dish.ingredients;
-
             ItemImage.Source = new BitmapImage(new Uri(ImagePath, UriKind.Relative));
             dietaryRestrictions = dish.dietaryRestrictions;
             string[] imagePaths = new string[dietaryRestrictions.Length];
@@ -88,6 +43,7 @@ namespace CPSC481_iMenu
             {
                 imagePaths[i] = dietaryRestrictions[i].imgSource;
             }
+
             DataContext = new { ImageArray = imagePaths };
             if (isEdit)
             {
@@ -143,6 +99,7 @@ namespace CPSC481_iMenu
                     }
                 );
             }
+            this.Close();
         }
 
         private void Minus_Click(object sender, RoutedEventArgs e)
