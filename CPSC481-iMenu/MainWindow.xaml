@@ -75,7 +75,7 @@
                         </Button>
                     </StackPanel>
                     <!-- Instead of having a bar at the buttom to display the legend I made a box on the corner-->
-                    <Button Width="60" Content="?" FontSize="40" FontWeight="Bold" Background="#FFE86464" Margin="0,713,0,0" Grid.RowSpan="2" Click="Help_Button_Click" Height="60" VerticalAlignment="Top"/>
+                    <Button Width="60" Content="?" FontSize="40" FontWeight="Bold" Background="#FFE86464" Margin="0,713,0,0" Grid.RowSpan="2" Click="Help_Button_Click" Height="60" VerticalAlignment="Bottom"/>
                 </Grid>
 
                 <!-- Menu -->
@@ -145,10 +145,7 @@
 
                         </StackPanel>
                     </ScrollViewer>
-                    <Button x:Name="btn_legend" FontSize="18" Background="WhiteSmoke" Click="btn_legend_Click" Margin="388,0,0,0" Grid.RowSpan="2" HorizontalAlignment="Left" Width="202" Height="50" VerticalAlignment="Bottom" >
-                        Legend
-                    </Button>
-                    <Button x:Name="btn_trackOrder" FontSize="18" Background="WhiteSmoke"  Margin="98,0,0,0" Grid.RowSpan="2" Click="btn_trackOrder_Click" HorizontalAlignment="Left" Width="202" Height="50" VerticalAlignment="Bottom" FontWeight="Bold" >
+                    <Button x:Name="btn_trackOrder" FontSize="18" Background="WhiteSmoke" Click="btn_trackOrder_Click" HorizontalAlignment="Center" Height="50" Width="600" VerticalAlignment="Center" FontWeight="Bold" Grid.Row="1" >
                         Track Order
                     </Button>
                 </Grid>
