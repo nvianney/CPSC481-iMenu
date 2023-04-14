@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static CPSC481_iMenu.Items;
 
 namespace CPSC481_iMenu
 {
@@ -19,16 +20,107 @@ namespace CPSC481_iMenu
     /// </summary>
     public partial class ItemWindow : Window
     {
-        public ItemWindow()
+        
+        private int id;
+        private bool isEdit;
+        private DietaryRestrictionModel[] dietaryRestrictions;
+        public ItemWindow(int Id, bool isEdit, string ImagePath, long Quantity=0, string TotalCostString = "0")
         {
             InitializeComponent();
-            //assuming later ItemIngredientsList can be initialized using dish specific values
-            ItemIngredientsList.ItemsSource = new String[] {"Beef","Onion","Tomatoes", "Ketchup", "Mustard","Pickles","Hamburger Buns"};
+
+            this.id = Id;
+            this.isEdit = isEdit;
+
+            DishModel dish = Items.Data[Id];
+
+            ItemTitle.Text = dish.name;
+            ItemDescription.Text = dish.description;
+            ItemIngredientsList.ItemsSource = dish.ingredients;
+            ItemImage.Source = new BitmapImage(new Uri(ImagePath, UriKind.Relative));
+            dietaryRestrictions = dish.dietaryRestrictions;
+            string[] imagePaths = new string[dietaryRestrictions.Length];
+            for (int i = 0; i < dietaryRestrictions.Length; i++)
+            {
+                imagePaths[i] = dietaryRestrictions[i].imgSource;
+            }
+
+            DataContext = new { ImageArray = imagePaths };
+            if (isEdit)
+            {
+                AddButton.Content = "Update";
+                ItemCost.Text = TotalCostString;
+                ItemQuantity.Text = Quantity.ToString();
+            }
+            else
+            {
+                AddButton.Content = "Add";
+                ItemCost.Text = dish.cost.ToString();
+                ItemQuantity.Text = "1";
+            }
         }
 
         private void exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            int index = Items.Store.ToList().FindIndex((elem) => elem.itemId == id);
+
+            if (index != -1)
+            {
+                List<AddedItem> items = Items.Store.ToList().ConvertAll((item) =>
+                {
+                    if (item.itemId == id)
+                    {
+                        if (isEdit)
+                        {
+                            item.quantity = int.Parse(ItemQuantity.Text);
+                        }
+                        else
+                        {
+                            item.quantity += int.Parse(ItemQuantity.Text);
+                        }
+                    }
+                    return item;
+                });
+
+                Items.Store.Clear();
+                items.ForEach(item => Items.Store.Add(item));
+            }
+            else
+            {
+                Items.Store.Add(
+                    new Items.AddedItem()
+                    {
+                        itemId = id,
+                        quantity = int.Parse(ItemQuantity.Text),
+                    }
+                );
+            }
+            this.Close();
+        }
+
+        private void Minus_Click(object sender, RoutedEventArgs e)
+        {
+            int currentQuantity;
+            if (int.TryParse(ItemQuantity.Text, out currentQuantity))
+            {
+                // subtract 1 from current quantity and update the text
+                ItemQuantity.Text = (currentQuantity - 1).ToString();
+            }
+           
+        }
+
+        private void Plus_Click(object sender, RoutedEventArgs e)
+        {
+            int currentQuantity;
+            if (int.TryParse(ItemQuantity.Text, out currentQuantity))
+            {
+                // add 1 to current quantity and update the text
+                ItemQuantity.Text = (currentQuantity + 1).ToString();
+            }
         }
     }
 }

@@ -73,6 +73,9 @@
                         <Button Name="DessertsButton" Background="White" Margin="0,0,0,0" BorderBrush="#312E5F" BorderThickness="1" Click="Sidebar_Button_Click">
                             <Image Height="80" Source="/sidebar/dessert.png" Stretch="Fill" />
                         </Button>
+                        <Button Name="SepcialsButton" Background="White" Margin="0,0,0,0" BorderBrush="#312E5F" BorderThickness="1" Click="Sidebar_Button_Click">
+                            <Image Height="80" Source="/sidebar/special.png" Stretch="Fill" />
+                        </Button>
                     </StackPanel>
                     <!-- Instead of having a bar at the buttom to display the legend I made a box on the corner-->
                     <Button Width="60" Content="?" FontSize="40" FontWeight="Bold" Background="#FFE86464" Margin="0,713,0,0" Grid.RowSpan="2" Click="Help_Button_Click" Height="60" VerticalAlignment="Bottom"/>
@@ -136,7 +139,7 @@
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
 
-                                        <local:MenuItem Id="{Binding itemId}" Title="{Binding name}" Description="{Binding description}" Cost="{Binding cost}" ImagePath="{Binding imageName}" />
+                                        <local:MenuItem Id="{Binding itemId}" Title="{Binding name}" Cost="{Binding cost}" Description="{Binding description}" ImagePath="{Binding imageName}" />
 
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>

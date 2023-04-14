@@ -24,7 +24,7 @@
                            Text="{Binding Title, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
                    
                 <!-- Expand button added as described from the document-->
-                <Button x:Name="expand" Grid.Column="1" BorderThickness="0" HorizontalAlignment="Stretch" Width="30" Height="30" Margin="16,4,0,4" Click="Button_Click" Background="#FFFFFF">
+                <Button x:Name="expand" Grid.Column="1" BorderThickness="0" HorizontalAlignment="Stretch" Width="30" Height="30" Margin="16,4,0,4" Click="Expand_Button_Click" Background="#FFFFFF">
                     <Image Width="25" Height="25" Source="/expand.png" />
                 </Button> 
 
