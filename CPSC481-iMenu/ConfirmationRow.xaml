@@ -31,7 +31,7 @@
                     </ItemsControl.ItemsPanel>
                 </ItemsControl>
         </StackPanel>
-        <TextBlock Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" Text="{Binding Title, RelativeSource={RelativeSource AncestorType=UserControl}}"></TextBlock>
+        <TextBlock Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" Text="{Binding Title, RelativeSource={RelativeSource AncestorType=UserControl}}" TextWrapping="WrapWithOverflow"></TextBlock>
         <StackPanel Grid.Column="3" VerticalAlignment="Center">
             <TextBlock Text="{Binding QuantityString, RelativeSource={RelativeSource AncestorType=UserControl}}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12"/>
             <TextBlock Text="{Binding TotalCostString, RelativeSource={RelativeSource AncestorType=UserControl}}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"/>
